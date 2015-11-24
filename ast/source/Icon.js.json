@@ -1,14 +1,14 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 37429,
+  "end": 35321,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 1460,
+      "line": 1376,
       "column": 0
     }
   },
@@ -74020,22 +74020,22 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\r\n * Icon Component\r\n * @example\r\n * import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    ScrollView,\r\n    Text,\r\n    ListView,\r\n    InteractionManager\r\n} from 'react-native';\r\n import { TYPO, COLOR, ICON_NAME, Icon  } from 'react-native-material-design-components';\r\n\r\n export default class IconExample extends Component {\r\n    constructor(props) {\r\n        super(props);\r\n        // Operations usually carried out in componentWillMount go here\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {};\r\n    state = {\r\n        dataSource: new ListView.DataSource({\r\n            rowHasChanged: (r1, r2) => r1 !== r2\r\n        }).cloneWithRows(ICON_NAME),\r\n        renderPlaceholderOnly: true\r\n    };\r\n\r\n    componentDidMount() {\r\n        InteractionManager.runAfterInteractions(() => {\r\n            this.setState({renderPlaceholderOnly: false});\r\n        });\r\n    }\r\n\r\n    render = () => {\r\n        if (this.state.renderPlaceholderOnly) {\r\n            this._renderPlaceholderView();\r\n        }\r\n\r\n        return (\r\n            <ListView\r\n                dataSource={this.state.dataSource}\r\n                renderRow={this.renderIconItem}\r\n            />\r\n        );\r\n    };\r\n\r\n    renderIconItem = (rowData) => {\r\n        const { primary } = this.props;\r\n        return (\r\n            <View style={styles.iconItem} key={rowData}>\r\n                <Icon name={rowData}\r\n                      size={24}\r\n                      color={COLOR[`${primary}500`].color}\r\n                      style={\r\n                        styles.icon\r\n                      }\r\n                />\r\n                <Text style={[TYPO.paperFontBody1,styles.text,{color: 'rgba(0,0,0,.87)'}]}>\r\n                    {rowData}\r\n                </Text>\r\n            </View>\r\n        )\r\n    };\r\n\r\n    _renderPlaceholderView = () => (\r\n        <View>\r\n        </View>\r\n    );\r\n}\r\n\r\n const styles = StyleSheet.create({\r\n    content: {\r\n        padding: 16,\r\n    },\r\n    iconItem: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center'\r\n    },\r\n    icon: {\r\n        margin: 16\r\n    },\r\n    text: {\r\n        marginLeft: 16\r\n    }\r\n});\r\n ",
+            "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
             "start": 34915,
-            "end": 37067,
+            "end": 34959,
             "loc": {
               "start": {
                 "line": 1360,
                 "column": 0
               },
               "end": {
-                "line": 1448,
+                "line": 1364,
                 "column": 3
               }
             },
             "range": [
               34915,
-              37067
+              34959
             ]
           }
         ]
@@ -74067,65 +74067,65 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\r\n * Icon Component\r\n * @example\r\n * import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    ScrollView,\r\n    Text,\r\n    ListView,\r\n    InteractionManager\r\n} from 'react-native';\r\n import { TYPO, COLOR, ICON_NAME, Icon  } from 'react-native-material-design-components';\r\n\r\n export default class IconExample extends Component {\r\n    constructor(props) {\r\n        super(props);\r\n        // Operations usually carried out in componentWillMount go here\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {};\r\n    state = {\r\n        dataSource: new ListView.DataSource({\r\n            rowHasChanged: (r1, r2) => r1 !== r2\r\n        }).cloneWithRows(ICON_NAME),\r\n        renderPlaceholderOnly: true\r\n    };\r\n\r\n    componentDidMount() {\r\n        InteractionManager.runAfterInteractions(() => {\r\n            this.setState({renderPlaceholderOnly: false});\r\n        });\r\n    }\r\n\r\n    render = () => {\r\n        if (this.state.renderPlaceholderOnly) {\r\n            this._renderPlaceholderView();\r\n        }\r\n\r\n        return (\r\n            <ListView\r\n                dataSource={this.state.dataSource}\r\n                renderRow={this.renderIconItem}\r\n            />\r\n        );\r\n    };\r\n\r\n    renderIconItem = (rowData) => {\r\n        const { primary } = this.props;\r\n        return (\r\n            <View style={styles.iconItem} key={rowData}>\r\n                <Icon name={rowData}\r\n                      size={24}\r\n                      color={COLOR[`${primary}500`].color}\r\n                      style={\r\n                        styles.icon\r\n                      }\r\n                />\r\n                <Text style={[TYPO.paperFontBody1,styles.text,{color: 'rgba(0,0,0,.87)'}]}>\r\n                    {rowData}\r\n                </Text>\r\n            </View>\r\n        )\r\n    };\r\n\r\n    _renderPlaceholderView = () => (\r\n        <View>\r\n        </View>\r\n    );\r\n}\r\n\r\n const styles = StyleSheet.create({\r\n    content: {\r\n        padding: 16,\r\n    },\r\n    iconItem: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center'\r\n    },\r\n    icon: {\r\n        margin: 16\r\n    },\r\n    text: {\r\n        marginLeft: 16\r\n    }\r\n});\r\n ",
+          "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
           "start": 34915,
-          "end": 37067,
+          "end": 34959,
           "loc": {
             "start": {
               "line": 1360,
               "column": 0
             },
             "end": {
-              "line": 1448,
+              "line": 1364,
               "column": 3
             }
           },
           "range": [
             34915,
-            37067
+            34959
           ]
         }
       ]
     },
     {
       "type": "ExportDefaultDeclaration",
-      "start": 37069,
-      "end": 37427,
+      "start": 34961,
+      "end": 35319,
       "loc": {
         "start": {
-          "line": 1449,
+          "line": 1365,
           "column": 0
         },
         "end": {
-          "line": 1459,
+          "line": 1375,
           "column": 1
         }
       },
       "declaration": {
         "type": "ClassDeclaration",
-        "start": 37084,
-        "end": 37427,
+        "start": 34976,
+        "end": 35319,
         "loc": {
           "start": {
-            "line": 1449,
+            "line": 1365,
             "column": 15
           },
           "end": {
-            "line": 1459,
+            "line": 1375,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 37090,
-          "end": 37094,
+          "start": 34982,
+          "end": 34986,
           "loc": {
             "start": {
-              "line": 1449,
+              "line": 1365,
               "column": 21
             },
             "end": {
-              "line": 1449,
+              "line": 1365,
               "column": 25
             }
           },
@@ -74134,29 +74134,29 @@
         },
         "superClass": {
           "type": "CallExpression",
-          "start": 37103,
-          "end": 37192,
+          "start": 34995,
+          "end": 35084,
           "loc": {
             "start": {
-              "line": 1449,
+              "line": 1365,
               "column": 34
             },
             "end": {
-              "line": 1449,
+              "line": 1365,
               "column": 123
             }
           },
           "callee": {
             "type": "Identifier",
-            "start": 37103,
-            "end": 37116,
+            "start": 34995,
+            "end": 35008,
             "loc": {
               "start": {
-                "line": 1449,
+                "line": 1365,
                 "column": 34
               },
               "end": {
-                "line": 1449,
+                "line": 1365,
                 "column": 47
               }
             },
@@ -74165,15 +74165,15 @@
           "arguments": [
             {
               "type": "Identifier",
-              "start": 37117,
-              "end": 37125,
+              "start": 35009,
+              "end": 35017,
               "loc": {
                 "start": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 48
                 },
                 "end": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 56
                 }
               },
@@ -74181,15 +74181,15 @@
             },
             {
               "type": "Literal",
-              "start": 37127,
-              "end": 37150,
+              "start": 35019,
+              "end": 35042,
               "loc": {
                 "start": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 58
                 },
                 "end": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 81
                 }
               },
@@ -74199,15 +74199,15 @@
             },
             {
               "type": "Literal",
-              "start": 37152,
-              "end": 37191,
+              "start": 35044,
+              "end": 35083,
               "loc": {
                 "start": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 83
                 },
                 "end": {
-                  "line": 1449,
+                  "line": 1365,
                   "column": 122
                 }
               },
@@ -74219,45 +74219,45 @@
         },
         "body": {
           "type": "ClassBody",
-          "start": 37193,
-          "end": 37427,
+          "start": 35085,
+          "end": 35319,
           "loc": {
             "start": {
-              "line": 1449,
+              "line": 1365,
               "column": 124
             },
             "end": {
-              "line": 1459,
+              "line": 1375,
               "column": 1
             }
           },
           "body": [
             {
               "type": "MethodDefinition",
-              "start": 37380,
-              "end": 37424,
+              "start": 35272,
+              "end": 35316,
               "loc": {
                 "start": {
-                  "line": 1456,
+                  "line": 1372,
                   "column": 2
                 },
                 "end": {
-                  "line": 1458,
+                  "line": 1374,
                   "column": 3
                 }
               },
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 37380,
-                "end": 37391,
+                "start": 35272,
+                "end": 35283,
                 "loc": {
                   "start": {
-                    "line": 1456,
+                    "line": 1372,
                     "column": 2
                   },
                   "end": {
-                    "line": 1456,
+                    "line": 1372,
                     "column": 13
                   }
                 },
@@ -74268,15 +74268,15 @@
               "kind": "constructor",
               "value": {
                 "type": "FunctionExpression",
-                "start": 37391,
-                "end": 37424,
+                "start": 35283,
+                "end": 35316,
                 "loc": {
                   "start": {
-                    "line": 1456,
+                    "line": 1372,
                     "column": 13
                   },
                   "end": {
-                    "line": 1458,
+                    "line": 1374,
                     "column": 3
                   }
                 },
@@ -74287,15 +74287,15 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 37392,
-                    "end": 37397,
+                    "start": 35284,
+                    "end": 35289,
                     "loc": {
                       "start": {
-                        "line": 1456,
+                        "line": 1372,
                         "column": 14
                       },
                       "end": {
-                        "line": 1456,
+                        "line": 1372,
                         "column": 19
                       }
                     },
@@ -74304,58 +74304,58 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 37399,
-                  "end": 37424,
+                  "start": 35291,
+                  "end": 35316,
                   "loc": {
                     "start": {
-                      "line": 1456,
+                      "line": 1372,
                       "column": 21
                     },
                     "end": {
-                      "line": 1458,
+                      "line": 1374,
                       "column": 3
                     }
                   },
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 37406,
-                      "end": 37419,
+                      "start": 35298,
+                      "end": 35311,
                       "loc": {
                         "start": {
-                          "line": 1457,
+                          "line": 1373,
                           "column": 4
                         },
                         "end": {
-                          "line": 1457,
+                          "line": 1373,
                           "column": 17
                         }
                       },
                       "expression": {
                         "type": "CallExpression",
-                        "start": 37406,
-                        "end": 37418,
+                        "start": 35298,
+                        "end": 35310,
                         "loc": {
                           "start": {
-                            "line": 1457,
+                            "line": 1373,
                             "column": 4
                           },
                           "end": {
-                            "line": 1457,
+                            "line": 1373,
                             "column": 16
                           }
                         },
                         "callee": {
                           "type": "Super",
-                          "start": 37406,
-                          "end": 37411,
+                          "start": 35298,
+                          "end": 35303,
                           "loc": {
                             "start": {
-                              "line": 1457,
+                              "line": 1373,
                               "column": 4
                             },
                             "end": {
-                              "line": 1457,
+                              "line": 1373,
                               "column": 9
                             }
                           }
@@ -74363,15 +74363,15 @@
                         "arguments": [
                           {
                             "type": "Identifier",
-                            "start": 37412,
-                            "end": 37417,
+                            "start": 35304,
+                            "end": 35309,
                             "loc": {
                               "start": {
-                                "line": 1457,
+                                "line": 1373,
                                 "column": 10
                               },
                               "end": {
-                                "line": 1457,
+                                "line": 1373,
                                 "column": 15
                               }
                             },
@@ -74387,21 +74387,21 @@
                 {
                   "type": "Block",
                   "value": "*\r\n   * @param {object} prop\r\n   * @param {string} prop.name - Icon name\r\n   * @param {number} [prop.size=12] - Icon size\r\n   * @param {string} [prop.color] - Icon color\r\n   ",
-                  "start": 37198,
-                  "end": 37376,
+                  "start": 35090,
+                  "end": 35268,
                   "loc": {
                     "start": {
-                      "line": 1450,
+                      "line": 1366,
                       "column": 2
                     },
                     "end": {
-                      "line": 1455,
+                      "line": 1371,
                       "column": 5
                     }
                   },
                   "range": [
-                    37198,
-                    37376
+                    35090,
+                    35268
                   ]
                 }
               ]
@@ -74411,22 +74411,22 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\r\n * Icon Component\r\n * @example\r\n * import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    ScrollView,\r\n    Text,\r\n    ListView,\r\n    InteractionManager\r\n} from 'react-native';\r\n import { TYPO, COLOR, ICON_NAME, Icon  } from 'react-native-material-design-components';\r\n\r\n export default class IconExample extends Component {\r\n    constructor(props) {\r\n        super(props);\r\n        // Operations usually carried out in componentWillMount go here\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {};\r\n    state = {\r\n        dataSource: new ListView.DataSource({\r\n            rowHasChanged: (r1, r2) => r1 !== r2\r\n        }).cloneWithRows(ICON_NAME),\r\n        renderPlaceholderOnly: true\r\n    };\r\n\r\n    componentDidMount() {\r\n        InteractionManager.runAfterInteractions(() => {\r\n            this.setState({renderPlaceholderOnly: false});\r\n        });\r\n    }\r\n\r\n    render = () => {\r\n        if (this.state.renderPlaceholderOnly) {\r\n            this._renderPlaceholderView();\r\n        }\r\n\r\n        return (\r\n            <ListView\r\n                dataSource={this.state.dataSource}\r\n                renderRow={this.renderIconItem}\r\n            />\r\n        );\r\n    };\r\n\r\n    renderIconItem = (rowData) => {\r\n        const { primary } = this.props;\r\n        return (\r\n            <View style={styles.iconItem} key={rowData}>\r\n                <Icon name={rowData}\r\n                      size={24}\r\n                      color={COLOR[`${primary}500`].color}\r\n                      style={\r\n                        styles.icon\r\n                      }\r\n                />\r\n                <Text style={[TYPO.paperFontBody1,styles.text,{color: 'rgba(0,0,0,.87)'}]}>\r\n                    {rowData}\r\n                </Text>\r\n            </View>\r\n        )\r\n    };\r\n\r\n    _renderPlaceholderView = () => (\r\n        <View>\r\n        </View>\r\n    );\r\n}\r\n\r\n const styles = StyleSheet.create({\r\n    content: {\r\n        padding: 16,\r\n    },\r\n    iconItem: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center'\r\n    },\r\n    icon: {\r\n        margin: 16\r\n    },\r\n    text: {\r\n        marginLeft: 16\r\n    }\r\n});\r\n ",
+            "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
             "start": 34915,
-            "end": 37067,
+            "end": 34959,
             "loc": {
               "start": {
                 "line": 1360,
                 "column": 0
               },
               "end": {
-                "line": 1448,
+                "line": 1364,
                 "column": 3
               }
             },
             "range": [
               34915,
-              37067
+              34959
             ]
           }
         ],
@@ -74435,22 +74435,22 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\r\n * Icon Component\r\n * @example\r\n * import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    ScrollView,\r\n    Text,\r\n    ListView,\r\n    InteractionManager\r\n} from 'react-native';\r\n import { TYPO, COLOR, ICON_NAME, Icon  } from 'react-native-material-design-components';\r\n\r\n export default class IconExample extends Component {\r\n    constructor(props) {\r\n        super(props);\r\n        // Operations usually carried out in componentWillMount go here\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {};\r\n    state = {\r\n        dataSource: new ListView.DataSource({\r\n            rowHasChanged: (r1, r2) => r1 !== r2\r\n        }).cloneWithRows(ICON_NAME),\r\n        renderPlaceholderOnly: true\r\n    };\r\n\r\n    componentDidMount() {\r\n        InteractionManager.runAfterInteractions(() => {\r\n            this.setState({renderPlaceholderOnly: false});\r\n        });\r\n    }\r\n\r\n    render = () => {\r\n        if (this.state.renderPlaceholderOnly) {\r\n            this._renderPlaceholderView();\r\n        }\r\n\r\n        return (\r\n            <ListView\r\n                dataSource={this.state.dataSource}\r\n                renderRow={this.renderIconItem}\r\n            />\r\n        );\r\n    };\r\n\r\n    renderIconItem = (rowData) => {\r\n        const { primary } = this.props;\r\n        return (\r\n            <View style={styles.iconItem} key={rowData}>\r\n                <Icon name={rowData}\r\n                      size={24}\r\n                      color={COLOR[`${primary}500`].color}\r\n                      style={\r\n                        styles.icon\r\n                      }\r\n                />\r\n                <Text style={[TYPO.paperFontBody1,styles.text,{color: 'rgba(0,0,0,.87)'}]}>\r\n                    {rowData}\r\n                </Text>\r\n            </View>\r\n        )\r\n    };\r\n\r\n    _renderPlaceholderView = () => (\r\n        <View>\r\n        </View>\r\n    );\r\n}\r\n\r\n const styles = StyleSheet.create({\r\n    content: {\r\n        padding: 16,\r\n    },\r\n    iconItem: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center'\r\n    },\r\n    icon: {\r\n        margin: 16\r\n    },\r\n    text: {\r\n        marginLeft: 16\r\n    }\r\n});\r\n ",
+          "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
           "start": 34915,
-          "end": 37067,
+          "end": 34959,
           "loc": {
             "start": {
               "line": 1360,
               "column": 0
             },
             "end": {
-              "line": 1448,
+              "line": 1364,
               "column": 3
             }
           },
           "range": [
             34915,
-            37067
+            34959
           ]
         }
       ]

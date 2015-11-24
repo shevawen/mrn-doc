@@ -70,104 +70,20 @@ import { THEME_NAME, COLOR_NAME } from &apos;./config&apos;;
 /**
  * CheckboxGroup Component
  * @example
- * import React, {
-    Component,
-    StyleSheet,
-    PropTypes,
-    View,
-    ScrollView,
-    Text,
-    InteractionManager
-} from &apos;react-native&apos;;
- import {
-    Checkbox,
-    CheckboxGroup,
-    Button,
-    TYPO,
-    COLOR,
-    Subheader
-} from &apos;react-native-material-design-components&apos;;
-
- var typographyStyle = StyleSheet.create(TYPO);
-
- export default class CheckboxExample extends Component {
-    constructor(props) {
-        super(props);
-        // Operations usually carried out in componentWillMount go here
-    }
-
-    static defaultProps = {};
-    static propTypes = {};
-    state = {
-        group2Selected: [],
-        renderPlaceholderOnly: true
-    };
-
-    componentDidMount() {
-        InteractionManager.runAfterInteractions(() =&gt; {
-            this.setState({renderPlaceholderOnly: false});
-        });
-    }
-
-    render = () =&gt; {
-        var { primary } =  this.props;
-
-        if (this.state.renderPlaceholderOnly) {
-            return this._renderPlaceholderView();
-        }
-
-        return (
-            &lt;View&gt;
-                &lt;Subheader text=&quot;Light Theme&quot; /&gt;
-                &lt;View&gt;
-                    &lt;CheckboxGroup ref=&quot;CheckboxGroup1&quot; name=&quot;group2&quot; onSelect={(value) =&gt; {
+ *  &lt;CheckboxGroup ref=&quot;CheckboxGroup1&quot; name=&quot;group2&quot; onSelect={(value) =&gt; {
                             this.setState({group2Selected: value});
                         }} primary={primary}&gt;
-                        &lt;Checkbox value=&quot;1&quot; label=&quot;Checkbox On&quot; checked={true}/&gt;
-                        &lt;Checkbox value=&quot;2&quot; label=&quot;Checkbox Off&quot;/&gt;
-                        &lt;Checkbox value=&quot;3&quot; label=&quot;Checkbox On Disabled&quot; checked={true} disabled={true}/&gt;
-                        &lt;Checkbox value=&quot;4&quot; label=&quot;Checkbox Off Disabled&quot; disabled={true}/&gt;
-                        &lt;Checkbox value=&quot;5&quot; checked={true}/&gt;
-                        &lt;Checkbox value=&quot;6&quot;/&gt;
-                    &lt;/CheckboxGroup&gt;
-                    &lt;View style={[styles.content,styles.action]}&gt;
-                        &lt;Text style={{flex:1}}&gt;Selected {this.state.group2Selected.join(&apos;,&apos;)}&lt;/Text&gt;
-                        &lt;Button raised={true} value=&quot;Press to select 1,2,6&quot; onPress={()=&gt;{this.refs.CheckboxGroup1.value = [&apos;1&apos;,&apos;2&apos;,&apos;6&apos;]}} /&gt;
-                    &lt;/View&gt;
-
-                &lt;/View&gt;
-                &lt;Subheader text=&quot;Dark Theme&quot; /&gt;
-                &lt;View style={{
-                        backgroundColor: COLOR.paperGrey900.color,
-                    }}&gt;
-                    &lt;CheckboxGroup checked=&quot;1&quot; theme=&quot;dark&quot; name=&quot;group2&quot; primary={primary}&gt;
-                        &lt;Checkbox value=&quot;1&quot; label=&quot;Checkbox On&quot; checked={true}/&gt;
-                        &lt;Checkbox value=&quot;2&quot; label=&quot;Checkbox Off&quot;/&gt;
-                        &lt;Checkbox value=&quot;3&quot; label=&quot;Checkbox On Disabled&quot; checked={true} disabled={true}/&gt;
-                        &lt;Checkbox value=&quot;4&quot; label=&quot;Checkbox Off Disabled&quot; disabled={true}/&gt;
-                        &lt;Checkbox value=&quot;5&quot; checked={true}/&gt;
-                        &lt;Checkbox value=&quot;6&quot;/&gt;
-                    &lt;/CheckboxGroup&gt;
-                &lt;/View&gt;
-            &lt;/View&gt;
-        );
-    };
-
-    _renderPlaceholderView = () =&gt; (
-        &lt;View&gt;
-        &lt;/View&gt;
-    )
-}
-
- const styles = StyleSheet.create({
-    content: {
-        padding: 16,
-    },
-    action: {
-        flexDirection: &apos;row&apos;,
-        alignItems: &apos;center&apos;
-    }
-});
+ &lt;Checkbox value=&quot;1&quot; label=&quot;Checkbox On&quot; checked={true}/&gt;
+ &lt;Checkbox value=&quot;2&quot; label=&quot;Checkbox Off&quot;/&gt;
+ &lt;Checkbox value=&quot;3&quot; label=&quot;Checkbox On Disabled&quot; checked={true} disabled={true}/&gt;
+ &lt;Checkbox value=&quot;4&quot; label=&quot;Checkbox Off Disabled&quot; disabled={true}/&gt;
+ &lt;Checkbox value=&quot;5&quot; checked={true}/&gt;
+ &lt;Checkbox value=&quot;6&quot;/&gt;
+ &lt;/CheckboxGroup&gt;
+ &lt;View style={[styles.content,styles.action]}&gt;
+ &lt;Text style={{flex:1}}&gt;Selected {this.state.group2Selected.join(&apos;,&apos;)}&lt;/Text&gt;
+ &lt;Button raised={true} value=&quot;Press to select 1,2,6&quot; onPress={()=&gt;{this.refs.CheckboxGroup1.value = [&apos;1&apos;,&apos;2&apos;,&apos;6&apos;]}} /&gt;
+ &lt;/View&gt;
  */
 export default class CheckboxGroup extends Component {
     /**
