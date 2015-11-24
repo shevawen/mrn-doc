@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Installation</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<script data-ice="userScript" src="user/script/0-script.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="git+https://github.com/binggg/react-native-material-design-components.git">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual" data-toc-name="installation">
+    <h1 class="manual-toc-title"><a href="manual/installation.html" data-ice="title">Installation</a></h1>
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="manual/installation.html#getting-started" data-ice="link">Getting Started</a></li>
+<li data-ice="manualNav" class="indent-h2"><span class="manual-dot"></span><a href="manual/installation.html#android-setup" data-ice="link">Android Setup</a></li>
+<li data-ice="manualNav" class="indent-h3"><span class="manual-dot"></span><a href="manual/installation.html#install-react-native-material-design-components-http-github-com-binggg-react-native-material-design-components-" data-ice="link">Install react-native-material-design-components</a></li>
+<li data-ice="manualNav" class="indent-h3"><span class="manual-dot"></span><a href="manual/installation.html#install-react-native-vector-icons-https-github-com-oblador-react-native-vector-icons-" data-ice="link">Install react-native-vector-icons</a></li>
+<li data-ice="manualNav" class="indent-h3"><span class="manual-dot"></span><a href="manual/installation.html#setting-your-project-for-using-react-native-vector-icons-https-github-com-oblador-react-native-vector-icons-" data-ice="link">Setting Your Project For Using react-native-vector-icons</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="reference">
+    <h1 class="manual-toc-title"><a href="identifiers.html" data-ice="title">Reference</a></h1>
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-breadcrumb-list">
+    <a href="./manual/./index.html">Manual</a>
+    <span>&#xBB;</span>
+    <span data-ice="title">Installation</span>
+  </div>
+  <div data-ice="content"><h1 id="getting-started">Getting Started</h1>
+<h2 id="android-setup">Android Setup</h2>
+<h3 id="install-react-native-material-design-components-http-github-com-binggg-react-native-material-design-components-">Install <a href="http://github.com/binggg/react-native-material-design-components">react-native-material-design-components</a></h3>
+<pre><code class="lang-bash"><code class="source-code prettyprint">npm install react-native-material-design-components --save</code>
+</code></pre>
+<h3 id="install-react-native-vector-icons-https-github-com-oblador-react-native-vector-icons-">Install <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a></h3>
+<pre><code class="lang-bash"><code class="source-code prettyprint">npm install react-native-vector-icons --save</code>
+</code></pre>
+<h3 id="setting-your-project-for-using-react-native-vector-icons-https-github-com-oblador-react-native-vector-icons-">Setting Your Project For Using <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a></h3>
+<p><strong>react-native-material-design requires <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a>, so you should set your project for using it.</strong></p>
+<ul>
+<li><p>Copy the whole <code>Fonts</code> folder from <code>node_modules/react-native-material-design-components</code> to <code>android/app/src/main/assets</code>. </p>
+</li>
+<li><p>Edit <code>android/settings.gradle</code> to look like this:</p>
+</li>
+</ul>
+<pre><code class="lang-java"><code class="source-code prettyprint">rootProject.name = &apos;MyApp&apos;
+
+include &apos;:app&apos;
+
+//Add the following two lines:
+include &apos;:react-native-vector-icons&apos;
+project(&apos;:react-native-vector-icons&apos;).projectDir = new File(rootProject.projectDir, &apos;../node_modules/react-native-vector-icons/android&apos;)</code>
+</code></pre>
+<ul>
+<li>Edit <code>android/app/build.gradle</code> (note: <strong>app</strong> folder) to look like this: </li>
+</ul>
+<pre><code class="lang-java"><code class="source-code prettyprint">apply plugin: &apos;com.android.application&apos;
+
+android {
+    ...
+}
+
+dependencies {
+    compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
+    compile &apos;com.android.support:appcompat-v7:23.0.0&apos;
+    compile &apos;com.facebook.react:react-native:0.12.+&apos;
+
+    // Add this line:
+    compile project(&apos;:react-native-vector-icons&apos;)
+}</code>
+</code></pre>
+<ul>
+<li>Edit your <code>MainActivity.java</code> (deep in <code>android/app/src/main/java/...</code>) to look like this:</li>
+</ul>
+<pre><code class="lang-java"><code class="source-code prettyprint">package com.myapp;
+
+// Add this line:
+import com.oblador.vectoricons.VectorIconsPackage;
+
+import android.app.Activity;
+....
+
+public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
+
+private ReactInstanceManager mReactInstanceManager;
+private ReactRootView mReactRootView;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    mReactRootView = new ReactRootView(this);
+
+    mReactInstanceManager = ReactInstanceManager.builder()
+        .setApplication(getApplication())
+        .setBundleAssetName(&quot;index.android.bundle&quot;)
+        .setJSMainModuleName(&quot;index.android&quot;)
+        .addPackage(new MainReactPackage())
+
+        // and this line:
+        .addPackage(new VectorIconsPackage())
+
+        .setUseDeveloperSupport(BuildConfig.DEBUG)
+        .setInitialLifecycleState(LifecycleState.RESUMED)
+        .build();
+
+    mReactRootView.startReactApplication(mReactInstanceManager, &quot;MyApp&quot;, null);
+
+    setContentView(mReactRootView);
+}
+...
+}</code>
+</code></pre>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

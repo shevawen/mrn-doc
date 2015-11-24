@@ -1,0 +1,17 @@
+{
+  "index": "../mrn/README.md",
+  "package": "../mrn/package.json",
+  "source": "../mrn/lib",
+  "destination": "./",
+  "plugins": [
+    {"name": "esdoc-es7-plugin"}
+  ],
+  "manual": {
+    "installation": [
+      "./manual/getting-started.md"
+    ]
+  },
+  "title": "mrn - Material React Native",
+  "styles": ["./custom/style.css"],
+  "scripts": ["./custom/script.js"]
+}

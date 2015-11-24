@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/List.js | mrn - Material React Native API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<script data-ice="userScript" src="user/script/0-script.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="git+https://github.com/binggg/react-native-material-design-components.git">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Avatar.js~Avatar.html">Avatar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Button.js~Button.html">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Checkbox.js~Checkbox.html">Checkbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/CheckboxGroup.js~CheckboxGroup.html">CheckboxGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Divider.js~Divider.html">Divider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Icon.js~Icon.html">Icon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/IconButton.js~IconButton.html">IconButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/List.js~List.html">List</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButton.js~RadioButton.html">RadioButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButtonGroup.js~RadioButtonGroup.html">RadioButtonGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Subheader.js~Subheader.html">Subheader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Toolbar.js~Toolbar.html">Toolbar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-glyphMap">glyphMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-COLOR">COLOR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-COLOR_NAME">COLOR_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ICON_NAME">ICON_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PRIMARY">PRIMARY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-THEME_NAME">THEME_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TYPO">TYPO</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/List.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, {
+    Component,
+    StyleSheet,
+    PropTypes,
+    View,
+    Text,
+    TouchableNativeFeedback,
+    TouchableWithoutFeedback
+} from &apos;react-native&apos;;
+import { TYPO, COLOR } from &apos;./config&apos;;
+import Icon from &apos;./Icon&apos;;
+import Avatar from &apos;./Avatar&apos;;
+
+/**
+ * List Compoent
+ */
+export default class List extends Component {
+    /**
+     *
+     * @param {object} props
+     * @param {string} props.primaryText - The primary text of a List
+     * @param {string} [props.secondaryText] - The secondary text of a List
+     * @param {string} [props.caption] - The least distinguishing content.
+     * @param {Icon} [props.leftIcon] - Left icon. Size should be 24.
+     * @param {Icon} [props.rightIcon] - Right icon. Size should be 24.
+     * @param {Avatar} [props.leftAvatar] - Left avatar. Size should be 40.
+     * @param {Avatar} [props.rightAvatar] - Right avatar. Size should be 40.
+     * @param {number} [props.lines=1] - You must specify this prop when secondary lines large than 1. Lines = Secondary lines + 1.
+     * @param {string} [props.primaryColor=&apos;rgba(0,0,0,.87)&apos;] - The color of primary text.
+     * @param {function} [props.onPress] - The primary action of a list. When user press the list will trigger this function.
+     * @param {function} [props.onLeftIconClick] - The secondary action of a list. When user press the left icon will trigger this function.
+     * @param {function} [props.onRightIconClick] - The secondary action of a list. When user press the right icon will trigger this function.
+     * @param {{text: string, style: object} []} [props.secondaryTextMoreLine] - Pass an array when secondary text breaks some lines.
+     */
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = {
+        lines: 1,
+        primaryColor: &apos;rgba(0,0,0,.87)&apos;
+    };
+    static propTypes = {
+        primaryText: PropTypes.string.isRequired,
+        secondaryText: PropTypes.string,
+        captionText: PropTypes.string,
+        secondaryTextMoreLine: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            style: PropTypes.object
+        })),
+        leftIcon: PropTypes.instanceOf(Icon),
+        rightIcon: PropTypes.instanceof(Icon),
+        leftAvatar: PropTypes.instanceOf(Avatar),
+        rightAvatar: PropTypes.instanceOf(Avatar),
+        lines: PropTypes.number,
+        primaryColor: PropTypes.string,
+        onPress: PropTypes.func,
+        onLeftIconClick: PropTypes.func,
+        onRightIconClick: PropTypes.func
+    };
+    state = {};
+
+    render = () =&gt; {
+        const {
+            primaryText,
+            secondaryText,
+            leftIcon,
+            leftAvatar,
+            rightAvatar,
+            rightIcon,
+            lines,
+            onPress,
+            primaryColor,
+            onLeftIconClicked,
+            onRightIconClicked,
+            secondaryTextMoreLine,
+            captionText
+            } = this.props;
+
+        return (
+            &lt;TouchableNativeFeedback
+                background={TouchableNativeFeedback.Ripple(&apos;rgba(153,153,153,.4)&apos;)}
+                onPress={onPress}
+            &gt;
+                &lt;View style={[styles.listContainer, {
+                    height: lines &gt; 2 ? ((lines -1) * 16 + 56) : (secondaryText ? 72 : (leftAvatar || rightAvatar ) ? 56 : 48)
+                }]}&gt;
+
+                    {leftIcon &amp;&amp; &lt;TouchableWithoutFeedback onPress={onLeftIconClicked}&gt;
+                        &lt;View style={[styles.leftIcon,lines &gt; 2 &amp;&amp;{
+                        paddingTop: 16,
+                        alignSelf: &apos;flex-start&apos;
+                    }]}&gt;
+                            {leftIcon}
+                        &lt;/View&gt;
+                    &lt;/TouchableWithoutFeedback&gt;
+                    }
+
+                    {leftAvatar &amp;&amp;
+                    &lt;View style={[styles.leftAvatar,lines &gt; 2 &amp;&amp;{
+                        paddingTop: 16,
+                        alignSelf: &apos;flex-start&apos;
+                    }]}&gt;
+                        {leftAvatar}
+                    &lt;/View&gt;
+                    }
+
+                    &lt;View style={{flex:1,justifyContent:&apos;center&apos;,}}&gt;
+                        &lt;View style={styles.firstLine}&gt;
+                            &lt;View style={styles.primaryTextContainer}&gt;
+                                &lt;Text style={[styles.primaryText,{color: primaryColor}]}&gt;{primaryText}&lt;/Text&gt;
+                            &lt;/View&gt;
+                            { (lines &gt; 2 &amp;&amp; !!rightIcon) || &lt;View style={styles.captionTextContainer}&gt;
+                                &lt;Text style={styles.captionText}&gt;{captionText}&lt;/Text&gt;
+                            &lt;/View&gt;}
+                        &lt;/View&gt;
+
+                        {secondaryText &amp;&amp;
+                        &lt;View&gt;
+                            &lt;Text
+                                style={[{height:18},lines &gt; 2 &amp;&amp; {height: 22 * (lines - 1) -4},styles.secondaryText,]}&gt;{secondaryText}&lt;/Text&gt;
+                        &lt;/View&gt;}
+
+                        {secondaryTextMoreLine &amp;&amp;
+                        &lt;View style={[{height:18},lines &gt; 2 &amp;&amp; {height: 22* (lines - 1) - 4}]}&gt;
+                            {secondaryTextMoreLine.map((line) =&gt;(
+                                &lt;Text style={[styles.secondaryText,{height:22},line.style]}&gt;{line.text}&lt;/Text&gt;
+                            ))}
+                        &lt;/View&gt;}
+                    &lt;/View&gt;
+
+                    {rightAvatar &amp;&amp;
+                    &lt;View style={[styles.rightAvatar,lines &gt; 2 &amp;&amp;{
+                        paddingTop: 16,
+                        alignSelf: &apos;flex-start&apos;
+                    }]}&gt;
+                        {rightAvatar}
+                    &lt;/View&gt;}
+                    {}
+
+                    &lt;View style={{flexDirection: &apos;column&apos;}}&gt;
+                        {lines &gt; 2 &amp;&amp; !!rightIcon &amp;&amp; !!captionText &amp;&amp; &lt;View style={styles.captionTextContainer2}&gt;
+                            &lt;Text&gt;{captionText}&lt;/Text&gt;
+                        &lt;/View&gt;}
+
+                        {rightIcon &amp;&amp; &lt;TouchableWithoutFeedback onPress={onRightIconClicked}&gt;
+                            &lt;View style={[styles.rightIcon, {flex: 1},lines &gt; 2 &amp;&amp;{
+                        paddingTop: 16,
+                        alignSelf: &apos;flex-end&apos;,
+                        justifyContent:&apos;flex-end&apos;
+
+                    }]} onPress={onRightIconClicked}&gt;
+                                {rightIcon}
+                            &lt;/View&gt;&lt;/TouchableWithoutFeedback&gt;
+                        }
+                    &lt;/View&gt;
+                &lt;/View&gt;
+            &lt;/TouchableNativeFeedback&gt;
+        )
+    }
+
+}
+
+const styles = StyleSheet.create({
+    listContainer: {
+        flexDirection: &apos;row&apos;,
+        paddingLeft: 16,
+        paddingRight: 16,
+        height: 48,
+        alignItems: &apos;center&apos;
+    },
+    leftIcon: {
+        width: 56,
+    },
+    rightIcon: {
+        paddingLeft: 16,
+    },
+    leftAvatar: {
+        width: 56,
+    },
+    rightAvatar: {
+        width: 56,
+    },
+    primaryText: Object.assign({},
+        TYPO.paperFontSubhead,
+        {
+            lineHeight: 24,
+        }
+    ),
+    secondaryText: Object.assign({},
+        TYPO.paperFontBody1,
+        {
+            lineHeight: 22,
+            fontSize: 14,
+            color: &apos;rgba(0,0,0,.54)&apos;
+        }
+    ),
+    firstLine: {
+        flexDirection: &apos;row&apos;
+    },
+    primaryTextContainer: {
+        flex: 1
+    },
+    captionTextContainer: {
+        alignSelf: &apos;flex-start&apos;,
+        alignItems: &apos;flex-start&apos;
+    },
+    captionText: Object.assign({},
+        TYPO.paperFontCaption
+    ),
+    captionTextContainer2: {
+        alignSelf: &apos;flex-end&apos;,
+        alignItems: &apos;flex-end&apos;
+    }
+});</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

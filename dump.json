@@ -1,0 +1,2716 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Avatar.js",
+    "memberof": null,
+    "longname": "lib/Avatar.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    Image\r\n} from 'react-native';\r\nimport Icon, {glyphMap} from './Icon';\r\nimport { ICON_NAME } from './config';\r\n\r\n/**\r\n *\r\n */\r\nexport default class Avatar extends Component {\r\n    /**\r\n     * @param {object} props\r\n     * @param {enum(ICON_NAME)} props.icon - Icon name\r\n     * @param {string} props.src - Image src\r\n     * @param {number} [props.size=40] - Avatar size\r\n     * @param {string} [props.color='#fff'] - Color of icon of Avatar. Accept a color string such as RGBA,RGB,HEX.\r\n     * @param {string} [props.primaryColor='#bdbdbd'] -  Background color of Avatar. Only use with a icon prop.\r\n     * Accept a color string such as RGBA,RGB,HEX.\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        size: 40,\r\n        color: '#fff',\r\n        backgroundColor: '#bdbdbd'\r\n    };\r\n    static propTypes = {\r\n        icon: PropTypes.oneOf(ICON_NAME),\r\n        src: PropTypes.string,\r\n        size: PropTypes.number,\r\n        color: PropTypes.string,\r\n        backgroundColor: PropTypes.string\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            icon,\r\n            src,\r\n            size,\r\n            color,\r\n            backgroundColor\r\n            } = this.props;\r\n        if (src) {\r\n            return (\r\n                <Image\r\n                    style={{width:size,height:size,borderRadius: size / 2,borderColor:'rgba(0,0,0,.1)',borderWidth: 1}}\r\n                    source={{uri:src}}\r\n                />\r\n            );\r\n        }\r\n        if (icon) {\r\n            return (\r\n                <View style={{\r\n                width:size,\r\n                height:size,\r\n                borderRadius: size / 2,\r\n                backgroundColor: backgroundColor,\r\n                alignItems:'center',\r\n                justifyContent: 'center'}}>\r\n                    <Icon name={icon} color={color} size={0.6*size}/>\r\n                </View>\r\n            )\r\n        }\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({});"
+  },
+  {
+    "__docId__": 1,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Avatar",
+    "memberof": "lib/Avatar.js",
+    "longname": "lib/Avatar.js~Avatar",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Avatar.js",
+    "importStyle": "Avatar",
+    "description": "",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 2,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Avatar.js~Avatar",
+    "longname": "lib/Avatar.js~Avatar#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(ICON_NAME)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.icon",
+        "description": "Icon name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.src",
+        "description": "Image src"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "40",
+        "defaultRaw": 40,
+        "name": "props.size",
+        "description": "Avatar size"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'#fff'",
+        "defaultRaw": "'#fff'",
+        "name": "props.color",
+        "description": "Color of icon of Avatar. Accept a color string such as RGBA,RGB,HEX."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'#bdbdbd'",
+        "defaultRaw": "'#bdbdbd'",
+        "name": "props.primaryColor",
+        "description": "Background color of Avatar. Only use with a icon prop.\nAccept a color string such as RGBA,RGB,HEX."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 3,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Avatar.js",
+    "longname": "lib/Avatar.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Avatar.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 74,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Button.js",
+    "memberof": null,
+    "longname": "lib/Button.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    Text,\r\n    TouchableNativeFeedback\r\n} from 'react-native';\r\nimport { TYPO, PRIMARY, COLOR, THEME_NAME, COLOR_NAME } from './config';\r\n\r\n/**\r\n * Button Component\r\n */\r\nexport default class Button extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     * @param {string} props.value - Button Text. If language is english, all letters should be capitalized.\r\n     * @param {boolean} [props.disabled=false] - if `true`, Button can't be pressed\r\n     * @param {enum(THEME_NAME)} [props.theme='light'] - Button Theme\r\n     * @param {enum(COLOR_NAME)} [props.primary=PRIMARY] - Primary color name\r\n     * @param {boolean} [props.raised=false] - Whether Button looks like raised or not. If in a Modal, should not be `true`\r\n     * @param {function} [props.onPress] - Function will be triggered when click the Button\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        theme: 'light',\r\n        primary: PRIMARY,\r\n        disabled: false,\r\n        raised: false\r\n    };\r\n    static propTypes = {\r\n        value: PropTypes.string.isRequired,\r\n        disabled: PropTypes.bool,\r\n        theme: PropTypes.oneOf(THEME_NAME),\r\n        primary: PropTypes.oneOf(COLOR_NAME),\r\n        raised: PropTypes.bool,\r\n        onPress: PropTypes.func\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            value,\r\n            disabled,\r\n            theme,\r\n            primary,\r\n            raised,\r\n            onPress\r\n            } = this.props;\r\n        const {\r\n            background\r\n            } = this.state;\r\n\r\n        this.textStyleMap = {\r\n            flat: {\r\n                light: {\r\n                    normal: {\r\n                        color: COLOR[`${primary}500`].color\r\n                    },\r\n                    disabled: {\r\n                        color: 'rgba(0,0,0,.26)',\r\n                    }\r\n                },\r\n                dark: {\r\n                    normal: {\r\n                        color: COLOR[`${primary}500`].color,\r\n                    },\r\n                    disabled: {\r\n                        color: 'rgba(255,255,255,.3)',\r\n                    }\r\n                }\r\n            },\r\n            raised: {\r\n                light: {\r\n                    normal: {\r\n                        color: 'rgba(0,0,0,.87)',\r\n                    },\r\n                    disabled: {\r\n                        color: 'rgba(0,0,0,.26)',\r\n                    }\r\n                },\r\n                dark: {\r\n                    normal: {\r\n                        color: '#fff'\r\n                    },\r\n                    disabled: {\r\n                        color: 'rgba(255,255,255,.3)',\r\n                    }\r\n                }\r\n            }\r\n        };\r\n        this.buttonStyleMap = {\r\n            raised: {\r\n                light: {\r\n                    normal: {\r\n                        borderWidth: 1,\r\n                        backgroundColor: '#fff',\r\n                        borderColor: 'rgba(0,0,0,.12)',\r\n                        borderBottomWidth: 1,\r\n                        borderBottomColor: 'rgba(0,0,0,.12)',\r\n                    },\r\n                    disabled: {\r\n                        backgroundColor: 'rgba(0,0,0,.12)',\r\n                        borderWidth: 1,\r\n                        borderColor: 'rgba(0,0,0,.12)',\r\n                    }\r\n                },\r\n                dark: {\r\n                    normal: {\r\n                        backgroundColor: COLOR[`${primary}500`].color,\r\n                        borderWidth: 1,\r\n                        borderColor: 'rgba(0,0,0,.12)',\r\n                    },\r\n                    disabled: {\r\n                        backgroundColor: 'rgba(255,255,255,.12)',\r\n                        borderWidth: 1,\r\n                        borderColor: 'rgba(0,0,0,.12)',\r\n                    }\r\n                }\r\n            }\r\n        };\r\n\r\n        this.rippleColorMap = {\r\n            flat: {\r\n                light: {\r\n                    normal: 'rgba(153,153,153,.4)',\r\n                    disabled: 'rgba(0,0,0,0)'\r\n                },\r\n                dark: {\r\n                    normal: 'rgba(204,204,204,.25)',\r\n                    disabled: 'rgba(255,255,255,0)'\r\n                }\r\n            },\r\n            raised: {\r\n                light: {\r\n                    normal: 'rgba(153,153,153,.4)',\r\n                    disabled: 'rgba(0,0,0,0)'\r\n                },\r\n                dark: {\r\n                    normal: COLOR[`${primary}700`].color,\r\n                    disabled: 'rgba(255,255,255,0)'\r\n                }\r\n            }\r\n        };\r\n\r\n        let type = disabled ? 'disabled' : 'normal';\r\n        let shape = raised ? 'raised' : 'flat';\r\n\r\n        let textStyle = this.textStyleMap[shape][theme][type];\r\n        if (raised) {\r\n            var buttonStyle = this.buttonStyleMap[shape][theme][type];\r\n        }\r\n        let rippleColor = this.rippleColorMap[shape][theme][type];\r\n\r\n        return (\r\n            <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(String(rippleColor))}  onPress={disabled || onPress}>\r\n                <View\r\n                    style={[\r\n                        styles.button,\r\n                        buttonStyle,\r\n                        {\r\n                            backgroundColor: background ? background : (buttonStyle && buttonStyle.backgroundColor)\r\n                        }\r\n                ]}>\r\n                    <Text style={[TYPO.paperFontButton, textStyle]}>{value}</Text>\r\n                </View>\r\n            </TouchableNativeFeedback>\r\n        );\r\n    };\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    button: {\r\n        height: 36,\r\n        alignItems: 'center',\r\n        justifyContent: 'center',\r\n        paddingTop: 6,\r\n        paddingBottom: 6,\r\n        paddingLeft: 16,\r\n        paddingRight: 16,\r\n        margin: 4,\r\n        borderRadius: 2,\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 5,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Button",
+    "memberof": "lib/Button.js",
+    "longname": "lib/Button.js~Button",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Button.js",
+    "importStyle": "Button",
+    "description": "Button Component",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 6,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Button.js~Button",
+    "longname": "lib/Button.js~Button#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 25,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.value",
+        "description": "Button Text. If language is english, all letters should be capitalized."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "props.disabled",
+        "description": "if `true`, Button can't be pressed"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'light'",
+        "defaultRaw": "'light'",
+        "name": "props.theme",
+        "description": "Button Theme"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(COLOR_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "PRIMARY",
+        "defaultRaw": "PRIMARY",
+        "name": "props.primary",
+        "description": "Primary color name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "props.raised",
+        "description": "Whether Button looks like raised or not. If in a Modal, should not be `true`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onPress",
+        "description": "Function will be triggered when click the Button"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Button.js",
+    "longname": "lib/Button.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Button.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 176,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Checkbox.js",
+    "memberof": null,
+    "longname": "lib/Checkbox.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    Text,\r\n    View,\r\n    Animated\r\n} from 'react-native';\r\nimport { TYPO, PRIMARY, COLOR, COLOR_NAME, THEME_NAME} from './config';\r\nimport Icon from './Icon';\r\n\r\nconst typos = StyleSheet.create(TYPO);\r\n\r\n/**\r\n * Checkbox Component\r\n */\r\nexport default class Checkbox extends Component {\r\n    /**\r\n     * @param {object} props\r\n     * @param {string} [props.label] - Checkbox can have a label to describe it.\r\n     * @param {enum(THEME_NAME)} [props.theme='light'] - Theme of Checkbox\r\n     * @param {enum(COLOR_NAME)} [props.primary=PRIMARY] - Primary color name.\r\n     * @param {string} props.value - Checkbox must have a value\r\n     * @param {boolean} [props.checked] - Specifies that an Checkbox should be pre-selected\r\n     * @param {boolean} [props.disabled] - Specifies that an Checkbox element should be disabled\r\n     * @param {function(isChecked:boolean,value:string)} [props.onCheck] - Function will be triggered when check or\r\n     * uncheck the Checkbox\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n        /**\r\n         *\r\n         * @type {{scaleValue: Animated.Value, opacityValue: Animated.Value}}\r\n         */\r\n        this.state = {\r\n            scaleValue: new Animated.Value(0.001),\r\n            opacityValue: new Animated.Value(0.1)\r\n        };\r\n    }\r\n    static defaultProps = {\r\n        theme: 'light',\r\n        primary: PRIMARY\r\n    };\r\n    static propTypes = {\r\n        label: PropTypes.string,\r\n        theme: PropTypes.oneOf(THEME_NAME),\r\n        primary: PropTypes.oneOf(COLOR_NAME),\r\n        value: PropTypes.string.isRequired,\r\n        checked: PropTypes.bool,\r\n        disabled: PropTypes.bool,\r\n        onCheck: PropTypes.func,\r\n    };\r\n\r\n    render = () => {\r\n        const {\r\n            scaleValue,\r\n            opacityValue\r\n            } = this.state;\r\n        let {\r\n            theme,\r\n            primary,\r\n            checked,\r\n            disabled,\r\n            value,\r\n            } = this.props;\r\n\r\n\r\n        let status = (()=> {\r\n            if (disabled) {\r\n                return 'disabled'\r\n            } else if (checked) {\r\n                return 'checked'\r\n            } else {\r\n                return 'default'\r\n            }\r\n        })();\r\n        let colorMap = {\r\n            light: {\r\n                disabled: '#000',\r\n                checked: COLOR[`${primary}500`].color,\r\n                default: '#000'\r\n            },\r\n            dark: {\r\n                disabled: '#fff',\r\n                checked: COLOR[`${primary}500`].color,\r\n                default: '#fff'\r\n            }\r\n        };\r\n        let opacityMap = {\r\n            light: {\r\n                checked: 1,\r\n                default: 0.54,\r\n                disabled: 0.26,\r\n            },\r\n            dark: {\r\n                checked: 1,\r\n                default: 0.7,\r\n                disabled: 0.3,\r\n            }\r\n        };\r\n        let labelColorMap = {\r\n            light: '#000',\r\n            dark: '#fff'\r\n        };\r\n\r\n        const CURR_COLOR = colorMap[theme][status];\r\n        const OPACITY = opacityMap[theme][status];\r\n        const LABEL_COLOR = labelColorMap[theme];\r\n\r\n        return (\r\n            <View style={[\r\n                styles.container\r\n            ]}\r\n                  onStartShouldSetResponder={e=>true}\r\n                  onResponderGrant={this._onGrant}\r\n                  onResponderRelease={this._onRelease}>\r\n                <Animated.View style={[styles.ripple,{\r\n                    transform: [\r\n                        {scale: scaleValue}\r\n                    ],\r\n                    opacity: opacityValue,\r\n                    backgroundColor: CURR_COLOR\r\n                }]}/>\r\n                <Icon name={checked ? 'checkbox-marked' : 'checkbox-blank-outline'}\r\n                      size={24}\r\n                      color={CURR_COLOR}\r\n                      key={value}\r\n                      style={{\r\n                        opacity: OPACITY,\r\n                        margin: 16\r\n                      }}\r\n                />\r\n                <View style={styles.labelContainer}>\r\n                    <Text\r\n                        style={[\r\n                        typos.paperFontBody1,\r\n                        styles.label,\r\n                        COLOR[`${theme}PrimaryOpacity`],\r\n                        disabled && COLOR[`${theme}DisabledOpacity`],\r\n                        {\r\n                            color: LABEL_COLOR,\r\n                        }\r\n                    ]}>\r\n                        {this.props.label}\r\n                    </Text>\r\n                </View>\r\n            </View>\r\n        );\r\n    };\r\n\r\n    _onGrant = () => {\r\n        Animated.timing(\r\n            this.state.scaleValue,\r\n            {\r\n                toValue: 1,\r\n                duration: 150\r\n            }\r\n        ).start();\r\n        Animated.timing(\r\n            this.state.opacityValue,\r\n            {\r\n                toValue: .1,\r\n                duration: 100\r\n            }\r\n        ).start()\r\n    };\r\n\r\n    _onRelease = () => {\r\n        let { checked, disabled } = this.props;\r\n\r\n        if (!disabled) {\r\n            this.props.onCheck && this.props.onCheck(!checked, this.props.value);\r\n        }\r\n\r\n        Animated.timing(\r\n            this.state.scaleValue,\r\n            {\r\n                toValue: 0.001,\r\n                duration: 1500\r\n            }\r\n        ).start();\r\n        Animated.timing(\r\n            this.state.opacityValue,\r\n            {\r\n                toValue: 0\r\n            }\r\n        ).start();\r\n\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    container: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center',\r\n    },\r\n    ripple: {\r\n        position: 'absolute',\r\n        width: 48,\r\n        height: 48,\r\n        backgroundColor: '#000',\r\n        borderRadius: 56,\r\n        top: 4,\r\n        left: 4\r\n    },\r\n    label: {\r\n        marginLeft: 16,\r\n        opacity: COLOR.darkPrimaryOpacity.opacity,\r\n        flex: 1\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 9,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "typos",
+    "memberof": "lib/Checkbox.js",
+    "longname": "lib/Checkbox.js~typos",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Checkbox.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Checkbox",
+    "memberof": "lib/Checkbox.js",
+    "longname": "lib/Checkbox.js~Checkbox",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Checkbox.js",
+    "importStyle": "Checkbox",
+    "description": "Checkbox Component",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 11,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Checkbox.js~Checkbox",
+    "longname": "lib/Checkbox.js~Checkbox#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 29,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.label",
+        "description": "Checkbox can have a label to describe it."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'light'",
+        "defaultRaw": "'light'",
+        "name": "props.theme",
+        "description": "Theme of Checkbox"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(COLOR_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "PRIMARY",
+        "defaultRaw": "PRIMARY",
+        "name": "props.primary",
+        "description": "Primary color name."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.value",
+        "description": "Checkbox must have a value"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.checked",
+        "description": "Specifies that an Checkbox should be pre-selected"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.disabled",
+        "description": "Specifies that an Checkbox element should be disabled"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(isChecked:boolean,value:string)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onCheck",
+        "description": "Function will be triggered when check or\nuncheck the Checkbox"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 12,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "lib/Checkbox.js~Checkbox",
+    "longname": "lib/Checkbox.js~Checkbox#state",
+    "access": null,
+    "description": "",
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "{scaleValue: Animated.Value, opacityValue: Animated.Value}"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Checkbox.js",
+    "longname": "lib/Checkbox.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Checkbox.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 192,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/CheckboxGroup.js",
+    "memberof": null,
+    "longname": "lib/CheckboxGroup.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View\r\n} from 'react-native';\r\nimport Checkbox from './Checkbox';\r\nimport { THEME_NAME, COLOR_NAME } from './config';\r\n\r\n/**\r\n * CheckboxGroup Component\r\n */\r\nexport default class CheckboxGroup extends Component {\r\n    /**\r\n     * @param {object} props\r\n     * @param {string} props.name - CheckboxGroup name. Often use in form\r\n     * @param {enum(THEME_NAME)} [props.theme] - Checkbox theme option\r\n     * @param {enum(COLOR_NAME)} [props.primary] - Checkbox primary color name. Specifies that which Checkbox should be pre-selected\r\n     * @param {string[]} [props.value=[]] - A array save the values of checked Checkbox\r\n     * @param {function(value:string)} [props.onSelect] - When CheckboxGroup value change will trigger this function\r\n     *\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n        let options = React.Children.map(this.props.children, (option) => {\r\n            let {\r\n                value,\r\n                checked\r\n                } = option.props;\r\n\r\n            if (checked) {\r\n                /**\r\n                 *\r\n                 * @type {{selected: *[]}}\r\n                 */\r\n                this.state = {\r\n                    selected: [...this.state.selected, value]\r\n                };\r\n\r\n                const { onSelect } = this.props;\r\n                onSelect && onSelect(this.value);\r\n            }\r\n        })\r\n    }\r\n\r\n    static defaultProps = {\r\n        value: []\r\n    };\r\n    static propTypes = {\r\n        name: PropTypes.string.isRequired,\r\n        theme: PropTypes.oneOf(THEME_NAME),\r\n        primary: PropTypes.oneOf(COLOR_NAME),\r\n        onSelect: PropTypes.func,\r\n        value: PropTypes.array\r\n    };\r\n    state = {\r\n        selected: []\r\n    };\r\n\r\n    render = () => {\r\n        let options = React.Children.map(this.props.children, (option) => {\r\n            let {\r\n                value,\r\n                label,\r\n                disabled,\r\n                ...other,\r\n                } = option.props;\r\n            let {\r\n                name,\r\n                theme,\r\n                primary\r\n                } = this.props;\r\n\r\n            return <Checkbox\r\n                {...other}\r\n                ref={value}\r\n                name={name}\r\n                key={'Group'+value}\r\n                value={value}\r\n                label={label}\r\n                theme={theme}\r\n                primary={primary}\r\n                disabled={disabled}\r\n                onCheck={this._onChange}\r\n                checked={this.state.selected && this.state.selected.indexOf(value) !== -1}/>;\r\n        }, this);\r\n\r\n        return (\r\n            <View>\r\n                {options}\r\n            </View>\r\n        );\r\n    };\r\n\r\n    _onChange = (checked, value) => {\r\n        const { selected } = this.state;\r\n\r\n        if (checked) {\r\n            this.setState({\r\n                selected: [...selected, value]\r\n            });\r\n        } else {\r\n            let index = selected.indexOf(value);\r\n            this.setState({\r\n                selected: [\r\n                    ...selected.slice(0, index),\r\n                    ...selected.slice(index+1)\r\n                ]\r\n            });\r\n        }\r\n\r\n        const { onSelect } = this.props;\r\n        onSelect && onSelect(this.value);\r\n    };\r\n\r\n    /**\r\n     * Get the value of checked Checkbox in CheckboxGroup. Often use in form.\r\n     * @returns {Array}\r\n     */\r\n    get value() {\r\n        return this.state.selected\r\n    }\r\n\r\n    /**\r\n     * Make CheckboxGroup set some checkbox checked\r\n     * @param {string[]} value - An array of values of some Checkbox in　CheckboxGroup\r\n     */\r\n    set value(value) {\r\n        this.setState({\r\n            selected: value\r\n        });\r\n\r\n        const { onSelect } = this.props;\r\n        onSelect && onSelect(this.value);\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({});"
+  },
+  {
+    "__docId__": 15,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "CheckboxGroup",
+    "memberof": "lib/CheckboxGroup.js",
+    "longname": "lib/CheckboxGroup.js~CheckboxGroup",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/CheckboxGroup.js",
+    "importStyle": "CheckboxGroup",
+    "description": "CheckboxGroup Component",
+    "lineNumber": 13,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 16,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/CheckboxGroup.js~CheckboxGroup",
+    "longname": "lib/CheckboxGroup.js~CheckboxGroup#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.name",
+        "description": "CheckboxGroup name. Often use in form"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.theme",
+        "description": "Checkbox theme option"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(COLOR_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.primary",
+        "description": "Checkbox primary color name. Specifies that which Checkbox should be pre-selected"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "props.value",
+        "description": "A array save the values of checked Checkbox"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(value:string)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onSelect",
+        "description": "When CheckboxGroup value change will trigger this function"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 17,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "lib/CheckboxGroup.js~CheckboxGroup",
+    "longname": "lib/CheckboxGroup.js~CheckboxGroup#state",
+    "access": null,
+    "description": "",
+    "lineNumber": 36,
+    "type": {
+      "nullable": null,
+      "types": [
+        "{selected: *[]}"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "get",
+    "static": false,
+    "variation": null,
+    "name": "value",
+    "memberof": "lib/CheckboxGroup.js~CheckboxGroup",
+    "longname": "lib/CheckboxGroup.js~CheckboxGroup#value",
+    "access": null,
+    "description": "Get the value of checked Checkbox in CheckboxGroup. Often use in form.",
+    "lineNumber": 120,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Array}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 19,
+    "kind": "set",
+    "static": false,
+    "variation": null,
+    "name": "value",
+    "memberof": "lib/CheckboxGroup.js~CheckboxGroup",
+    "longname": "lib/CheckboxGroup.js~CheckboxGroup#value",
+    "access": null,
+    "description": "Make CheckboxGroup set some checkbox checked",
+    "lineNumber": 128,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "An array of values of some Checkbox in　CheckboxGroup"
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 20,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/CheckboxGroup.js",
+    "longname": "lib/CheckboxGroup.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/CheckboxGroup.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 138,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/config.js",
+    "memberof": null,
+    "longname": "lib/config.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { typography,color } from 'react-native-material-design-styles';\r\nimport { glyphMap } from './Icon';\r\n\r\n/**\r\n * Paper style color\r\n * @type {object}\r\n */\r\nexport const COLOR = color;\r\n\r\n/**\r\n * Paper style typography\r\n * @type {object}\r\n */\r\nexport const TYPO = typography;\r\n\r\n/**\r\n * Primary color name\r\n * @type {string}\r\n */\r\nexport const PRIMARY = 'paperOrange';\r\n\r\n/**\r\n * Paper style color names\r\n * @type {string[]}\r\n */\r\nexport const COLOR_NAME = [\"googleBlue\", \"googleGreen\", \"googleGrey\", \"googleRed\", \"googleYellow\", \"paperAmber\",\r\n    \"paperBlue\", \"paperBlueGrey\", \"paperBrown\", \"paperCyan\", \"paperDeepOrange\", \"paperDeepPurple\", \"paperGreen\",\r\n    \"paperGrey\", \"paperIndigo\", \"paperLightBlue\", \"paperLightGreen\", \"paperLime\", \"paperOrange\", \"paperPink\",\r\n    \"paperPurple\", \"paperRed\", \"paperTeal\", \"paperYellow\"];\r\n\r\n/**\r\n * Themes\r\n * @type {string[]}\r\n */\r\nexport const THEME_NAME = ['light', 'dark'];\r\n\r\n/**\r\n * All Icon name\r\n * @type {Array}\r\n */\r\nexport const ICON_NAME = Object.keys(glyphMap);"
+  },
+  {
+    "__docId__": 22,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "COLOR",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~COLOR",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{COLOR}",
+    "description": "Paper style color",
+    "lineNumber": 8,
+    "type": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 23,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "TYPO",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~TYPO",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{TYPO}",
+    "description": "Paper style typography",
+    "lineNumber": 14,
+    "type": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PRIMARY",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~PRIMARY",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{PRIMARY}",
+    "description": "Primary color name",
+    "lineNumber": 20,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "COLOR_NAME",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~COLOR_NAME",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{COLOR_NAME}",
+    "description": "Paper style color names",
+    "lineNumber": 26,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "THEME_NAME",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~THEME_NAME",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{THEME_NAME}",
+    "description": "Themes",
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ICON_NAME",
+    "memberof": "lib/config.js",
+    "longname": "lib/config.js~ICON_NAME",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/config.js",
+    "importStyle": "{ICON_NAME}",
+    "description": "All Icon name",
+    "lineNumber": 41,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Divider.js",
+    "memberof": null,
+    "longname": "lib/Divider.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View\r\n} from 'react-native';\r\n\r\n/**\r\n * Divider Component\r\n */\r\nexport default class Divider extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     * @param {boolean} [props.inset=false] - Whether the divider have a 72 dp marginLeft or not\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        inset: false\r\n    };\r\n    static propTypes = {\r\n        inset: PropTypes.bool\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            inset\r\n            } = this.props;\r\n\r\n        return (\r\n            <View style={[styles.divider,inset && {\r\n                marginLeft: 72\r\n            }]} />\r\n        );\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    divider: {\r\n        backgroundColor: 'rgba(0,0,0,.12)',\r\n        height:1\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 29,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Divider",
+    "memberof": "lib/Divider.js",
+    "longname": "lib/Divider.js~Divider",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Divider.js",
+    "importStyle": "Divider",
+    "description": "Divider Component",
+    "lineNumber": 11,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 30,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Divider.js~Divider",
+    "longname": "lib/Divider.js~Divider#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "props.inset",
+        "description": "Whether the divider have a 72 dp marginLeft or not"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 31,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Divider.js",
+    "longname": "lib/Divider.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Divider.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Icon.js",
+    "memberof": null,
+    "longname": "lib/Icon.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\r\n * Icon icon set component.\r\n * Usage: <Icon name=\"icon-name\" size={20} color=\"#4F8EF7\" />\r\n *\r\n * @providesModule Icon\r\n */\r\n'use strict';\r\n\r\nimport createIconSet from 'react-native-vector-icons/lib/create-icon-set';\r\n\r\n/**\r\n *\r\n * @type {object}\r\n */\r\nexport const glyphMap = {\r\n  \"access-point\": 61697,\r\n  \"access-point-network\": 61698,\r\n  \"account\": 61699,\r\n  \"account-alert\": 61700,\r\n  \"account-box\": 61701,\r\n  \"account-box-outline\": 61702,\r\n  \"account-check\": 61703,\r\n  \"account-circle\": 61704,\r\n  \"account-convert\": 61705,\r\n  \"account-key\": 61706,\r\n  \"account-location\": 61707,\r\n  \"account-minus\": 61708,\r\n  \"account-multiple\": 61709,\r\n  \"account-multiple-outline\": 61710,\r\n  \"account-multiple-plus\": 61711,\r\n  \"account-network\": 61712,\r\n  \"account-outline\": 61713,\r\n  \"account-plus\": 61714,\r\n  \"account-remove\": 61715,\r\n  \"account-search\": 61716,\r\n  \"account-star\": 61717,\r\n  \"account-star-variant\": 61718,\r\n  \"account-switch\": 61719,\r\n  \"air-conditioner\": 61720,\r\n  \"airballoon\": 61721,\r\n  \"airplane\": 61722,\r\n  \"airplane-off\": 61723,\r\n  \"alarm\": 61724,\r\n  \"alarm-check\": 61725,\r\n  \"alarm-multiple\": 61726,\r\n  \"alarm-off\": 61727,\r\n  \"alarm-plus\": 61728,\r\n  \"album\": 61729,\r\n  \"alert\": 61730,\r\n  \"alert-box\": 61731,\r\n  \"alert-circle\": 61732,\r\n  \"alert-octagon\": 61733,\r\n  \"alpha\": 61734,\r\n  \"alphabetical\": 61735,\r\n  \"amazon\": 61736,\r\n  \"amazon-clouddrive\": 61737,\r\n  \"ambulance\": 61738,\r\n  \"android\": 61739,\r\n  \"android-debug-bridge\": 61740,\r\n  \"android-studio\": 61741,\r\n  \"apple\": 61742,\r\n  \"apple-finder\": 61743,\r\n  \"apple-ios\": 61744,\r\n  \"apple-mobileme\": 61745,\r\n  \"apple-safari\": 61746,\r\n  \"appnet\": 61747,\r\n  \"apps\": 61748,\r\n  \"archive\": 61749,\r\n  \"arrange-bring-forward\": 61750,\r\n  \"arrange-bring-to-front\": 61751,\r\n  \"arrange-send-backward\": 61752,\r\n  \"arrange-send-to-back\": 61753,\r\n  \"arrow-all\": 61754,\r\n  \"arrow-bottom-left\": 61755,\r\n  \"arrow-bottom-right\": 61756,\r\n  \"arrow-collapse\": 61757,\r\n  \"arrow-down\": 61758,\r\n  \"arrow-down-bold\": 61759,\r\n  \"arrow-down-bold-circle\": 61760,\r\n  \"arrow-down-bold-circle-outline\": 61761,\r\n  \"arrow-down-bold-hexagon-outline\": 61762,\r\n  \"arrow-expand\": 61763,\r\n  \"arrow-left\": 61764,\r\n  \"arrow-left-bold\": 61765,\r\n  \"arrow-left-bold-circle\": 61766,\r\n  \"arrow-left-bold-circle-outline\": 61767,\r\n  \"arrow-left-bold-hexagon-outline\": 61768,\r\n  \"arrow-right\": 61769,\r\n  \"arrow-right-bold\": 61770,\r\n  \"arrow-right-bold-circle\": 61771,\r\n  \"arrow-right-bold-circle-outline\": 61772,\r\n  \"arrow-right-bold-hexagon-outline\": 61773,\r\n  \"arrow-top-left\": 61774,\r\n  \"arrow-top-right\": 61775,\r\n  \"arrow-up\": 61776,\r\n  \"arrow-up-bold\": 61777,\r\n  \"arrow-up-bold-circle\": 61778,\r\n  \"arrow-up-bold-circle-outline\": 61779,\r\n  \"arrow-up-bold-hexagon-outline\": 61780,\r\n  \"at\": 61781,\r\n  \"attachment\": 61782,\r\n  \"audiobook\": 61783,\r\n  \"auto-fix\": 61784,\r\n  \"auto-upload\": 61785,\r\n  \"baby\": 61786,\r\n  \"backburger\": 61787,\r\n  \"backup-restore\": 61788,\r\n  \"bank\": 61789,\r\n  \"barcode\": 61790,\r\n  \"barley\": 61791,\r\n  \"barrel\": 61792,\r\n  \"basecamp\": 61793,\r\n  \"basket\": 61794,\r\n  \"basket-fill\": 61795,\r\n  \"basket-unfill\": 61796,\r\n  \"battery\": 61797,\r\n  \"battery-10\": 61798,\r\n  \"battery-20\": 61799,\r\n  \"battery-30\": 61800,\r\n  \"battery-40\": 61801,\r\n  \"battery-50\": 61802,\r\n  \"battery-60\": 61803,\r\n  \"battery-70\": 61804,\r\n  \"battery-80\": 61805,\r\n  \"battery-90\": 61806,\r\n  \"battery-alert\": 61807,\r\n  \"battery-charging-100\": 61808,\r\n  \"battery-charging-20\": 61809,\r\n  \"battery-charging-30\": 61810,\r\n  \"battery-charging-40\": 61811,\r\n  \"battery-charging-60\": 61812,\r\n  \"battery-charging-80\": 61813,\r\n  \"battery-charging-90\": 61814,\r\n  \"battery-minus\": 61815,\r\n  \"battery-negative\": 61816,\r\n  \"battery-outline\": 61817,\r\n  \"battery-plus\": 61818,\r\n  \"battery-positive\": 61819,\r\n  \"battery-unknown\": 61820,\r\n  \"beach\": 61821,\r\n  \"beaker\": 61822,\r\n  \"beaker-empty\": 61823,\r\n  \"beaker-empty-outline\": 61824,\r\n  \"beaker-outline\": 61825,\r\n  \"beats\": 61826,\r\n  \"beer\": 61827,\r\n  \"behance\": 61828,\r\n  \"bell\": 61829,\r\n  \"bell-off\": 61830,\r\n  \"bell-outline\": 61831,\r\n  \"bell-ring\": 61832,\r\n  \"bell-ring-outline\": 61833,\r\n  \"bell-sleep\": 61834,\r\n  \"beta\": 61835,\r\n  \"bike\": 61836,\r\n  \"bing\": 61837,\r\n  \"binoculars\": 61838,\r\n  \"bio\": 61839,\r\n  \"biohazard\": 61840,\r\n  \"bitbucket\": 61841,\r\n  \"black-mesa\": 61842,\r\n  \"blackberry\": 61843,\r\n  \"blinds\": 61844,\r\n  \"block-helper\": 61845,\r\n  \"blogger\": 61846,\r\n  \"bluetooth\": 61847,\r\n  \"bluetooth-audio\": 61848,\r\n  \"bluetooth-connect\": 61849,\r\n  \"bluetooth-settings\": 61850,\r\n  \"bluetooth-transfer\": 61851,\r\n  \"blur\": 61852,\r\n  \"blur-linear\": 61853,\r\n  \"blur-off\": 61854,\r\n  \"blur-radial\": 61855,\r\n  \"bone\": 61856,\r\n  \"book\": 61857,\r\n  \"book-multiple\": 61858,\r\n  \"book-multiple-variant\": 61859,\r\n  \"book-open\": 61860,\r\n  \"book-variant\": 61861,\r\n  \"bookmark\": 61862,\r\n  \"bookmark-check\": 61863,\r\n  \"bookmark-music\": 61864,\r\n  \"bookmark-outline\": 61865,\r\n  \"bookmark-outline-plus\": 61866,\r\n  \"bookmark-plus\": 61867,\r\n  \"bookmark-remove\": 61868,\r\n  \"border-all\": 61869,\r\n  \"border-bottom\": 61870,\r\n  \"border-color\": 61871,\r\n  \"border-horizontal\": 61872,\r\n  \"border-inside\": 61873,\r\n  \"border-left\": 61874,\r\n  \"border-none\": 61875,\r\n  \"border-outside\": 61876,\r\n  \"border-right\": 61877,\r\n  \"border-top\": 61878,\r\n  \"border-vertical\": 61879,\r\n  \"bowling\": 61880,\r\n  \"box\": 61881,\r\n  \"briefcase\": 61882,\r\n  \"briefcase-check\": 61883,\r\n  \"briefcase-download\": 61884,\r\n  \"briefcase-upload\": 61885,\r\n  \"brightness-1\": 61886,\r\n  \"brightness-2\": 61887,\r\n  \"brightness-3\": 61888,\r\n  \"brightness-4\": 61889,\r\n  \"brightness-5\": 61890,\r\n  \"brightness-6\": 61891,\r\n  \"brightness-7\": 61892,\r\n  \"brightness-auto\": 61893,\r\n  \"broom\": 61894,\r\n  \"brush\": 61895,\r\n  \"bug\": 61896,\r\n  \"bulletin-board\": 61897,\r\n  \"bullhorn\": 61898,\r\n  \"bus\": 61899,\r\n  \"cake\": 61900,\r\n  \"cake-variant\": 61901,\r\n  \"calculator\": 61902,\r\n  \"calendar\": 61903,\r\n  \"calendar-blank\": 61904,\r\n  \"calendar-check\": 61905,\r\n  \"calendar-clock\": 61906,\r\n  \"calendar-multiple\": 61907,\r\n  \"calendar-multiple-check\": 61908,\r\n  \"calendar-plus\": 61909,\r\n  \"calendar-remove\": 61910,\r\n  \"calendar-text\": 61911,\r\n  \"calendar-today\": 61912,\r\n  \"camcorder\": 61913,\r\n  \"camcorder-box\": 61914,\r\n  \"camcorder-box-off\": 61915,\r\n  \"camcorder-off\": 61916,\r\n  \"camera\": 61917,\r\n  \"camera-front\": 61918,\r\n  \"camera-front-variant\": 61919,\r\n  \"camera-iris\": 61920,\r\n  \"camera-party-mode\": 61921,\r\n  \"camera-rear\": 61922,\r\n  \"camera-rear-variant\": 61923,\r\n  \"camera-switch\": 61924,\r\n  \"camera-timer\": 61925,\r\n  \"candycane\": 61926,\r\n  \"car\": 61927,\r\n  \"car-battery\": 61928,\r\n  \"car-wash\": 61929,\r\n  \"carrot\": 61930,\r\n  \"cart\": 61931,\r\n  \"cart-outline\": 61932,\r\n  \"case-sensitive-alt\": 61933,\r\n  \"cash\": 61934,\r\n  \"cash-100\": 61935,\r\n  \"cash-multiple\": 61936,\r\n  \"cash-usd\": 61937,\r\n  \"cast\": 61938,\r\n  \"cast-connected\": 61939,\r\n  \"castle\": 61940,\r\n  \"cat\": 61941,\r\n  \"cellphone\": 61942,\r\n  \"cellphone-android\": 61943,\r\n  \"cellphone-basic\": 61944,\r\n  \"cellphone-dock\": 61945,\r\n  \"cellphone-iphone\": 61946,\r\n  \"cellphone-link\": 61947,\r\n  \"cellphone-link-off\": 61948,\r\n  \"cellphone-settings\": 61949,\r\n  \"certificate\": 61950,\r\n  \"chair-school\": 61951,\r\n  \"chart-arc\": 61952,\r\n  \"chart-areaspline\": 61953,\r\n  \"chart-bar\": 61954,\r\n  \"chart-histogram\": 61955,\r\n  \"chart-line\": 61956,\r\n  \"chart-pie\": 61957,\r\n  \"check\": 61958,\r\n  \"check-all\": 61959,\r\n  \"checkbox-blank\": 61960,\r\n  \"checkbox-blank-circle\": 61961,\r\n  \"checkbox-blank-circle-outline\": 61962,\r\n  \"checkbox-blank-outline\": 61963,\r\n  \"checkbox-marked\": 61964,\r\n  \"checkbox-marked-circle\": 61965,\r\n  \"checkbox-marked-circle-outline\": 61966,\r\n  \"checkbox-marked-outline\": 61967,\r\n  \"checkbox-multiple-blank\": 61968,\r\n  \"checkbox-multiple-blank-outline\": 61969,\r\n  \"checkbox-multiple-marked\": 61970,\r\n  \"checkbox-multiple-marked-outline\": 61971,\r\n  \"checkerboard\": 61972,\r\n  \"chevron-double-down\": 61973,\r\n  \"chevron-double-left\": 61974,\r\n  \"chevron-double-right\": 61975,\r\n  \"chevron-double-up\": 61976,\r\n  \"chevron-down\": 61977,\r\n  \"chevron-left\": 61978,\r\n  \"chevron-right\": 61979,\r\n  \"chevron-up\": 61980,\r\n  \"church\": 61981,\r\n  \"cisco-webex\": 61982,\r\n  \"city\": 61983,\r\n  \"clipboard\": 61984,\r\n  \"clipboard-account\": 61985,\r\n  \"clipboard-alert\": 61986,\r\n  \"clipboard-arrow-down\": 61987,\r\n  \"clipboard-arrow-left\": 61988,\r\n  \"clipboard-check\": 61989,\r\n  \"clipboard-outline\": 61990,\r\n  \"clipboard-text\": 61991,\r\n  \"clippy\": 61992,\r\n  \"clock\": 61993,\r\n  \"clock-fast\": 61994,\r\n  \"close\": 61995,\r\n  \"close-box\": 61996,\r\n  \"close-box-outline\": 61997,\r\n  \"close-circle\": 61998,\r\n  \"close-circle-outline\": 61999,\r\n  \"close-network\": 62000,\r\n  \"closed-caption\": 62001,\r\n  \"cloud\": 62002,\r\n  \"cloud-check\": 62003,\r\n  \"cloud-circle\": 62004,\r\n  \"cloud-download\": 62005,\r\n  \"cloud-outline\": 62006,\r\n  \"cloud-outline-off\": 62007,\r\n  \"cloud-print\": 62008,\r\n  \"cloud-print-outline\": 62009,\r\n  \"cloud-upload\": 62010,\r\n  \"code-array\": 62011,\r\n  \"code-braces\": 62012,\r\n  \"code-brackets\": 62013,\r\n  \"code-equal\": 62014,\r\n  \"code-greater-than\": 62015,\r\n  \"code-less-than\": 62016,\r\n  \"code-less-than-or-equal\": 62017,\r\n  \"code-not-equal\": 62018,\r\n  \"code-not-equal-variant\": 62019,\r\n  \"code-parentheses\": 62020,\r\n  \"code-string\": 62021,\r\n  \"code-tags\": 62022,\r\n  \"codepen\": 62023,\r\n  \"coffee\": 62024,\r\n  \"coffee-to-go\": 62025,\r\n  \"coin\": 62026,\r\n  \"color-helper\": 62027,\r\n  \"comment\": 62028,\r\n  \"comment-account\": 62029,\r\n  \"comment-account-outline\": 62030,\r\n  \"comment-alert\": 62031,\r\n  \"comment-alert-outline\": 62032,\r\n  \"comment-check\": 62033,\r\n  \"comment-check-outline\": 62034,\r\n  \"comment-multiple-outline\": 62035,\r\n  \"comment-outline\": 62036,\r\n  \"comment-plus-outline\": 62037,\r\n  \"comment-processing\": 62038,\r\n  \"comment-processing-outline\": 62039,\r\n  \"comment-remove-outline\": 62040,\r\n  \"comment-text\": 62041,\r\n  \"comment-text-outline\": 62042,\r\n  \"compare\": 62043,\r\n  \"compass\": 62044,\r\n  \"compass-outline\": 62045,\r\n  \"console\": 62046,\r\n  \"content-copy\": 62047,\r\n  \"content-cut\": 62048,\r\n  \"content-duplicate\": 62049,\r\n  \"content-paste\": 62050,\r\n  \"content-save\": 62051,\r\n  \"content-save-all\": 62052,\r\n  \"contrast\": 62053,\r\n  \"contrast-box\": 62054,\r\n  \"contrast-circle\": 62055,\r\n  \"cow\": 62056,\r\n  \"credit-card\": 62057,\r\n  \"credit-card-multiple\": 62058,\r\n  \"credit-card-scan\": 62059,\r\n  \"crop\": 62060,\r\n  \"crop-free\": 62061,\r\n  \"crop-landscape\": 62062,\r\n  \"crop-portrait\": 62063,\r\n  \"crop-square\": 62064,\r\n  \"crosshairs\": 62065,\r\n  \"crosshairs-gps\": 62066,\r\n  \"crown\": 62067,\r\n  \"cube\": 62068,\r\n  \"cube-outline\": 62069,\r\n  \"cube-unfolded\": 62070,\r\n  \"cup\": 62071,\r\n  \"cup-water\": 62072,\r\n  \"currency-btc\": 62073,\r\n  \"currency-eur\": 62074,\r\n  \"currency-gbp\": 62075,\r\n  \"currency-inr\": 62076,\r\n  \"currency-ngn\": 62077,\r\n  \"currency-rub\": 62078,\r\n  \"currency-try\": 62079,\r\n  \"currency-usd\": 62080,\r\n  \"cursor-default\": 62081,\r\n  \"cursor-default-outline\": 62082,\r\n  \"cursor-move\": 62083,\r\n  \"cursor-pointer\": 62084,\r\n  \"database\": 62085,\r\n  \"database-minus\": 62086,\r\n  \"database-plus\": 62087,\r\n  \"debug-step-into\": 62088,\r\n  \"debug-step-out\": 62089,\r\n  \"debug-step-over\": 62090,\r\n  \"decimal-decrease\": 62091,\r\n  \"decimal-increase\": 62092,\r\n  \"delete\": 62093,\r\n  \"delete-variant\": 62094,\r\n  \"deskphone\": 62095,\r\n  \"desktop-mac\": 62096,\r\n  \"desktop-tower\": 62097,\r\n  \"details\": 62098,\r\n  \"deviantart\": 62099,\r\n  \"diamond\": 62100,\r\n  \"dice\": 62101,\r\n  \"dice-1\": 62102,\r\n  \"dice-2\": 62103,\r\n  \"dice-3\": 62104,\r\n  \"dice-4\": 62105,\r\n  \"dice-5\": 62106,\r\n  \"dice-6\": 62107,\r\n  \"directions\": 62108,\r\n  \"disk-alert\": 62109,\r\n  \"disqus\": 62110,\r\n  \"disqus-outline\": 62111,\r\n  \"division\": 62112,\r\n  \"division-box\": 62113,\r\n  \"dns\": 62114,\r\n  \"domain\": 62115,\r\n  \"dots-horizontal\": 62116,\r\n  \"dots-vertical\": 62117,\r\n  \"download\": 62118,\r\n  \"drag\": 62119,\r\n  \"drag-horizontal\": 62120,\r\n  \"drag-vertical\": 62121,\r\n  \"drawing\": 62122,\r\n  \"drawing-box\": 62123,\r\n  \"dribbble\": 62124,\r\n  \"dribbble-box\": 62125,\r\n  \"drone\": 62126,\r\n  \"dropbox\": 62127,\r\n  \"drupal\": 62128,\r\n  \"duck\": 62129,\r\n  \"dumbbell\": 62130,\r\n  \"earth\": 62131,\r\n  \"earth-off\": 62132,\r\n  \"edge\": 62133,\r\n  \"eject\": 62134,\r\n  \"elevation-decline\": 62135,\r\n  \"elevation-rise\": 62136,\r\n  \"elevator\": 62137,\r\n  \"email\": 62138,\r\n  \"email-open\": 62139,\r\n  \"email-outline\": 62140,\r\n  \"email-secure\": 62141,\r\n  \"emoticon\": 62142,\r\n  \"emoticon-cool\": 62143,\r\n  \"emoticon-devil\": 62144,\r\n  \"emoticon-happy\": 62145,\r\n  \"emoticon-neutral\": 62146,\r\n  \"emoticon-poop\": 62147,\r\n  \"emoticon-sad\": 62148,\r\n  \"emoticon-tongue\": 62149,\r\n  \"engine\": 62150,\r\n  \"engine-outline\": 62151,\r\n  \"equal\": 62152,\r\n  \"equal-box\": 62153,\r\n  \"eraser\": 62154,\r\n  \"escalator\": 62155,\r\n  \"ethernet\": 62156,\r\n  \"ethernet-cable\": 62157,\r\n  \"ethernet-cable-off\": 62158,\r\n  \"etsy\": 62159,\r\n  \"evernote\": 62160,\r\n  \"exclamation\": 62161,\r\n  \"exit-to-app\": 62162,\r\n  \"export\": 62163,\r\n  \"eye\": 62164,\r\n  \"eye-off\": 62165,\r\n  \"eyedropper\": 62166,\r\n  \"eyedropper-variant\": 62167,\r\n  \"facebook\": 62168,\r\n  \"facebook-box\": 62169,\r\n  \"facebook-messenger\": 62170,\r\n  \"factory\": 62171,\r\n  \"fan\": 62172,\r\n  \"fast-forward\": 62173,\r\n  \"fax\": 62174,\r\n  \"ferry\": 62175,\r\n  \"file\": 62176,\r\n  \"file-chart\": 62177,\r\n  \"file-check\": 62178,\r\n  \"file-cloud\": 62179,\r\n  \"file-delimited\": 62180,\r\n  \"file-document\": 62181,\r\n  \"file-document-box\": 62182,\r\n  \"file-excel\": 62183,\r\n  \"file-excel-box\": 62184,\r\n  \"file-find\": 62185,\r\n  \"file-image\": 62186,\r\n  \"file-image-box\": 62187,\r\n  \"file-lock\": 62188,\r\n  \"file-multiple\": 62189,\r\n  \"file-music\": 62190,\r\n  \"file-outline\": 62191,\r\n  \"file-pdf\": 62192,\r\n  \"file-pdf-box\": 62193,\r\n  \"file-powerpoint\": 62194,\r\n  \"file-powerpoint-box\": 62195,\r\n  \"file-presentation-box\": 62196,\r\n  \"file-send\": 62197,\r\n  \"file-video\": 62198,\r\n  \"file-word\": 62199,\r\n  \"file-word-box\": 62200,\r\n  \"file-xml\": 62201,\r\n  \"film\": 62202,\r\n  \"filmstrip\": 62203,\r\n  \"filmstrip-off\": 62204,\r\n  \"filter\": 62205,\r\n  \"filter-outline\": 62206,\r\n  \"filter-remove\": 62207,\r\n  \"filter-remove-outline\": 62208,\r\n  \"filter-variant\": 62209,\r\n  \"fingerprint\": 62210,\r\n  \"fire\": 62211,\r\n  \"firefox\": 62212,\r\n  \"fish\": 62213,\r\n  \"flag\": 62214,\r\n  \"flag-checkered\": 62215,\r\n  \"flag-outline\": 62216,\r\n  \"flag-outline-variant\": 62217,\r\n  \"flag-triangle\": 62218,\r\n  \"flag-variant\": 62219,\r\n  \"flash\": 62220,\r\n  \"flash-auto\": 62221,\r\n  \"flash-off\": 62222,\r\n  \"flashlight\": 62223,\r\n  \"flashlight-off\": 62224,\r\n  \"flattr\": 62225,\r\n  \"flip-to-back\": 62226,\r\n  \"flip-to-front\": 62227,\r\n  \"floppy\": 62228,\r\n  \"flower\": 62229,\r\n  \"folder\": 62230,\r\n  \"folder-account\": 62231,\r\n  \"folder-download\": 62232,\r\n  \"folder-google-drive\": 62233,\r\n  \"folder-image\": 62234,\r\n  \"folder-lock\": 62235,\r\n  \"folder-lock-open\": 62236,\r\n  \"folder-move\": 62237,\r\n  \"folder-multiple\": 62238,\r\n  \"folder-multiple-image\": 62239,\r\n  \"folder-multiple-outline\": 62240,\r\n  \"folder-outline\": 62241,\r\n  \"folder-plus\": 62242,\r\n  \"folder-remove\": 62243,\r\n  \"folder-upload\": 62244,\r\n  \"food\": 62245,\r\n  \"food-apple\": 62246,\r\n  \"food-variant\": 62247,\r\n  \"football\": 62248,\r\n  \"football-australian\": 62249,\r\n  \"football-helmet\": 62250,\r\n  \"format-align-center\": 62251,\r\n  \"format-align-justify\": 62252,\r\n  \"format-align-left\": 62253,\r\n  \"format-align-right\": 62254,\r\n  \"format-bold\": 62255,\r\n  \"format-clear\": 62256,\r\n  \"format-color-fill\": 62257,\r\n  \"format-float-center\": 62258,\r\n  \"format-float-left\": 62259,\r\n  \"format-float-none\": 62260,\r\n  \"format-float-right\": 62261,\r\n  \"format-header-1\": 62262,\r\n  \"format-header-2\": 62263,\r\n  \"format-header-3\": 62264,\r\n  \"format-header-4\": 62265,\r\n  \"format-header-5\": 62266,\r\n  \"format-header-6\": 62267,\r\n  \"format-header-decrease\": 62268,\r\n  \"format-header-equal\": 62269,\r\n  \"format-header-increase\": 62270,\r\n  \"format-header-pound\": 62271,\r\n  \"format-indent-decrease\": 62272,\r\n  \"format-indent-increase\": 62273,\r\n  \"format-italic\": 62274,\r\n  \"format-line-spacing\": 62275,\r\n  \"format-list-bulleted\": 62276,\r\n  \"format-list-bulleted-type\": 62277,\r\n  \"format-list-numbers\": 62278,\r\n  \"format-paint\": 62279,\r\n  \"format-paragraph\": 62280,\r\n  \"format-quote\": 62281,\r\n  \"format-size\": 62282,\r\n  \"format-strikethrough\": 62283,\r\n  \"format-strikethrough-variant\": 62284,\r\n  \"format-subscript\": 62285,\r\n  \"format-superscript\": 62286,\r\n  \"format-text\": 62287,\r\n  \"format-textdirection-l-to-r\": 62288,\r\n  \"format-textdirection-r-to-l\": 62289,\r\n  \"format-underline\": 62290,\r\n  \"format-wrap-inline\": 62291,\r\n  \"format-wrap-square\": 62292,\r\n  \"format-wrap-tight\": 62293,\r\n  \"format-wrap-top-bottom\": 62294,\r\n  \"forum\": 62295,\r\n  \"forward\": 62296,\r\n  \"foursquare\": 62297,\r\n  \"fridge\": 62298,\r\n  \"fullscreen\": 62299,\r\n  \"fullscreen-exit\": 62300,\r\n  \"function\": 62301,\r\n  \"gamepad\": 62302,\r\n  \"gamepad-variant\": 62303,\r\n  \"gas-station\": 62304,\r\n  \"gauge\": 62305,\r\n  \"gavel\": 62306,\r\n  \"gender-female\": 62307,\r\n  \"gender-male\": 62308,\r\n  \"gender-male-female\": 62309,\r\n  \"gender-transgender\": 62310,\r\n  \"gift\": 62311,\r\n  \"git\": 62312,\r\n  \"github-box\": 62313,\r\n  \"github-circle\": 62314,\r\n  \"glass-flute\": 62315,\r\n  \"glass-mug\": 62316,\r\n  \"glass-stange\": 62317,\r\n  \"glass-tulip\": 62318,\r\n  \"glasses\": 62319,\r\n  \"gmail\": 62320,\r\n  \"google\": 62321,\r\n  \"google-chrome\": 62322,\r\n  \"google-circles\": 62323,\r\n  \"google-circles-communities\": 62324,\r\n  \"google-circles-extended\": 62325,\r\n  \"google-circles-group\": 62326,\r\n  \"google-controller\": 62327,\r\n  \"google-controller-off\": 62328,\r\n  \"google-drive\": 62329,\r\n  \"google-earth\": 62330,\r\n  \"google-glass\": 62331,\r\n  \"google-pages\": 62332,\r\n  \"google-play\": 62333,\r\n  \"google-plus\": 62334,\r\n  \"google-plus-box\": 62335,\r\n  \"grid\": 62336,\r\n  \"grid-off\": 62337,\r\n  \"group\": 62338,\r\n  \"guitar\": 62339,\r\n  \"guitar-pick\": 62340,\r\n  \"guitar-pick-outline\": 62341,\r\n  \"hand-pointing-right\": 62342,\r\n  \"hanger\": 62343,\r\n  \"hangouts\": 62344,\r\n  \"harddisk\": 62345,\r\n  \"headphones\": 62346,\r\n  \"headphones-box\": 62347,\r\n  \"headphones-settings\": 62348,\r\n  \"headset\": 62349,\r\n  \"headset-dock\": 62350,\r\n  \"headset-off\": 62351,\r\n  \"heart\": 62352,\r\n  \"heart-box\": 62353,\r\n  \"heart-box-outline\": 62354,\r\n  \"heart-broken\": 62355,\r\n  \"heart-outline\": 62356,\r\n  \"help\": 62357,\r\n  \"help-circle\": 62358,\r\n  \"hexagon\": 62359,\r\n  \"hexagon-outline\": 62360,\r\n  \"history\": 62361,\r\n  \"hololens\": 62362,\r\n  \"home\": 62363,\r\n  \"home-modern\": 62364,\r\n  \"home-variant\": 62365,\r\n  \"hops\": 62366,\r\n  \"hospital\": 62367,\r\n  \"hospital-building\": 62368,\r\n  \"hospital-marker\": 62369,\r\n  \"hotel\": 62370,\r\n  \"houzz\": 62371,\r\n  \"houzz-box\": 62372,\r\n  \"human\": 62373,\r\n  \"human-child\": 62374,\r\n  \"human-male-female\": 62375,\r\n  \"image-album\": 62376,\r\n  \"image-area\": 62377,\r\n  \"image-area-close\": 62378,\r\n  \"image-broken\": 62379,\r\n  \"image-filter\": 62380,\r\n  \"image-filter-black-white\": 62381,\r\n  \"image-filter-center-focus\": 62382,\r\n  \"image-filter-drama\": 62383,\r\n  \"image-filter-frames\": 62384,\r\n  \"image-filter-hdr\": 62385,\r\n  \"image-filter-none\": 62386,\r\n  \"image-filter-tilt-shift\": 62387,\r\n  \"image-filter-vintage\": 62388,\r\n  \"import\": 62389,\r\n  \"inbox\": 62390,\r\n  \"information\": 62391,\r\n  \"information-outline\": 62392,\r\n  \"instagram\": 62393,\r\n  \"instapaper\": 62394,\r\n  \"internet-explorer\": 62395,\r\n  \"invert-colors\": 62396,\r\n  \"jira\": 62397,\r\n  \"jsfiddle\": 62398,\r\n  \"keg\": 62399,\r\n  \"key\": 62400,\r\n  \"key-change\": 62401,\r\n  \"key-minus\": 62402,\r\n  \"key-plus\": 62403,\r\n  \"key-remove\": 62404,\r\n  \"key-variant\": 62405,\r\n  \"keyboard\": 62406,\r\n  \"keyboard-backspace\": 62407,\r\n  \"keyboard-caps\": 62408,\r\n  \"keyboard-close\": 62409,\r\n  \"keyboard-off\": 62410,\r\n  \"keyboard-return\": 62411,\r\n  \"keyboard-tab\": 62412,\r\n  \"keyboard-variant\": 62413,\r\n  \"label\": 62414,\r\n  \"label-outline\": 62415,\r\n  \"lan\": 62416,\r\n  \"lan-connect\": 62417,\r\n  \"lan-disconnect\": 62418,\r\n  \"lan-pending\": 62419,\r\n  \"language-csharp\": 62420,\r\n  \"language-css3\": 62421,\r\n  \"language-html5\": 62422,\r\n  \"language-javascript\": 62423,\r\n  \"language-python\": 62424,\r\n  \"language-python-text\": 62425,\r\n  \"laptop\": 62426,\r\n  \"laptop-chromebook\": 62427,\r\n  \"laptop-mac\": 62428,\r\n  \"laptop-windows\": 62429,\r\n  \"lastfm\": 62430,\r\n  \"launch\": 62431,\r\n  \"layers\": 62432,\r\n  \"layers-off\": 62433,\r\n  \"leaf\": 62434,\r\n  \"led-off\": 62435,\r\n  \"led-on\": 62436,\r\n  \"led-outline\": 62437,\r\n  \"led-variant-off\": 62438,\r\n  \"led-variant-on\": 62439,\r\n  \"led-variant-outline\": 62440,\r\n  \"library\": 62441,\r\n  \"library-books\": 62442,\r\n  \"library-music\": 62443,\r\n  \"library-plus\": 62444,\r\n  \"lightbulb\": 62445,\r\n  \"lightbulb-outline\": 62446,\r\n  \"link\": 62447,\r\n  \"link-off\": 62448,\r\n  \"link-variant\": 62449,\r\n  \"link-variant-off\": 62450,\r\n  \"linkedin\": 62451,\r\n  \"linkedin-box\": 62452,\r\n  \"linux\": 62453,\r\n  \"lock\": 62454,\r\n  \"lock-open\": 62455,\r\n  \"lock-open-outline\": 62456,\r\n  \"lock-outline\": 62457,\r\n  \"login\": 62458,\r\n  \"logout\": 62459,\r\n  \"looks\": 62460,\r\n  \"loupe\": 62461,\r\n  \"lumx\": 62462,\r\n  \"magnet\": 62463,\r\n  \"magnet-on\": 62464,\r\n  \"magnify\": 62465,\r\n  \"magnify-minus\": 62466,\r\n  \"magnify-plus\": 62467,\r\n  \"mail-ru\": 62468,\r\n  \"map\": 62469,\r\n  \"map-marker\": 62470,\r\n  \"map-marker-circle\": 62471,\r\n  \"map-marker-multiple\": 62472,\r\n  \"map-marker-off\": 62473,\r\n  \"map-marker-radius\": 62474,\r\n  \"margin\": 62475,\r\n  \"markdown\": 62476,\r\n  \"marker-check\": 62477,\r\n  \"martini\": 62478,\r\n  \"material-ui\": 62479,\r\n  \"math-compass\": 62480,\r\n  \"maxcdn\": 62481,\r\n  \"medium\": 62482,\r\n  \"memory\": 62483,\r\n  \"menu\": 62484,\r\n  \"menu-down\": 62485,\r\n  \"menu-left\": 62486,\r\n  \"menu-right\": 62487,\r\n  \"menu-up\": 62488,\r\n  \"message\": 62489,\r\n  \"message-alert\": 62490,\r\n  \"message-draw\": 62491,\r\n  \"message-image\": 62492,\r\n  \"message-processing\": 62493,\r\n  \"message-reply\": 62494,\r\n  \"message-text\": 62495,\r\n  \"message-text-outline\": 62496,\r\n  \"message-video\": 62497,\r\n  \"microphone\": 62498,\r\n  \"microphone-off\": 62499,\r\n  \"microphone-outline\": 62500,\r\n  \"microphone-settings\": 62501,\r\n  \"microphone-variant\": 62502,\r\n  \"microphone-variant-off\": 62503,\r\n  \"minus\": 62504,\r\n  \"minus-box\": 62505,\r\n  \"minus-circle\": 62506,\r\n  \"minus-circle-outline\": 62507,\r\n  \"minus-network\": 62508,\r\n  \"monitor\": 62509,\r\n  \"monitor-multiple\": 62510,\r\n  \"more\": 62511,\r\n  \"motorbike\": 62512,\r\n  \"mouse\": 62513,\r\n  \"mouse-off\": 62514,\r\n  \"mouse-variant\": 62515,\r\n  \"mouse-variant-off\": 62516,\r\n  \"movie\": 62517,\r\n  \"multiplication\": 62518,\r\n  \"multiplication-box\": 62519,\r\n  \"music-box\": 62520,\r\n  \"music-box-outline\": 62521,\r\n  \"music-circle\": 62522,\r\n  \"music-note\": 62523,\r\n  \"music-note-eighth\": 62524,\r\n  \"music-note-half\": 62525,\r\n  \"music-note-off\": 62526,\r\n  \"music-note-quarter\": 62527,\r\n  \"music-note-sixteenth\": 62528,\r\n  \"music-note-whole\": 62529,\r\n  \"nature\": 62530,\r\n  \"nature-people\": 62531,\r\n  \"navigation\": 62532,\r\n  \"needle\": 62533,\r\n  \"nest-protect\": 62534,\r\n  \"nest-thermostat\": 62535,\r\n  \"newspaper\": 62536,\r\n  \"nfc\": 62537,\r\n  \"nfc-tap\": 62538,\r\n  \"nfc-variant\": 62539,\r\n  \"note\": 62540,\r\n  \"note-outline\": 62541,\r\n  \"note-plus\": 62542,\r\n  \"note-plus-outline\": 62543,\r\n  \"note-text\": 62544,\r\n  \"numeric\": 62545,\r\n  \"numeric-0-box\": 62546,\r\n  \"numeric-0-box-multiple-outline\": 62547,\r\n  \"numeric-0-box-outline\": 62548,\r\n  \"numeric-1-box\": 62549,\r\n  \"numeric-1-box-multiple-outline\": 62550,\r\n  \"numeric-1-box-outline\": 62551,\r\n  \"numeric-2-box\": 62552,\r\n  \"numeric-2-box-multiple-outline\": 62553,\r\n  \"numeric-2-box-outline\": 62554,\r\n  \"numeric-3-box\": 62555,\r\n  \"numeric-3-box-multiple-outline\": 62556,\r\n  \"numeric-3-box-outline\": 62557,\r\n  \"numeric-4-box\": 62558,\r\n  \"numeric-4-box-multiple-outline\": 62559,\r\n  \"numeric-4-box-outline\": 62560,\r\n  \"numeric-5-box\": 62561,\r\n  \"numeric-5-box-multiple-outline\": 62562,\r\n  \"numeric-5-box-outline\": 62563,\r\n  \"numeric-6-box\": 62564,\r\n  \"numeric-6-box-multiple-outline\": 62565,\r\n  \"numeric-6-box-outline\": 62566,\r\n  \"numeric-7-box\": 62567,\r\n  \"numeric-7-box-multiple-outline\": 62568,\r\n  \"numeric-7-box-outline\": 62569,\r\n  \"numeric-8-box\": 62570,\r\n  \"numeric-8-box-multiple-outline\": 62571,\r\n  \"numeric-8-box-outline\": 62572,\r\n  \"numeric-9-box\": 62573,\r\n  \"numeric-9-box-multiple-outline\": 62574,\r\n  \"numeric-9-box-outline\": 62575,\r\n  \"numeric-9-plus-box\": 62576,\r\n  \"numeric-9-plus-box-multiple-outline\": 62577,\r\n  \"numeric-9-plus-box-outline\": 62578,\r\n  \"nutriton\": 62579,\r\n  \"odnoklassniki\": 62580,\r\n  \"office\": 62581,\r\n  \"oil\": 62582,\r\n  \"oil-temperature\": 62583,\r\n  \"omega\": 62584,\r\n  \"onedrive\": 62585,\r\n  \"open-in-app\": 62586,\r\n  \"open-in-new\": 62587,\r\n  \"opera\": 62588,\r\n  \"ornament\": 62589,\r\n  \"ornament-variant\": 62590,\r\n  \"outbox\": 62591,\r\n  \"owl\": 62592,\r\n  \"package\": 62593,\r\n  \"package-down\": 62594,\r\n  \"package-up\": 62595,\r\n  \"package-variant\": 62596,\r\n  \"package-variant-closed\": 62597,\r\n  \"palette\": 62598,\r\n  \"palette-advanced\": 62599,\r\n  \"panda\": 62600,\r\n  \"pandora\": 62601,\r\n  \"panorama\": 62602,\r\n  \"panorama-fisheye\": 62603,\r\n  \"panorama-horizontal\": 62604,\r\n  \"panorama-vertical\": 62605,\r\n  \"panorama-wide-angle\": 62606,\r\n  \"paper-cut-vertical\": 62607,\r\n  \"paperclip\": 62608,\r\n  \"parking\": 62609,\r\n  \"pause\": 62610,\r\n  \"pause-circle\": 62611,\r\n  \"pause-circle-outline\": 62612,\r\n  \"pause-octagon\": 62613,\r\n  \"pause-octagon-outline\": 62614,\r\n  \"paw\": 62615,\r\n  \"pen\": 62616,\r\n  \"pencil\": 62617,\r\n  \"pencil-box\": 62618,\r\n  \"pencil-box-outline\": 62619,\r\n  \"pencil-lock\": 62620,\r\n  \"pencil-off\": 62621,\r\n  \"percent\": 62622,\r\n  \"pharmacy\": 62623,\r\n  \"phone\": 62624,\r\n  \"phone-bluetooth\": 62625,\r\n  \"phone-forward\": 62626,\r\n  \"phone-hangup\": 62627,\r\n  \"phone-in-talk\": 62628,\r\n  \"phone-incoming\": 62629,\r\n  \"phone-locked\": 62630,\r\n  \"phone-log\": 62631,\r\n  \"phone-missed\": 62632,\r\n  \"phone-outgoing\": 62633,\r\n  \"phone-paused\": 62634,\r\n  \"phone-settings\": 62635,\r\n  \"phone-voip\": 62636,\r\n  \"pig\": 62637,\r\n  \"pill\": 62638,\r\n  \"pin\": 62639,\r\n  \"pin-off\": 62640,\r\n  \"pine-tree\": 62641,\r\n  \"pine-tree-box\": 62642,\r\n  \"pinterest\": 62643,\r\n  \"pinterest-box\": 62644,\r\n  \"pizza\": 62645,\r\n  \"play\": 62646,\r\n  \"play-box-outline\": 62647,\r\n  \"play-circle\": 62648,\r\n  \"play-circle-outline\": 62649,\r\n  \"playlist-minus\": 62650,\r\n  \"playlist-play\": 62651,\r\n  \"playlist-plus\": 62652,\r\n  \"playlist-remove\": 62653,\r\n  \"playstation\": 62654,\r\n  \"plus\": 62655,\r\n  \"plus-box\": 62656,\r\n  \"plus-circle\": 62657,\r\n  \"plus-circle-outline\": 62658,\r\n  \"plus-network\": 62659,\r\n  \"plus-one\": 62660,\r\n  \"pocket\": 62661,\r\n  \"polaroid\": 62662,\r\n  \"poll\": 62663,\r\n  \"poll-box\": 62664,\r\n  \"polymer\": 62665,\r\n  \"popcorn\": 62666,\r\n  \"pound\": 62667,\r\n  \"pound-box\": 62668,\r\n  \"power\": 62669,\r\n  \"power-settings\": 62670,\r\n  \"power-socket\": 62671,\r\n  \"presentation\": 62672,\r\n  \"presentation-play\": 62673,\r\n  \"printer\": 62674,\r\n  \"printer-3d\": 62675,\r\n  \"printer-alert\": 62676,\r\n  \"professional-hexagon\": 62677,\r\n  \"projector\": 62678,\r\n  \"projector-screen\": 62679,\r\n  \"pulse\": 62680,\r\n  \"puzzle\": 62681,\r\n  \"qrcode\": 62682,\r\n  \"quadcopter\": 62683,\r\n  \"quality-high\": 62684,\r\n  \"quicktime\": 62685,\r\n  \"radar\": 62686,\r\n  \"radiator\": 62687,\r\n  \"radio\": 62688,\r\n  \"radio-handheld\": 62689,\r\n  \"radio-tower\": 62690,\r\n  \"radioactive\": 62691,\r\n  \"radiobox-blank\": 62692,\r\n  \"radiobox-marked\": 62693,\r\n  \"raspberrypi\": 62694,\r\n  \"rdio\": 62695,\r\n  \"read\": 62696,\r\n  \"readability\": 62697,\r\n  \"receipt\": 62698,\r\n  \"recycle\": 62699,\r\n  \"reddit\": 62700,\r\n  \"redo\": 62701,\r\n  \"redo-variant\": 62702,\r\n  \"refresh\": 62703,\r\n  \"regex\": 62704,\r\n  \"relative-scale\": 62705,\r\n  \"reload\": 62706,\r\n  \"remote\": 62707,\r\n  \"rename-box\": 62708,\r\n  \"repeat\": 62709,\r\n  \"repeat-off\": 62710,\r\n  \"repeat-once\": 62711,\r\n  \"replay\": 62712,\r\n  \"reply\": 62713,\r\n  \"reply-all\": 62714,\r\n  \"reproduction\": 62715,\r\n  \"resize-bottom-right\": 62716,\r\n  \"responsive\": 62717,\r\n  \"rewind\": 62718,\r\n  \"ribbon\": 62719,\r\n  \"road\": 62720,\r\n  \"road-variant\": 62721,\r\n  \"rocket\": 62722,\r\n  \"rotate-3d\": 62723,\r\n  \"rotate-left\": 62724,\r\n  \"rotate-left-variant\": 62725,\r\n  \"rotate-right\": 62726,\r\n  \"rotate-right-variant\": 62727,\r\n  \"routes\": 62728,\r\n  \"rss\": 62729,\r\n  \"rss-box\": 62730,\r\n  \"ruler\": 62731,\r\n  \"run\": 62732,\r\n  \"sale\": 62733,\r\n  \"satellite\": 62734,\r\n  \"satellite-variant\": 62735,\r\n  \"scale\": 62736,\r\n  \"scale-bathroom\": 62737,\r\n  \"school\": 62738,\r\n  \"screen-rotation\": 62739,\r\n  \"screen-rotation-lock\": 62740,\r\n  \"screwdriver\": 62741,\r\n  \"script\": 62742,\r\n  \"sd\": 62743,\r\n  \"seal\": 62744,\r\n  \"security\": 62745,\r\n  \"security-network\": 62746,\r\n  \"select\": 62747,\r\n  \"select-all\": 62748,\r\n  \"select-inverse\": 62749,\r\n  \"select-off\": 62750,\r\n  \"selection\": 62751,\r\n  \"send\": 62752,\r\n  \"server\": 62753,\r\n  \"server-minus\": 62754,\r\n  \"server-network\": 62755,\r\n  \"server-network-off\": 62756,\r\n  \"server-off\": 62757,\r\n  \"server-plus\": 62758,\r\n  \"server-remove\": 62759,\r\n  \"server-security\": 62760,\r\n  \"settings\": 62761,\r\n  \"settings-box\": 62762,\r\n  \"shape-plus\": 62763,\r\n  \"share\": 62764,\r\n  \"share-variant\": 62765,\r\n  \"shield\": 62766,\r\n  \"shield-outline\": 62767,\r\n  \"shopping\": 62768,\r\n  \"shopping-music\": 62769,\r\n  \"shredder\": 62770,\r\n  \"shuffle\": 62771,\r\n  \"sigma\": 62772,\r\n  \"sign-caution\": 62773,\r\n  \"signal\": 62774,\r\n  \"silverware\": 62775,\r\n  \"silverware-fork\": 62776,\r\n  \"silverware-spoon\": 62777,\r\n  \"silverware-variant\": 62778,\r\n  \"sim\": 62779,\r\n  \"sim-alert\": 62780,\r\n  \"sim-off\": 62781,\r\n  \"sitemap\": 62782,\r\n  \"skip-next\": 62783,\r\n  \"skip-previous\": 62784,\r\n  \"skype\": 62785,\r\n  \"skype-business\": 62786,\r\n  \"sleep\": 62787,\r\n  \"sleep-off\": 62788,\r\n  \"smoking\": 62789,\r\n  \"smoking-off\": 62790,\r\n  \"snapchat\": 62791,\r\n  \"snowman\": 62792,\r\n  \"sofa\": 62793,\r\n  \"sort\": 62794,\r\n  \"sort-alphabetical\": 62795,\r\n  \"sort-ascending\": 62796,\r\n  \"sort-descending\": 62797,\r\n  \"sort-numeric\": 62798,\r\n  \"sort-variant\": 62799,\r\n  \"soundcloud\": 62800,\r\n  \"source-fork\": 62801,\r\n  \"source-pull\": 62802,\r\n  \"speaker\": 62803,\r\n  \"speaker-off\": 62804,\r\n  \"speedometer\": 62805,\r\n  \"spellcheck\": 62806,\r\n  \"spotify\": 62807,\r\n  \"spotlight\": 62808,\r\n  \"spotlight-beam\": 62809,\r\n  \"square-inc\": 62810,\r\n  \"square-inc-cash\": 62811,\r\n  \"stackoverflow\": 62812,\r\n  \"stairs\": 62813,\r\n  \"star\": 62814,\r\n  \"star-circle\": 62815,\r\n  \"star-half\": 62816,\r\n  \"star-outline\": 62817,\r\n  \"steam\": 62818,\r\n  \"steering\": 62819,\r\n  \"stethoscope\": 62820,\r\n  \"stocking\": 62821,\r\n  \"stop\": 62822,\r\n  \"store\": 62823,\r\n  \"store-24-hour\": 62824,\r\n  \"stove\": 62825,\r\n  \"subway\": 62826,\r\n  \"sunglasses\": 62827,\r\n  \"swap-horizontal\": 62828,\r\n  \"swap-vertical\": 62829,\r\n  \"swim\": 62830,\r\n  \"sword\": 62831,\r\n  \"sync\": 62832,\r\n  \"sync-alert\": 62833,\r\n  \"sync-off\": 62834,\r\n  \"tab\": 62835,\r\n  \"tab-unselected\": 62836,\r\n  \"table\": 62837,\r\n  \"table-column-plus-after\": 62838,\r\n  \"table-column-plus-before\": 62839,\r\n  \"table-column-remove\": 62840,\r\n  \"table-column-width\": 62841,\r\n  \"table-edit\": 62842,\r\n  \"table-large\": 62843,\r\n  \"table-row-height\": 62844,\r\n  \"table-row-plus-after\": 62845,\r\n  \"table-row-plus-before\": 62846,\r\n  \"table-row-remove\": 62847,\r\n  \"tablet\": 62848,\r\n  \"tablet-android\": 62849,\r\n  \"tablet-ipad\": 62850,\r\n  \"tag\": 62851,\r\n  \"tag-faces\": 62852,\r\n  \"tag-multiple\": 62853,\r\n  \"tag-outline\": 62854,\r\n  \"tag-text-outline\": 62855,\r\n  \"target\": 62856,\r\n  \"taxi\": 62857,\r\n  \"teamviewer\": 62858,\r\n  \"telegram\": 62859,\r\n  \"television\": 62860,\r\n  \"television-guide\": 62861,\r\n  \"temperature-celsius\": 62862,\r\n  \"temperature-fahrenheit\": 62863,\r\n  \"temperature-kelvin\": 62864,\r\n  \"tennis\": 62865,\r\n  \"tent\": 62866,\r\n  \"terrain\": 62867,\r\n  \"text-to-speech\": 62868,\r\n  \"text-to-speech-off\": 62869,\r\n  \"texture\": 62870,\r\n  \"theater\": 62871,\r\n  \"theme-light-dark\": 62872,\r\n  \"thermometer\": 62873,\r\n  \"thermometer-lines\": 62874,\r\n  \"thumb-down\": 62875,\r\n  \"thumb-down-outline\": 62876,\r\n  \"thumb-up\": 62877,\r\n  \"thumb-up-outline\": 62878,\r\n  \"thumbs-up-down\": 62879,\r\n  \"ticket\": 62880,\r\n  \"ticket-account\": 62881,\r\n  \"tie\": 62882,\r\n  \"timelapse\": 62883,\r\n  \"timer\": 62884,\r\n  \"timer-10\": 62885,\r\n  \"timer-3\": 62886,\r\n  \"timer-off\": 62887,\r\n  \"timer-sand\": 62888,\r\n  \"timetable\": 62889,\r\n  \"toggle-switch\": 62890,\r\n  \"toggle-switch-off\": 62891,\r\n  \"tooltip\": 62892,\r\n  \"tooltip-edit\": 62893,\r\n  \"tooltip-image\": 62894,\r\n  \"tooltip-outline\": 62895,\r\n  \"tooltip-outline-plus\": 62896,\r\n  \"tooltip-text\": 62897,\r\n  \"tor\": 62898,\r\n  \"traffic-light\": 62899,\r\n  \"train\": 62900,\r\n  \"tram\": 62901,\r\n  \"transcribe\": 62902,\r\n  \"transcribe-close\": 62903,\r\n  \"transfer\": 62904,\r\n  \"tree\": 62905,\r\n  \"trello\": 62906,\r\n  \"trending-down\": 62907,\r\n  \"trending-neutral\": 62908,\r\n  \"trending-up\": 62909,\r\n  \"trophy\": 62910,\r\n  \"trophy-award\": 62911,\r\n  \"trophy-outline\": 62912,\r\n  \"trophy-variant\": 62913,\r\n  \"trophy-variant-outline\": 62914,\r\n  \"truck\": 62915,\r\n  \"tshirt-crew\": 62916,\r\n  \"tshirt-v\": 62917,\r\n  \"tumblr\": 62918,\r\n  \"tumblr-reblog\": 62919,\r\n  \"twitch\": 62920,\r\n  \"twitter\": 62921,\r\n  \"twitter-box\": 62922,\r\n  \"twitter-circle\": 62923,\r\n  \"twitter-retweet\": 62924,\r\n  \"ubuntu\": 62925,\r\n  \"umbrella\": 62926,\r\n  \"umbrella-outline\": 62927,\r\n  \"undo\": 62928,\r\n  \"undo-variant\": 62929,\r\n  \"unfold-less\": 62930,\r\n  \"unfold-more\": 62931,\r\n  \"ungroup\": 62932,\r\n  \"untappd\": 62933,\r\n  \"upload\": 62934,\r\n  \"usb\": 62935,\r\n  \"vector-arrange-above\": 62936,\r\n  \"vector-arrange-below\": 62937,\r\n  \"vector-combine\": 62938,\r\n  \"vector-curve\": 62939,\r\n  \"vector-difference\": 62940,\r\n  \"vector-difference-ab\": 62941,\r\n  \"vector-difference-ba\": 62942,\r\n  \"vector-intersection\": 62943,\r\n  \"vector-point\": 62944,\r\n  \"vector-selection\": 62945,\r\n  \"vector-square\": 62946,\r\n  \"vector-union\": 62947,\r\n  \"verified\": 62948,\r\n  \"vibrate\": 62949,\r\n  \"video\": 62950,\r\n  \"video-off\": 62951,\r\n  \"video-switch\": 62952,\r\n  \"view-agenda\": 62953,\r\n  \"view-array\": 62954,\r\n  \"view-carousel\": 62955,\r\n  \"view-column\": 62956,\r\n  \"view-dashboard\": 62957,\r\n  \"view-day\": 62958,\r\n  \"view-grid\": 62959,\r\n  \"view-headline\": 62960,\r\n  \"view-list\": 62961,\r\n  \"view-module\": 62962,\r\n  \"view-quilt\": 62963,\r\n  \"view-stream\": 62964,\r\n  \"view-week\": 62965,\r\n  \"vimeo\": 62966,\r\n  \"vine\": 62967,\r\n  \"vk\": 62968,\r\n  \"vk-box\": 62969,\r\n  \"vk-circle\": 62970,\r\n  \"voicemail\": 62971,\r\n  \"volume-high\": 62972,\r\n  \"volume-low\": 62973,\r\n  \"volume-medium\": 62974,\r\n  \"volume-off\": 62975,\r\n  \"vpn\": 62976,\r\n  \"walk\": 62977,\r\n  \"wallet\": 62978,\r\n  \"wallet-giftcard\": 62979,\r\n  \"wallet-membership\": 62980,\r\n  \"wallet-travel\": 62981,\r\n  \"wan\": 62982,\r\n  \"watch\": 62983,\r\n  \"watch-export\": 62984,\r\n  \"watch-import\": 62985,\r\n  \"water\": 62986,\r\n  \"water-off\": 62987,\r\n  \"water-pump\": 62988,\r\n  \"weather-cloudy\": 62989,\r\n  \"weather-fog\": 62990,\r\n  \"weather-hail\": 62991,\r\n  \"weather-lightning\": 62992,\r\n  \"weather-night\": 62993,\r\n  \"weather-partlycloudy\": 62994,\r\n  \"weather-pouring\": 62995,\r\n  \"weather-rainy\": 62996,\r\n  \"weather-snowy\": 62997,\r\n  \"weather-sunny\": 62998,\r\n  \"weather-sunset\": 62999,\r\n  \"weather-sunset-down\": 63000,\r\n  \"weather-sunset-up\": 63001,\r\n  \"weather-windy\": 63002,\r\n  \"weather-windy-variant\": 63003,\r\n  \"web\": 63004,\r\n  \"webcam\": 63005,\r\n  \"weight\": 63006,\r\n  \"weight-kilogram\": 63007,\r\n  \"whatsapp\": 63008,\r\n  \"wheelchair-accessibility\": 63009,\r\n  \"white-balance-auto\": 63010,\r\n  \"white-balance-incandescent\": 63011,\r\n  \"white-balance-irradescent\": 63012,\r\n  \"white-balance-sunny\": 63013,\r\n  \"wifi\": 63014,\r\n  \"wii\": 63015,\r\n  \"wikipedia\": 63016,\r\n  \"window-close\": 63017,\r\n  \"window-closed\": 63018,\r\n  \"window-maximize\": 63019,\r\n  \"window-minimize\": 63020,\r\n  \"window-open\": 63021,\r\n  \"window-restore\": 63022,\r\n  \"windows\": 63023,\r\n  \"wordpress\": 63024,\r\n  \"worker\": 63025,\r\n  \"wrap\": 63026,\r\n  \"wrench\": 63027,\r\n  \"wunderlist\": 63028,\r\n  \"xbox\": 63029,\r\n  \"xbox-controller\": 63030,\r\n  \"xbox-controller-off\": 63031,\r\n  \"xda\": 63032,\r\n  \"xml\": 63033,\r\n  \"yeast\": 63034,\r\n  \"yelp\": 63035,\r\n  \"youtube-play\": 63036,\r\n  \"zip-box\": 63037\r\n};\r\n\r\n\r\n/**\r\n * Icon Component\r\n */\r\nexport default class Icon extends createIconSet(glyphMap, 'Material Design Icons', 'Fonts/materialdesignicons-webfont.ttf') {\r\n  /**\r\n   * @param {object} prop\r\n   * @param {string} prop.name - Icon name\r\n   * @param {number} [prop.size=12] - Icon size\r\n   * @param {string} [prop.color] - Icon color\r\n   */\r\n  constructor(props) {\r\n    super(props);\r\n  }\r\n}\r\n"
+  },
+  {
+    "__docId__": 33,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "glyphMap",
+    "memberof": "lib/Icon.js",
+    "longname": "lib/Icon.js~glyphMap",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Icon.js",
+    "importStyle": "{glyphMap}",
+    "description": "",
+    "lineNumber": 15,
+    "type": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 34,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Icon",
+    "memberof": "lib/Icon.js",
+    "longname": "lib/Icon.js~Icon",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Icon.js",
+    "importStyle": "Icon",
+    "description": "Icon Component",
+    "lineNumber": 1363,
+    "interface": false,
+    "expressionExtends": "createIconSet(glyphMap, 'Material Design Icons', 'Fonts/materialdesignicons-webfont.ttf')"
+  },
+  {
+    "__docId__": 35,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Icon.js~Icon",
+    "longname": "lib/Icon.js~Icon#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 1370,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "prop",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "prop.name",
+        "description": "Icon name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "12",
+        "defaultRaw": 12,
+        "name": "prop.size",
+        "description": "Icon size"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "prop.color",
+        "description": "Icon color"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 36,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/IconButton.js",
+    "memberof": null,
+    "longname": "lib/IconButton.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    TouchableNativeFeedback\r\n} from 'react-native';\r\nimport Icon from './Icon';\r\n\r\n/**\r\n * IconButton Component\r\n */\r\nexport default class IconButton extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     * @param {function} [props.onPressButton] - Function will be triggered on press icon button.\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {};\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            onPressButton,\r\n            children\r\n            } = this.props;\r\n        return (\r\n            <TouchableNativeFeedback\r\n                onPress={onPressButton}\r\n                background={TouchableNativeFeedback.SelectableBackground()}>\r\n                <View>\r\n                    {children}\r\n                </View>\r\n            </TouchableNativeFeedback>\r\n        );\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n\r\n});"
+  },
+  {
+    "__docId__": 37,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "IconButton",
+    "memberof": "lib/IconButton.js",
+    "longname": "lib/IconButton.js~IconButton",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/IconButton.js",
+    "importStyle": "IconButton",
+    "description": "IconButton Component",
+    "lineNumber": 13,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 38,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/IconButton.js~IconButton",
+    "longname": "lib/IconButton.js~IconButton#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 19,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onPressButton",
+        "description": "Function will be triggered on press icon button."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 39,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/IconButton.js",
+    "longname": "lib/IconButton.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/IconButton.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/index.js",
+    "memberof": null,
+    "longname": "lib/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "var Components = {\r\n    COLOR: require('./config').COLOR,\r\n    TYPO: require('./config').TYPO,\r\n    ICON_NAME: require('./config').ICON_NAME,\r\n    COLOR_NAME: require('./config').COLOR_NAME,\r\n    THEME_NAME: require('./config').THEME_NAME,\r\n    Button: require('./Button'),\r\n    Checkbox: require('./Checkbox'),\r\n    CheckboxGroup : require('./CheckboxGroup'),\r\n    Icon: require('./Icon').default,\r\n    RadioButton: require('./RadioButton'),\r\n    RadioButtonGroup: require('./RadioButtonGroup'),\r\n    Toolbar: require('./Toolbar'),\r\n    List: require('./List'),\r\n    Subheader: require('./Subheader'),\r\n    Avatar: require('./Avatar'),\r\n    Divider: require('./Divider')\r\n};\r\n\r\nmodule.exports = Components;\r\n\r\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "Components",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~Components",
+    "access": null,
+    "export": false,
+    "importPath": "mrn",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 42,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/List.js",
+    "memberof": null,
+    "longname": "lib/List.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    Text,\r\n    TouchableNativeFeedback,\r\n    TouchableWithoutFeedback\r\n} from 'react-native';\r\nimport { TYPO, COLOR } from './config';\r\nimport Icon from './Icon';\r\nimport Avatar from './Avatar';\r\n\r\n/**\r\n * List Compoent\r\n */\r\nexport default class List extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     * @param {string} props.primaryText - The primary text of a List\r\n     * @param {string} [props.secondaryText] - The secondary text of a List\r\n     * @param {string} [props.caption] - The least distinguishing content.\r\n     * @param {Icon} [props.leftIcon] - Left icon. Size should be 24.\r\n     * @param {Icon} [props.rightIcon] - Right icon. Size should be 24.\r\n     * @param {Avatar} [props.leftAvatar] - Left avatar. Size should be 40.\r\n     * @param {Avatar} [props.rightAvatar] - Right avatar. Size should be 40.\r\n     * @param {number} [props.lines=1] - You must specify this prop when secondary lines large than 1. Lines = Secondary lines + 1.\r\n     * @param {string} [props.primaryColor='rgba(0,0,0,.87)'] - The color of primary text.\r\n     * @param {function} [props.onPress] - The primary action of a list. When user press the list will trigger this function.\r\n     * @param {function} [props.onLeftIconClick] - The secondary action of a list. When user press the left icon will trigger this function.\r\n     * @param {function} [props.onRightIconClick] - The secondary action of a list. When user press the right icon will trigger this function.\r\n     * @param {{text: string, style: object} []} [props.secondaryTextMoreLine] - Pass an array when secondary text breaks some lines.\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        lines: 1,\r\n        primaryColor: 'rgba(0,0,0,.87)'\r\n    };\r\n    static propTypes = {\r\n        primaryText: PropTypes.string.isRequired,\r\n        secondaryText: PropTypes.string,\r\n        captionText: PropTypes.string,\r\n        secondaryTextMoreLine: PropTypes.arrayOf(PropTypes.shape({\r\n            text: PropTypes.string.isRequired,\r\n            style: PropTypes.object\r\n        })),\r\n        leftIcon: PropTypes.instanceOf(Icon),\r\n        rightIcon: PropTypes.instanceof(Icon),\r\n        leftAvatar: PropTypes.instanceOf(Avatar),\r\n        rightAvatar: PropTypes.instanceOf(Avatar),\r\n        lines: PropTypes.number,\r\n        primaryColor: PropTypes.string,\r\n        onPress: PropTypes.func,\r\n        onLeftIconClick: PropTypes.func,\r\n        onRightIconClick: PropTypes.func\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            primaryText,\r\n            secondaryText,\r\n            leftIcon,\r\n            leftAvatar,\r\n            rightAvatar,\r\n            rightIcon,\r\n            lines,\r\n            onPress,\r\n            primaryColor,\r\n            onLeftIconClicked,\r\n            onRightIconClicked,\r\n            secondaryTextMoreLine,\r\n            captionText\r\n            } = this.props;\r\n\r\n        return (\r\n            <TouchableNativeFeedback\r\n                background={TouchableNativeFeedback.Ripple('rgba(153,153,153,.4)')}\r\n                onPress={onPress}\r\n            >\r\n                <View style={[styles.listContainer, {\r\n                    height: lines > 2 ? ((lines -1) * 16 + 56) : (secondaryText ? 72 : (leftAvatar || rightAvatar ) ? 56 : 48)\r\n                }]}>\r\n\r\n                    {leftIcon && <TouchableWithoutFeedback onPress={onLeftIconClicked}>\r\n                        <View style={[styles.leftIcon,lines > 2 &&{\r\n                        paddingTop: 16,\r\n                        alignSelf: 'flex-start'\r\n                    }]}>\r\n                            {leftIcon}\r\n                        </View>\r\n                    </TouchableWithoutFeedback>\r\n                    }\r\n\r\n                    {leftAvatar &&\r\n                    <View style={[styles.leftAvatar,lines > 2 &&{\r\n                        paddingTop: 16,\r\n                        alignSelf: 'flex-start'\r\n                    }]}>\r\n                        {leftAvatar}\r\n                    </View>\r\n                    }\r\n\r\n                    <View style={{flex:1,justifyContent:'center',}}>\r\n                        <View style={styles.firstLine}>\r\n                            <View style={styles.primaryTextContainer}>\r\n                                <Text style={[styles.primaryText,{color: primaryColor}]}>{primaryText}</Text>\r\n                            </View>\r\n                            { (lines > 2 && !!rightIcon) || <View style={styles.captionTextContainer}>\r\n                                <Text style={styles.captionText}>{captionText}</Text>\r\n                            </View>}\r\n                        </View>\r\n\r\n                        {secondaryText &&\r\n                        <View>\r\n                            <Text\r\n                                style={[{height:18},lines > 2 && {height: 22 * (lines - 1) -4},styles.secondaryText,]}>{secondaryText}</Text>\r\n                        </View>}\r\n\r\n                        {secondaryTextMoreLine &&\r\n                        <View style={[{height:18},lines > 2 && {height: 22* (lines - 1) - 4}]}>\r\n                            {secondaryTextMoreLine.map((line) =>(\r\n                                <Text style={[styles.secondaryText,{height:22},line.style]}>{line.text}</Text>\r\n                            ))}\r\n                        </View>}\r\n                    </View>\r\n\r\n                    {rightAvatar &&\r\n                    <View style={[styles.rightAvatar,lines > 2 &&{\r\n                        paddingTop: 16,\r\n                        alignSelf: 'flex-start'\r\n                    }]}>\r\n                        {rightAvatar}\r\n                    </View>}\r\n                    {}\r\n\r\n                    <View style={{flexDirection: 'column'}}>\r\n                        {lines > 2 && !!rightIcon && !!captionText && <View style={styles.captionTextContainer2}>\r\n                            <Text>{captionText}</Text>\r\n                        </View>}\r\n\r\n                        {rightIcon && <TouchableWithoutFeedback onPress={onRightIconClicked}>\r\n                            <View style={[styles.rightIcon, {flex: 1},lines > 2 &&{\r\n                        paddingTop: 16,\r\n                        alignSelf: 'flex-end',\r\n                        justifyContent:'flex-end'\r\n\r\n                    }]} onPress={onRightIconClicked}>\r\n                                {rightIcon}\r\n                            </View></TouchableWithoutFeedback>\r\n                        }\r\n                    </View>\r\n                </View>\r\n            </TouchableNativeFeedback>\r\n        )\r\n    }\r\n\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    listContainer: {\r\n        flexDirection: 'row',\r\n        paddingLeft: 16,\r\n        paddingRight: 16,\r\n        height: 48,\r\n        alignItems: 'center'\r\n    },\r\n    leftIcon: {\r\n        width: 56,\r\n    },\r\n    rightIcon: {\r\n        paddingLeft: 16,\r\n    },\r\n    leftAvatar: {\r\n        width: 56,\r\n    },\r\n    rightAvatar: {\r\n        width: 56,\r\n    },\r\n    primaryText: Object.assign({},\r\n        TYPO.paperFontSubhead,\r\n        {\r\n            lineHeight: 24,\r\n        }\r\n    ),\r\n    secondaryText: Object.assign({},\r\n        TYPO.paperFontBody1,\r\n        {\r\n            lineHeight: 22,\r\n            fontSize: 14,\r\n            color: 'rgba(0,0,0,.54)'\r\n        }\r\n    ),\r\n    firstLine: {\r\n        flexDirection: 'row'\r\n    },\r\n    primaryTextContainer: {\r\n        flex: 1\r\n    },\r\n    captionTextContainer: {\r\n        alignSelf: 'flex-start',\r\n        alignItems: 'flex-start'\r\n    },\r\n    captionText: Object.assign({},\r\n        TYPO.paperFontCaption\r\n    ),\r\n    captionTextContainer2: {\r\n        alignSelf: 'flex-end',\r\n        alignItems: 'flex-end'\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 43,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "List",
+    "memberof": "lib/List.js",
+    "longname": "lib/List.js~List",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/List.js",
+    "importStyle": "List",
+    "description": "List Compoent",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 44,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/List.js~List",
+    "longname": "lib/List.js~List#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 35,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.primaryText",
+        "description": "The primary text of a List"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.secondaryText",
+        "description": "The secondary text of a List"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.caption",
+        "description": "The least distinguishing content."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Icon"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.leftIcon",
+        "description": "Left icon. Size should be 24."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Icon"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.rightIcon",
+        "description": "Right icon. Size should be 24."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Avatar"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.leftAvatar",
+        "description": "Left avatar. Size should be 40."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Avatar"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.rightAvatar",
+        "description": "Right avatar. Size should be 40."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "1",
+        "defaultRaw": 1,
+        "name": "props.lines",
+        "description": "You must specify this prop when secondary lines large than 1. Lines = Secondary lines + 1."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'rgba(0,0,0,.87)'",
+        "defaultRaw": "'rgba(0,0,0,.87)'",
+        "name": "props.primaryColor",
+        "description": "The color of primary text."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onPress",
+        "description": "The primary action of a list. When user press the list will trigger this function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onLeftIconClick",
+        "description": "The secondary action of a list. When user press the left icon will trigger this function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onRightIconClick",
+        "description": "The secondary action of a list. When user press the right icon will trigger this function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "{text: string, style: object} []"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.secondaryTextMoreLine",
+        "description": "Pass an array when secondary text breaks some lines."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 45,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/List.js",
+    "longname": "lib/List.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/List.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 164,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 46,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/RadioButton.js",
+    "memberof": null,
+    "longname": "lib/RadioButton.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    Text,\r\n    View,\r\n    Animated\r\n} from 'react-native';\r\nimport Icon from './Icon';\r\nimport { TYPO, PRIMARY, COLOR, THEME_NAME, COLOR_NAME } from './config';\r\n\r\nconst typos = StyleSheet.create(TYPO);\r\n\r\n/**\r\n * RadioButton Compoent\r\n */\r\nexport default class RadioButton extends Component {\r\n    /**\r\n     * @param {object} props\r\n     * @param {string} [props.label] - RadioButton can have a label to describe it.\r\n     * @param {enum(THEME_NAME)} [props.theme='light'] - Theme of RadioButton\r\n     * @param {enum(COLOR_NAME)} [props.primary=PRIMARY] - Primary color name.\r\n     * @param {string} props.value - RadioButton must have a value\r\n     * @param {boolean} [props.checked] - Specifies that an RadioButton should be pre-selected\r\n     * @param {boolean} [props.disabled] - Specifies that an RadioButton element should be disabled\r\n     * @param {function(isChecked:boolean,value:string)} [props.onCheck] - Function will be triggered when check the RadioButton\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n        /**\r\n         *\r\n         * @type {{scaleValue: Animated.Value, opacityValue: Animated.Value}}\r\n         */\r\n        this.state = {\r\n            scaleValue: new Animated.Value(0.001),\r\n            opacityValue: new Animated.Value(0.1)\r\n        };\r\n    }\r\n\r\n    static defaultProps = {\r\n        theme: 'light',\r\n        primary: PRIMARY\r\n    };\r\n    static propTypes = {\r\n        label: PropTypes.string,\r\n        theme: PropTypes.oneOf(THEME_NAME),\r\n        primary: PropTypes.oneOf(COLOR_NAME),\r\n        value: PropTypes.string,\r\n        checked: PropTypes.bool,\r\n        disabled: PropTypes.bool,\r\n        onCheck: PropTypes.func,\r\n    };\r\n\r\n    render = () => {\r\n        const {\r\n            scaleValue,\r\n            opacityValue\r\n            } = this.state;\r\n        let {\r\n            theme,\r\n            primary,\r\n            checked,\r\n            disabled,\r\n            } = this.props;\r\n        let primaryColor = COLOR[`${primary}500`].color;\r\n        let status = (()=> {\r\n            if (disabled) {\r\n                return 'disabled'\r\n            } else if (checked) {\r\n                return 'checked'\r\n            } else {\r\n                return 'default'\r\n            }\r\n        })();\r\n        let colorMap = {\r\n            light: {\r\n                disabled: '#000',\r\n                checked: primaryColor,\r\n                default: '#000'\r\n            },\r\n            dark: {\r\n                disabled: '#fff',\r\n                checked: primaryColor,\r\n                default: '#fff'\r\n            }\r\n        };\r\n        let opacityMap = {\r\n            light: {\r\n                checked: 1,\r\n                default: 0.54,\r\n                disabled: 0.26,\r\n            },\r\n            dark: {\r\n                checked: 1,\r\n                default: 0.7,\r\n                disabled: 0.3,\r\n            }\r\n        };\r\n        let labelColorMap = {\r\n            light: '#000',\r\n            dark: '#fff'\r\n        };\r\n\r\n        const CURR_COLOR = colorMap[theme][status];\r\n        const OPACITY = opacityMap[theme][status];\r\n        const LABEL_COLOR = labelColorMap[theme];\r\n\r\n        return (\r\n            <View style={[\r\n                styles.container\r\n            ]}\r\n                  onStartShouldSetResponder={e=>true}\r\n                  onResponderGrant={this._onGrant}\r\n                  onResponderRelease={this._onRelease}>\r\n                <Animated.View style={[styles.ripple,{\r\n                    transform: [\r\n                        {scale: scaleValue}\r\n                    ],\r\n                    opacity: opacityValue,\r\n                    backgroundColor: CURR_COLOR\r\n                }]}/>\r\n                <Icon name={checked ? 'radiobox-marked' : 'radiobox-blank'}\r\n                      size={24}\r\n                      color={CURR_COLOR}\r\n                      style={{\r\n                        opacity: OPACITY,\r\n                        margin: 16\r\n                      }}\r\n                />\r\n                <View style={styles.labelContainer}>\r\n                    <Text\r\n                        style={[\r\n                        typos.paperFontBody1,\r\n                        styles.label,\r\n                        COLOR[`${theme}PrimaryOpacity`],\r\n                        disabled && COLOR[`${theme}DisabledOpacity`],\r\n                        {\r\n                            color: LABEL_COLOR,\r\n                        }\r\n                    ]}>\r\n                        {this.props.label}\r\n                    </Text>\r\n                </View>\r\n            </View>\r\n        );\r\n    };\r\n\r\n    _onGrant = (e) => {\r\n        Animated.timing(\r\n            this.state.scaleValue,\r\n            {\r\n                toValue: 1,\r\n                duration: 150\r\n            }\r\n        ).start();\r\n        Animated.timing(\r\n            this.state.opacityValue,\r\n            {\r\n                toValue: .1,\r\n                duration: 100\r\n            }\r\n        ).start()\r\n    };\r\n\r\n    _onRelease = (e) => {\r\n        let { checked, disabled } = this.props;\r\n\r\n        if (!checked && !disabled) {\r\n            this.props.onCheck && this.props.onCheck(this.props.value);\r\n        }\r\n\r\n        Animated.timing(\r\n            this.state.scaleValue,\r\n            {\r\n                toValue: 0.001,\r\n                duration: 1500\r\n            }\r\n        ).start();\r\n        Animated.timing(\r\n            this.state.opacityValue,\r\n            {\r\n                toValue: 0\r\n            }\r\n        ).start();\r\n\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    container: {\r\n        flexDirection: 'row',\r\n        alignItems: 'center',\r\n    },\r\n    ripple: {\r\n        position: 'absolute',\r\n        width: 48,\r\n        height: 48,\r\n        backgroundColor: '#000',\r\n        borderRadius: 56,\r\n        top: 4,\r\n        left: 4\r\n    },\r\n    label: {\r\n        marginLeft: 16,\r\n        opacity: COLOR.darkPrimaryOpacity.opacity,\r\n        flex:1\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 47,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "typos",
+    "memberof": "lib/RadioButton.js",
+    "longname": "lib/RadioButton.js~typos",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/RadioButton.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "RadioButton",
+    "memberof": "lib/RadioButton.js",
+    "longname": "lib/RadioButton.js~RadioButton",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/RadioButton.js",
+    "importStyle": "RadioButton",
+    "description": "RadioButton Compoent",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 49,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/RadioButton.js~RadioButton",
+    "longname": "lib/RadioButton.js~RadioButton#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.label",
+        "description": "RadioButton can have a label to describe it."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'light'",
+        "defaultRaw": "'light'",
+        "name": "props.theme",
+        "description": "Theme of RadioButton"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(COLOR_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "PRIMARY",
+        "defaultRaw": "PRIMARY",
+        "name": "props.primary",
+        "description": "Primary color name."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.value",
+        "description": "RadioButton must have a value"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.checked",
+        "description": "Specifies that an RadioButton should be pre-selected"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.disabled",
+        "description": "Specifies that an RadioButton element should be disabled"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(isChecked:boolean,value:string)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onCheck",
+        "description": "Function will be triggered when check the RadioButton"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "lib/RadioButton.js~RadioButton",
+    "longname": "lib/RadioButton.js~RadioButton#state",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "type": {
+      "nullable": null,
+      "types": [
+        "{scaleValue: Animated.Value, opacityValue: Animated.Value}"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/RadioButton.js",
+    "longname": "lib/RadioButton.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/RadioButton.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 189,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/RadioButtonGroup.js",
+    "memberof": null,
+    "longname": "lib/RadioButtonGroup.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View\r\n} from 'react-native';\r\nimport RadioButton from './RadioButton';\r\nimport { TYPO, PRIMARY, COLOR, COLOR_NAME, THEME_NAME} from './config';\r\n\r\n/**\r\n * RadioButtonGroup Component\r\n */\r\nexport default class RadioButtonGroup extends Component {\r\n    /**\r\n     * @param {object} props\r\n     * @param {string} props.name - RadioButtonGroup name. Often use in form\r\n     * @param {enum(THEME_NAME)} [props.theme] - RadioButton theme option\r\n     * @param {enum(COLOR_NAME)} [props.primary] - RadioButton primary color name. Specifies that which RadioButton should be pre-selected\r\n     * @param {string} [props.value] - The value of checked RadioButton\r\n     * @param {function(value:string)} [props.onSelect] - When RadioButtonGroup value change will trigger this function\r\n     *\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n        let options = React.Children.map(this.props.children, (option) => {\r\n            let {\r\n                value,\r\n                checked,\r\n                } = option.props;\r\n\r\n            if (!this.state.selected && checked) {\r\n                /**\r\n                 *\r\n                 * @type {{selected: *}}\r\n                 */\r\n                this.state = {\r\n                    selected: value\r\n                };\r\n\r\n                const { onSelect } = this.props;\r\n                onSelect && onSelect(this.value);\r\n            }\r\n        })\r\n    }\r\n\r\n    static defaultProps = {};\r\n    static propTypes = {\r\n        name: PropTypes.string.isRequired,\r\n        value: PropTypes.string,\r\n        theme: PropTypes.oneOf(THEME_NAME),\r\n        primary: PropTypes.oneOf(COLOR_NAME),\r\n        onSelect: PropTypes.func\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        let options = React.Children.map(this.props.children, (option) => {\r\n            let {\r\n                value,\r\n                label,\r\n                disabled,\r\n                ...other,\r\n                } = option.props;\r\n            let {\r\n                name,\r\n                theme,\r\n                primary\r\n                } = this.props;\r\n\r\n            return <RadioButton\r\n                {...other}\r\n                ref={value}\r\n                name={name}\r\n                key={'radioGroup'+value}\r\n                value={value}\r\n                label={label}\r\n                theme={theme}\r\n                primary={primary}\r\n                disabled={disabled}\r\n                onCheck={this._onChange}\r\n                checked={this.state.selected && value == this.state.selected}/>;\r\n        }, this);\r\n\r\n        return (\r\n            <View>\r\n                {options}\r\n            </View>\r\n        );\r\n    };\r\n\r\n    _onChange = (value) => {\r\n        this.setState({\r\n            selected: value\r\n        });\r\n\r\n        const { onSelect } = this.props;\r\n        onSelect && onSelect(this.value);\r\n    };\r\n\r\n    /**\r\n     * Get the value of checked RadioButton in RadioButtonGroup. Often use in form.\r\n     * @returns {string}\r\n     */\r\n    get value() {\r\n        return this.state.selected\r\n    }\r\n\r\n    /**\r\n     * Specifies that which RadioButton should be pre-selected\r\n     * @param {string} value\r\n     */\r\n    set value(value) {\r\n        this._onChange(value);\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({});"
+  },
+  {
+    "__docId__": 53,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "RadioButtonGroup",
+    "memberof": "lib/RadioButtonGroup.js",
+    "longname": "lib/RadioButtonGroup.js~RadioButtonGroup",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/RadioButtonGroup.js",
+    "importStyle": "RadioButtonGroup",
+    "description": "RadioButtonGroup Component",
+    "lineNumber": 13,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/RadioButtonGroup.js~RadioButtonGroup",
+    "longname": "lib/RadioButtonGroup.js~RadioButtonGroup#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.name",
+        "description": "RadioButtonGroup name. Often use in form"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.theme",
+        "description": "RadioButton theme option"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(COLOR_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.primary",
+        "description": "RadioButton primary color name. Specifies that which RadioButton should be pre-selected"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.value",
+        "description": "The value of checked RadioButton"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(value:string)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "props.onSelect",
+        "description": "When RadioButtonGroup value change will trigger this function"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "lib/RadioButtonGroup.js~RadioButtonGroup",
+    "longname": "lib/RadioButtonGroup.js~RadioButtonGroup#state",
+    "access": null,
+    "description": "",
+    "lineNumber": 36,
+    "type": {
+      "nullable": null,
+      "types": [
+        "{selected: *}"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "get",
+    "static": false,
+    "variation": null,
+    "name": "value",
+    "memberof": "lib/RadioButtonGroup.js~RadioButtonGroup",
+    "longname": "lib/RadioButtonGroup.js~RadioButtonGroup#value",
+    "access": null,
+    "description": "Get the value of checked RadioButton in RadioButtonGroup. Often use in form.",
+    "lineNumber": 104,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 57,
+    "kind": "set",
+    "static": false,
+    "variation": null,
+    "name": "value",
+    "memberof": "lib/RadioButtonGroup.js~RadioButtonGroup",
+    "longname": "lib/RadioButtonGroup.js~RadioButtonGroup#value",
+    "access": null,
+    "description": "Specifies that which RadioButton should be pre-selected",
+    "lineNumber": 112,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/RadioButtonGroup.js",
+    "longname": "lib/RadioButtonGroup.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/RadioButtonGroup.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 117,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Subheader.js",
+    "memberof": null,
+    "longname": "lib/Subheader.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    Text\r\n} from 'react-native';\r\nimport {\r\n    TYPO,\r\n    THEME_NAME\r\n} from './config'\r\n\r\n/**\r\n * Subheader Component\r\n *\r\n * @example\r\n * import {TYPO, COLOR, Subheader } from 'react-native-material-design-components';\r\n *\r\n * ...\r\n *\r\n * <Subheader text=\"Subheader normal\"/>\r\n * <Subheader text=\"Subheader with color\" primaryColor={COLOR[`${primary}500`].color}/>\r\n * <Subheader text=\"Subheader normal, inset\" inset={true}/>\r\n * <Subheader text=\"Subheader with color, inset\" primaryColor={COLOR[`${primary}500`].color}inset={true}/>\r\n */\r\nexport default class Subheader extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     * @param {string} props.text - Subheader text.\r\n     * @param {string} [props.primaryColor='rgba(0,0,0,.54)'] - Primary color of Subheader. Accept a color string such\r\n     * as RGBA,RGB,HEX.\r\n     * @param {boolean} [props.inset=false] - If `true`, Subheader is aligned with the text content with 72dp paddingLeft.\r\n     * Often with a left-aligned floating action button.\r\n     * @param {enum(THEME_NAME)} [props.theme='light'] - The theme of Subheader.\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        primaryColor: 'rgba(0,0,0,.54)',\r\n        inset: false,\r\n        theme: 'light'\r\n    };\r\n\r\n    static propTypes = {\r\n        text: PropTypes.string.isRequired,\r\n        primaryColor: PropTypes.string,\r\n        inset: PropTypes.bool,\r\n        theme: PropTypes.oneOf(THEME_NAME)\r\n    };\r\n\r\n    state = {};\r\n\r\n    render = () => {\r\n        const {\r\n            text,\r\n            primaryColor,\r\n            inset,\r\n            theme\r\n            } = this.props;\r\n        return (\r\n            <View style={[styles.subheaderContainer,{\r\n                paddingLeft: inset ? 72 : 16\r\n            }]}>\r\n                <Text style={[styles.text, {\r\n                    color: primaryColor,\r\n                    fontWeight: '500'\r\n                }]}>\r\n                    {text}\r\n                </Text>\r\n            </View>\r\n        );\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    subheaderContainer: {\r\n        padding: 16\r\n    },\r\n    text: TYPO.paperFontBody1\r\n});"
+  },
+  {
+    "__docId__": 60,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Subheader",
+    "memberof": "lib/Subheader.js",
+    "longname": "lib/Subheader.js~Subheader",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Subheader.js",
+    "importStyle": "Subheader",
+    "description": "Subheader Component",
+    "examples": [
+      "import {TYPO, COLOR, Subheader } from 'react-native-material-design-components';\n\n...\n\n<Subheader text=\"Subheader normal\"/>\n<Subheader text=\"Subheader with color\" primaryColor={COLOR[`${primary}500`].color}/>\n<Subheader text=\"Subheader normal, inset\" inset={true}/>\n<Subheader text=\"Subheader with color, inset\" primaryColor={COLOR[`${primary}500`].color}inset={true}/>"
+    ],
+    "lineNumber": 26,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Subheader.js~Subheader",
+    "longname": "lib/Subheader.js~Subheader#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 37,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.text",
+        "description": "Subheader text."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'rgba(0,0,0,.54)'",
+        "defaultRaw": "'rgba(0,0,0,.54)'",
+        "name": "props.primaryColor",
+        "description": "Primary color of Subheader. Accept a color string such\nas RGBA,RGB,HEX."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "props.inset",
+        "description": "If `true`, Subheader is aligned with the text content with 72dp paddingLeft.\nOften with a left-aligned floating action button."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "enum(THEME_NAME)"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'light'",
+        "defaultRaw": "'light'",
+        "name": "props.theme",
+        "description": "The theme of Subheader."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 62,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Subheader.js",
+    "longname": "lib/Subheader.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Subheader.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 78,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/Toolbar.js",
+    "memberof": null,
+    "longname": "lib/Toolbar.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React, {\r\n    Component,\r\n    StyleSheet,\r\n    PropTypes,\r\n    View,\r\n    Text\r\n} from 'react-native';\r\nimport { TYPO, PRIMARY, COLOR } from './config';\r\nimport Icon from './Icon';\r\nimport IconButton from './IconButton';\r\n\r\nconst typos = StyleSheet.create(TYPO);\r\n\r\n/**\r\n * Toolbar Component\r\n */\r\nexport default class Toolbar extends Component {\r\n    /**\r\n     *\r\n     * @param {object} props\r\n     */\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n\r\n    static defaultProps = {\r\n        theme: 'dark',\r\n        primary: PRIMARY\r\n    };\r\n    static propTypes = {\r\n        theme: PropTypes.string,\r\n        primary: PropTypes.string,\r\n        navIconName: PropTypes.string,\r\n        onIconClicked: PropTypes.func,\r\n        title: PropTypes.string,\r\n        titleColor: PropTypes.string,\r\n    };\r\n    state = {};\r\n\r\n    render = () => {\r\n        var {\r\n            title,\r\n            theme,\r\n            primary,\r\n            titleColor,\r\n            navIconName,\r\n            onIconClicked\r\n            } = this.props;\r\n\r\n        var themeMap = {\r\n            light: {\r\n                backgroundColor: '#fff',\r\n                color: 'rgba(0,0,0,.87)',\r\n                iconColor: 'rgba(0,0,0,.54)',\r\n            },\r\n            dark: {\r\n                backgroundColor: COLOR[`${primary}500`].color,\r\n                color: '#rgba(255,255,255,.87)',\r\n                iconColor: 'rgba(255,255,255,.87)',\r\n            }\r\n        }\r\n\r\n        var themeStyle = themeMap[theme];\r\n        return (\r\n            <View style={[\r\n                styles.toolbar,{backgroundColor :themeStyle.backgroundColor}]}>\r\n                <IconButton onPressButton={onIconClicked}>\r\n                    <Icon name='menu'\r\n                          size={24}\r\n                          color={themeStyle.iconColor}\r\n                          style={styles.icon}/>\r\n                </IconButton>\r\n                <Text style={[\r\n                    styles.title,\r\n                    TYPO.paperFontTitle,\r\n                    {\r\n                        color: themeStyle.color\r\n                    }\r\n                ]}>{title}</Text>\r\n            </View>\r\n        );\r\n    }\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n    toolbar: {\r\n        height: 56,\r\n        flexDirection: 'row',\r\n        alignItems: 'center'\r\n    },\r\n    title: {\r\n        flex: 1,\r\n        marginLeft: 16\r\n    },\r\n    icon: {\r\n        margin: 16,\r\n    }\r\n});"
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "typos",
+    "memberof": "lib/Toolbar.js",
+    "longname": "lib/Toolbar.js~typos",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Toolbar.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Toolbar",
+    "memberof": "lib/Toolbar.js",
+    "longname": "lib/Toolbar.js~Toolbar",
+    "access": null,
+    "export": true,
+    "importPath": "mrn/lib/Toolbar.js",
+    "importStyle": "Toolbar",
+    "description": "Toolbar Component",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "lib/Toolbar.js~Toolbar",
+    "longname": "lib/Toolbar.js~Toolbar#constructor",
+    "access": null,
+    "description": "",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "styles",
+    "memberof": "lib/Toolbar.js",
+    "longname": "lib/Toolbar.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "mrn/lib/Toolbar.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 85,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 120,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": null,
+    "builtinExternal": true
+  }
+]

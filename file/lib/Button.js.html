@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/Button.js | mrn - Material React Native API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<script data-ice="userScript" src="user/script/0-script.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="git+https://github.com/binggg/react-native-material-design-components.git">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Avatar.js~Avatar.html">Avatar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Button.js~Button.html">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Checkbox.js~Checkbox.html">Checkbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/CheckboxGroup.js~CheckboxGroup.html">CheckboxGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Divider.js~Divider.html">Divider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Icon.js~Icon.html">Icon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/IconButton.js~IconButton.html">IconButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/List.js~List.html">List</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButton.js~RadioButton.html">RadioButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButtonGroup.js~RadioButtonGroup.html">RadioButtonGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Subheader.js~Subheader.html">Subheader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Toolbar.js~Toolbar.html">Toolbar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-glyphMap">glyphMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-COLOR">COLOR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-COLOR_NAME">COLOR_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ICON_NAME">ICON_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PRIMARY">PRIMARY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-THEME_NAME">THEME_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TYPO">TYPO</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/Button.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, {
+    Component,
+    StyleSheet,
+    PropTypes,
+    View,
+    Text,
+    TouchableNativeFeedback
+} from &apos;react-native&apos;;
+import { TYPO, PRIMARY, COLOR, THEME_NAME, COLOR_NAME } from &apos;./config&apos;;
+
+/**
+ * Button Component
+ */
+export default class Button extends Component {
+    /**
+     *
+     * @param {object} props
+     * @param {string} props.value - Button Text. If language is english, all letters should be capitalized.
+     * @param {boolean} [props.disabled=false] - if `true`, Button can&apos;t be pressed
+     * @param {enum(THEME_NAME)} [props.theme=&apos;light&apos;] - Button Theme
+     * @param {enum(COLOR_NAME)} [props.primary=PRIMARY] - Primary color name
+     * @param {boolean} [props.raised=false] - Whether Button looks like raised or not. If in a Modal, should not be `true`
+     * @param {function} [props.onPress] - Function will be triggered when click the Button
+     */
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = {
+        theme: &apos;light&apos;,
+        primary: PRIMARY,
+        disabled: false,
+        raised: false
+    };
+    static propTypes = {
+        value: PropTypes.string.isRequired,
+        disabled: PropTypes.bool,
+        theme: PropTypes.oneOf(THEME_NAME),
+        primary: PropTypes.oneOf(COLOR_NAME),
+        raised: PropTypes.bool,
+        onPress: PropTypes.func
+    };
+    state = {};
+
+    render = () =&gt; {
+        const {
+            value,
+            disabled,
+            theme,
+            primary,
+            raised,
+            onPress
+            } = this.props;
+        const {
+            background
+            } = this.state;
+
+        this.textStyleMap = {
+            flat: {
+                light: {
+                    normal: {
+                        color: COLOR[`${primary}500`].color
+                    },
+                    disabled: {
+                        color: &apos;rgba(0,0,0,.26)&apos;,
+                    }
+                },
+                dark: {
+                    normal: {
+                        color: COLOR[`${primary}500`].color,
+                    },
+                    disabled: {
+                        color: &apos;rgba(255,255,255,.3)&apos;,
+                    }
+                }
+            },
+            raised: {
+                light: {
+                    normal: {
+                        color: &apos;rgba(0,0,0,.87)&apos;,
+                    },
+                    disabled: {
+                        color: &apos;rgba(0,0,0,.26)&apos;,
+                    }
+                },
+                dark: {
+                    normal: {
+                        color: &apos;#fff&apos;
+                    },
+                    disabled: {
+                        color: &apos;rgba(255,255,255,.3)&apos;,
+                    }
+                }
+            }
+        };
+        this.buttonStyleMap = {
+            raised: {
+                light: {
+                    normal: {
+                        borderWidth: 1,
+                        backgroundColor: &apos;#fff&apos;,
+                        borderColor: &apos;rgba(0,0,0,.12)&apos;,
+                        borderBottomWidth: 1,
+                        borderBottomColor: &apos;rgba(0,0,0,.12)&apos;,
+                    },
+                    disabled: {
+                        backgroundColor: &apos;rgba(0,0,0,.12)&apos;,
+                        borderWidth: 1,
+                        borderColor: &apos;rgba(0,0,0,.12)&apos;,
+                    }
+                },
+                dark: {
+                    normal: {
+                        backgroundColor: COLOR[`${primary}500`].color,
+                        borderWidth: 1,
+                        borderColor: &apos;rgba(0,0,0,.12)&apos;,
+                    },
+                    disabled: {
+                        backgroundColor: &apos;rgba(255,255,255,.12)&apos;,
+                        borderWidth: 1,
+                        borderColor: &apos;rgba(0,0,0,.12)&apos;,
+                    }
+                }
+            }
+        };
+
+        this.rippleColorMap = {
+            flat: {
+                light: {
+                    normal: &apos;rgba(153,153,153,.4)&apos;,
+                    disabled: &apos;rgba(0,0,0,0)&apos;
+                },
+                dark: {
+                    normal: &apos;rgba(204,204,204,.25)&apos;,
+                    disabled: &apos;rgba(255,255,255,0)&apos;
+                }
+            },
+            raised: {
+                light: {
+                    normal: &apos;rgba(153,153,153,.4)&apos;,
+                    disabled: &apos;rgba(0,0,0,0)&apos;
+                },
+                dark: {
+                    normal: COLOR[`${primary}700`].color,
+                    disabled: &apos;rgba(255,255,255,0)&apos;
+                }
+            }
+        };
+
+        let type = disabled ? &apos;disabled&apos; : &apos;normal&apos;;
+        let shape = raised ? &apos;raised&apos; : &apos;flat&apos;;
+
+        let textStyle = this.textStyleMap[shape][theme][type];
+        if (raised) {
+            var buttonStyle = this.buttonStyleMap[shape][theme][type];
+        }
+        let rippleColor = this.rippleColorMap[shape][theme][type];
+
+        return (
+            &lt;TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(String(rippleColor))}  onPress={disabled || onPress}&gt;
+                &lt;View
+                    style={[
+                        styles.button,
+                        buttonStyle,
+                        {
+                            backgroundColor: background ? background : (buttonStyle &amp;&amp; buttonStyle.backgroundColor)
+                        }
+                ]}&gt;
+                    &lt;Text style={[TYPO.paperFontButton, textStyle]}&gt;{value}&lt;/Text&gt;
+                &lt;/View&gt;
+            &lt;/TouchableNativeFeedback&gt;
+        );
+    };
+}
+
+const styles = StyleSheet.create({
+    button: {
+        height: 36,
+        alignItems: &apos;center&apos;,
+        justifyContent: &apos;center&apos;,
+        paddingTop: 6,
+        paddingBottom: 6,
+        paddingLeft: 16,
+        paddingRight: 16,
+        margin: 4,
+        borderRadius: 2,
+    }
+});</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
