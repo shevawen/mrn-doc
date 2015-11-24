@@ -58,13 +58,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import RadioButtonGroup from &apos;<span><a href="file/lib/RadioButtonGroup.js.html#lineNumber13">mrn/lib/RadioButtonGroup.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import RadioButtonGroup from &apos;<span><a href="file/lib/RadioButtonGroup.js.html#lineNumber29">mrn/lib/RadioButtonGroup.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/RadioButtonGroup.js.html#lineNumber13">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/RadioButtonGroup.js.html#lineNumber29">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -89,7 +89,26 @@
 
   
 
-  
+  <div data-ice="exampleDocs">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">&lt;RadioButtonGroup ref=&quot;Group1&quot; primary={primary} name=&quot;group1&quot; onSelect={(value) =&gt; {
+                           this.setState({group1Selected: value});
+                       }}&gt;
+    &lt;RadioButton value=&quot;1&quot; label=&quot;RadioButton On&quot; checked={true}/&gt;
+    &lt;RadioButton value=&quot;2&quot; label=&quot;RadioButton Off&quot;/&gt;
+    &lt;RadioButton value=&quot;3&quot; label=&quot;RadioButton Off Disabled&quot; disabled={true}/&gt;
+    &lt;RadioButton value=&quot;4&quot; disabled={true}/&gt;
+&lt;/RadioButtonGroup&gt;
+&lt;View style={[styles.content,styles.action]}&gt;
+    &lt;Text style={{flex:1}}&gt;Selected {this.state.group1Selected}&lt;/Text&gt;
+    &lt;Button raised={true} value=&quot;Press to select 2&quot;
+    onPress={()=&gt;{this.refs.Group1.value = 2}}/&gt;
+&lt;/View&gt;</code></pre>
+    </div>
+</div>
 
   
 
@@ -233,7 +252,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber39">source</a></span></span>
     </span>
   </h3>
 
@@ -327,7 +346,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber52">source</a></span></span>
     </span>
   </h3>
 
@@ -367,7 +386,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber121">source</a></span></span>
     </span>
   </h3>
 
@@ -418,7 +437,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber112">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/RadioButtonGroup.js.html#lineNumber129">source</a></span></span>
     </span>
   </h3>
 

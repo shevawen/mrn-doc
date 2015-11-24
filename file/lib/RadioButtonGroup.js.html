@@ -69,7 +69,23 @@ import { TYPO, PRIMARY, COLOR, COLOR_NAME, THEME_NAME} from &apos;./config&apos;
 
 /**
  * RadioButtonGroup Component
+ * @example
+ &lt;RadioButtonGroup ref=&quot;Group1&quot; primary={primary} name=&quot;group1&quot; onSelect={(value) =&gt; {
+                            this.setState({group1Selected: value});
+                        }}&gt;
+     &lt;RadioButton value=&quot;1&quot; label=&quot;RadioButton On&quot; checked={true}/&gt;
+     &lt;RadioButton value=&quot;2&quot; label=&quot;RadioButton Off&quot;/&gt;
+     &lt;RadioButton value=&quot;3&quot; label=&quot;RadioButton Off Disabled&quot; disabled={true}/&gt;
+     &lt;RadioButton value=&quot;4&quot; disabled={true}/&gt;
+ &lt;/RadioButtonGroup&gt;
+
+ &lt;View style={[styles.content,styles.action]}&gt;
+     &lt;Text style={{flex:1}}&gt;Selected {this.state.group1Selected}&lt;/Text&gt;
+     &lt;Button raised={true} value=&quot;Press to select 2&quot;
+     onPress={()=&gt;{this.refs.Group1.value = 2}}/&gt;
+ &lt;/View&gt;
  */
+
 export default class RadioButtonGroup extends Component {
     /**
      * @param {object} props
@@ -143,6 +159,7 @@ export default class RadioButtonGroup extends Component {
 
         return (
             &lt;View&gt;
+
                 {options}
             &lt;/View&gt;
         );
