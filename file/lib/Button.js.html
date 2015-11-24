@@ -70,6 +70,86 @@ import { TYPO, PRIMARY, COLOR, THEME_NAME, COLOR_NAME } from &apos;./config&apos
 
 /**
  * Button Component
+ * @example
+ * import React, {
+    Component,
+    StyleSheet,
+    PropTypes,
+    View,
+    ScrollView,
+    Text,
+    InteractionManager
+} from &apos;react-native&apos;;
+ import {
+    Button,
+    TYPO,
+    COLOR,
+    Subheader
+} from &apos;react-native-material-design-components&apos;;
+
+ var typographyStyle = StyleSheet.create(TYPO);
+
+ export default class ButtonExample extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    static defaultProps = {};
+    static propTypes = {};
+    state = {
+        renderPlaceholderOnly: true
+    };
+
+    componentDidMount() {
+        InteractionManager.runAfterInteractions(() =&gt; {
+            this.setState({renderPlaceholderOnly: false});
+        });
+    }
+
+    render = () =&gt; {
+        var { primary } =  this.props;
+
+        if (this.state.renderPlaceholderOnly) {
+            return this._renderPlaceholderView();
+        }
+
+        return (
+            &lt;View&gt;
+                &lt;Subheader text=&quot;Light Theme&quot;/&gt;
+                &lt;View style={styles.content}&gt;
+                    &lt;Button value=&quot;NORMAL FLAT&quot; primary={primary} onPress={()=&gt; console.log(this.refs)}/&gt;
+                    &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} primary={primary}/&gt;
+                    &lt;Button value=&quot;NORMAL RAISED&quot; raised={true} primary={primary}/&gt;
+                    &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} raised={true} primary={primary}/&gt;
+                &lt;/View&gt;
+                &lt;Subheader text=&quot;Dark Theme&quot;/&gt;
+                &lt;View style={{
+                        backgroundColor: COLOR.paperGrey900.color,
+                        padding: 16,
+
+                    }}&gt;
+                    &lt;Button value=&quot;NORMAL FLAT&quot; theme=&quot;dark&quot; primary={primary}/&gt;
+                    &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} theme=&quot;dark&quot; primary={primary}/&gt;
+                    &lt;Button value=&quot;NORMAL RAISED&quot; theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+                    &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+                &lt;/View&gt;
+            &lt;/View&gt;
+        );
+    };
+
+    _renderPlaceholderView = () =&gt; (
+        &lt;View&gt;
+        &lt;/View&gt;
+    )
+
+
+}
+
+ const styles = StyleSheet.create({
+    content: {
+        padding: 16,
+    },
+});
  */
 export default class Button extends Component {
     /**

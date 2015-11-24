@@ -58,13 +58,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Button from &apos;<span><a href="file/lib/Button.js.html#lineNumber14">mrn/lib/Button.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Button from &apos;<span><a href="file/lib/Button.js.html#lineNumber94">mrn/lib/Button.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/Button.js.html#lineNumber14">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/Button.js.html#lineNumber94">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -89,7 +89,80 @@
 
   
 
-  
+  <div data-ice="exampleDocs">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">import React, {
+   Component,
+   StyleSheet,
+   PropTypes,
+   View,
+   ScrollView,
+   Text,
+   InteractionManager
+} from &apos;react-native&apos;;
+import {
+   Button,
+   TYPO,
+   COLOR,
+   Subheader
+} from &apos;react-native-material-design-components&apos;;
+var typographyStyle = StyleSheet.create(TYPO);
+export default class ButtonExample extends Component {
+   constructor(props) {
+       super(props);
+   }
+   static defaultProps = {};
+   static propTypes = {};
+   state = {
+       renderPlaceholderOnly: true
+   };
+   componentDidMount() {
+       InteractionManager.runAfterInteractions(() =&gt; {
+           this.setState({renderPlaceholderOnly: false});
+       });
+   }
+   render = () =&gt; {
+       var { primary } =  this.props;
+       if (this.state.renderPlaceholderOnly) {
+           return this._renderPlaceholderView();
+       }
+       return (
+           &lt;View&gt;
+               &lt;Subheader text=&quot;Light Theme&quot;/&gt;
+               &lt;View style={styles.content}&gt;
+                   &lt;Button value=&quot;NORMAL FLAT&quot; primary={primary} onPress={()=&gt; console.log(this.refs)}/&gt;
+                   &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} primary={primary}/&gt;
+                   &lt;Button value=&quot;NORMAL RAISED&quot; raised={true} primary={primary}/&gt;
+                   &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} raised={true} primary={primary}/&gt;
+               &lt;/View&gt;
+               &lt;Subheader text=&quot;Dark Theme&quot;/&gt;
+               &lt;View style={{
+                       backgroundColor: COLOR.paperGrey900.color,
+                       padding: 16,
+                   }}&gt;
+                   &lt;Button value=&quot;NORMAL FLAT&quot; theme=&quot;dark&quot; primary={primary}/&gt;
+                   &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} theme=&quot;dark&quot; primary={primary}/&gt;
+                   &lt;Button value=&quot;NORMAL RAISED&quot; theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+                   &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+               &lt;/View&gt;
+           &lt;/View&gt;
+       );
+   };
+   _renderPlaceholderView = () =&gt; (
+       &lt;View&gt;
+       &lt;/View&gt;
+   )
+}
+const styles = StyleSheet.create({
+   content: {
+       padding: 16,
+   },
+});</code></pre>
+    </div>
+</div>
 
   
 
@@ -150,7 +223,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/Button.js.html#lineNumber25">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/Button.js.html#lineNumber105">source</a></span></span>
     </span>
   </h3>
 
