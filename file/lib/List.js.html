@@ -74,403 +74,176 @@ import Avatar from &apos;./Avatar&apos;;
 /**
  * List Compoent
  * @example
- *import React, {
-    Component,
-    StyleSheet,
-    PropTypes,
-    View,
-    ScrollView,
-    TouchableNativeFeedback,
-    TouchableWithoutFeedback,
-    Text,
-    InteractionManager
-} from &apos;react-native&apos;;
- import {
-    TYPO,
-    COLOR,
-    List,
-    Icon,
-    Subheader,
-    Avatar,
-    Divider,
-    Button
-} from &apos;react-native-material-design-components&apos;;
+ *&lt;Subheader text=&quot;Text only single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.single.text.map(list =&gt; (
+     &lt;List
+         primaryText={list.primaryText}/&gt;
+ ))}
 
- export default class ListExample extends Component {
-    constructor(props) {
-        super(props);
-    }
+ &lt;Subheader text=&quot;Icon with text single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.single.iconText.map(list =&gt; (
+     &lt;List
+         leftIcon={
+             &lt;Icon name={list.leftIcon} size={24}/&gt;
+         }
+         primaryText={list.primaryText}/&gt;
+ ))}
 
-    static defaultProps = {};
-    static propTypes = {};
-    state = {
-        renderPlaceholderOnly: true
-    };
+ &lt;Subheader text=&quot;Avatar with text single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.single.avatarText.map((user, i) =&gt;(
+     &lt;List
+         leftAvatar={
+             &lt;Avatar src={user.avatar}/&gt;
+         }
+         primaryText={user.name}
+         rightIcon={
+             &lt;Icon name=&quot;message&quot; size={24} color={i &lt; 2 ? primaryColor : undefined}/&gt;
+         }
+     /&gt;
+ ))}
 
-    componentDidMount() {
-        InteractionManager.runAfterInteractions(() =&gt; {
-            this.setState({renderPlaceholderOnly: false});
-        });
-    }
+ &lt;Subheader text=&quot;Text only two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.text.map(list =&gt; (
+     &lt;List
+         primaryText={list.primaryText}
+         secondaryText={list.secondaryText}
+     /&gt;
+ ))}
 
-    render = () =&gt; {
-        const {
-            primary
-            } = this.props;
-        const primaryColor = COLOR[`${primary}500`].color;
+ &lt;Subheader text=&quot;Icon with text two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.iconText.map((list, i) =&gt; (
+     &lt;View&gt;
+         &lt;List
+             leftIcon={
+             list.leftIcon ? (&lt;Icon name={list.leftIcon} size={24} color={COLOR[`${primary}500`].color}/&gt;) : (&lt;View&gt;&lt;/View&gt;)
+         }
+             onLeftIconClick={()=&gt;{console.log(list.leftIcon)}}
+             primaryText={list.primaryText}
+             secondaryText={list.secondaryText}
+             rightIcon={
+             list.rightIcon &amp;&amp; (&lt;Icon name={list.rightIcon} size={24}  /&gt;)
+         }
+             onRightIconClick={()=&gt;{console.log(list.rightIcon)}}
+         /&gt;
+         {i === 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
+     &lt;/View&gt;
+ ))}
 
-        if (this.state.renderPlaceholderOnly) {
-            this._renderPlaceholderView();
-        }
+ &lt;Subheader text=&quot;Avatar with text two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.avatarText.map((mail, i) =&gt; (
+     &lt;View&gt;
+         &lt;List
+             primaryText={mail.name}
+             leftAvatar={
+             &lt;Avatar src={mail.avatar}/&gt;
+         }
+             secondaryText={
+         &lt;Text&gt;
+             &lt;Text style={{color:&apos;rgba(0,0,0,.87)&apos;}}&gt;{mail.subject}&lt;/Text&gt;
+             &lt;Text&gt; - {mail.body}&lt;/Text&gt;
+         &lt;/Text&gt;
+         }
+             captionText={`${i * 6 + 1}min ago`}
+         /&gt;
+         {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
+     &lt;/View&gt;
+ ))}
 
-        return (
-            &lt;View style={{backgroundColor: &apos;#fff&apos;}}&gt;
-                &lt;Subheader text=&quot;Text only single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.single.text.map(list =&gt; (
-                    &lt;List
-                        primaryText={list.primaryText}/&gt;
-                ))}
+ &lt;Subheader text=&quot;Avatar with text and icon two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.avatarIconText.map((type, i)=&gt;(
+     &lt;View&gt;
+         &lt;Subheader text={type.name} inset={true}/&gt;
+         {type.files.map((file, j) =&gt;(
+             &lt;View&gt;
+                 &lt;List
+                     leftAvatar={
+                         &lt;Avatar icon={file.icon} backgroundColor={file.color}/&gt;
+                     }
+                     primaryText={file.name}
+                     secondaryText={file.time}
+                     rightIcon={
+                         &lt;Icon name=&quot;information&quot; size={24}/&gt;
+                     }
+                     onRightIconClick={()=&gt;{console.log(&apos;information&apos;)}}
+                 /&gt;
+             &lt;/View&gt;
+         ))}
+         {i &lt; data.two.avatarIconText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
+     &lt;/View&gt;
+ ))}
 
-                &lt;Subheader text=&quot;Icon with text single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.single.iconText.map(list =&gt; (
-                    &lt;List
-                        leftIcon={
-                            &lt;Icon name={list.leftIcon} size={24}/&gt;
-                        }
-                        primaryText={list.primaryText}/&gt;
-                ))}
+ &lt;Subheader text=&quot;Text only three-line list&quot;
+ primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.avatarText.map((mail, i) =&gt; (
+     &lt;View&gt;
+         &lt;List
+             primaryText={mail.name}
+             secondaryTextMoreLine={[
+                 {
+                     text: mail.subject,
+                     style: {
+                         color: &apos;rgba(0,0,0,.87)&apos;
+                     },
+                 },
+                 {
+                     text: mail.body
+                 }
+             ]}
+             lines={3}
+             captionText={`${i * 6 + 1}min ago`}
+         /&gt;
+         {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider/&gt;}
+     &lt;/View&gt;
+ ))}
 
-                &lt;Subheader text=&quot;Avatar with text single-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.single.avatarText.map((user, i) =&gt;(
-                    &lt;List
-                        leftAvatar={
-                            &lt;Avatar src={user.avatar}/&gt;
-                        }
-                        primaryText={user.name}
-                        rightIcon={
-                            &lt;Icon name=&quot;message&quot; size={24} color={i &lt; 2 ? primaryColor : undefined}/&gt;
-                        }
-                    /&gt;
-                ))}
+ &lt;Subheader text=&quot;Icon with text three-line list&quot;
+ primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.three.textIcon.map((list) =&gt; (
+     &lt;List
+         primaryText={list.primaryText}
+         secondaryText={list.secondaryText}
+         lines={3}
+         leftIcon={
+             &lt;Icon name=&quot;checkbox-blank-outline&quot; size={24}/&gt;
+         }
+         onLeftIconClick={()=&gt;{console.log(&apos;checked&apos;)}}
+     /&gt;
+ ))}
 
-                &lt;Subheader text=&quot;Text only two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.text.map(list =&gt; (
-                    &lt;List
-                        primaryText={list.primaryText}
-                        secondaryText={list.secondaryText}
-                    /&gt;
-                ))}
+ &lt;Subheader text=&quot;Avatar with text three-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
+ {data.two.avatarText.map((mail, i) =&gt; (
+     &lt;View&gt;
+         &lt;List
+             primaryText={mail.name}
+             leftAvatar={
+             &lt;Avatar src={mail.avatar}/&gt;
+         }
+             secondaryTextMoreLine={[
+                 {
+                     text: mail.subject,
+                     style: {
+                         color: &apos;rgba(0,0,0,.87)&apos;
+                     },
+                 },
+                 {
+                     text: mail.body
+                 }
+             ]}
+             lines={3}
+             rightIcon={
+                 i &lt; 2 ?
+                 &lt;Icon name=&quot;star&quot; size={24} color={primaryColor}/&gt;
+                 :
+                 &lt;Icon name=&quot;star-outline&quot; size={24}/&gt;
+             }
+             onRightIconClick={()=&gt;{console.log(&apos;star&apos;)}}
+             captionText={`${i * 6 + 1}min ago`}
+         /&gt;
+         {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
+     &lt;/View&gt;
+ ))}*/
 
-                &lt;Subheader text=&quot;Icon with text two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.iconText.map((list, i) =&gt; (
-                    &lt;View&gt;
-                        &lt;List
-                            leftIcon={
-                            list.leftIcon ? (&lt;Icon name={list.leftIcon} size={24} color={COLOR[`${primary}500`].color}/&gt;) : (&lt;View&gt;&lt;/View&gt;)
-                        }
-                            onLeftIconClick={()=&gt;{console.log(list.leftIcon)}}
-                            primaryText={list.primaryText}
-                            secondaryText={list.secondaryText}
-                            rightIcon={
-                            list.rightIcon &amp;&amp; (&lt;Icon name={list.rightIcon} size={24}  /&gt;)
-                        }
-                            onRightIconClick={()=&gt;{console.log(list.rightIcon)}}
-                        /&gt;
-                        {i === 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
-                    &lt;/View&gt;
-                ))}
 
-                &lt;Subheader text=&quot;Avatar with text two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.avatarText.map((mail, i) =&gt; (
-                    &lt;View&gt;
-                        &lt;List
-                            primaryText={mail.name}
-                            leftAvatar={
-                            &lt;Avatar src={mail.avatar}/&gt;
-                        }
-                            secondaryText={
-                        &lt;Text&gt;
-                            &lt;Text style={{color:&apos;rgba(0,0,0,.87)&apos;}}&gt;{mail.subject}&lt;/Text&gt;
-                            &lt;Text&gt; - {mail.body}&lt;/Text&gt;
-                        &lt;/Text&gt;
-                        }
-                            captionText={`${i * 6 + 1}min ago`}
-                        /&gt;
-                        {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
-                    &lt;/View&gt;
-                ))}
-
-                &lt;Subheader text=&quot;Avatar with text and icon two-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.avatarIconText.map((type, i)=&gt;(
-                    &lt;View&gt;
-                        &lt;Subheader text={type.name} inset={true}/&gt;
-                        {type.files.map((file, j) =&gt;(
-                            &lt;View&gt;
-                                &lt;List
-                                    leftAvatar={
-                                        &lt;Avatar icon={file.icon} backgroundColor={file.color}/&gt;
-                                    }
-                                    primaryText={file.name}
-                                    secondaryText={file.time}
-                                    rightIcon={
-                                        &lt;Icon name=&quot;information&quot; size={24}/&gt;
-                                    }
-                                    onRightIconClick={()=&gt;{console.log(&apos;information&apos;)}}
-                                /&gt;
-                            &lt;/View&gt;
-                        ))}
-                        {i &lt; data.two.avatarIconText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
-                    &lt;/View&gt;
-                ))}
-
-                &lt;Subheader text=&quot;Text only three-line list&quot;
-                           primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.avatarText.map((mail, i) =&gt; (
-                    &lt;View&gt;
-                        &lt;List
-                            primaryText={mail.name}
-                            secondaryTextMoreLine={[
-                                {
-                                    text: mail.subject,
-                                    style: {
-                                        color: &apos;rgba(0,0,0,.87)&apos;
-                                    },
-                                },
-                                {
-                                    text: mail.body
-                                }
-                            ]}
-                            lines={3}
-                            captionText={`${i * 6 + 1}min ago`}
-                        /&gt;
-                        {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider/&gt;}
-                    &lt;/View&gt;
-                ))}
-
-                &lt;Subheader text=&quot;Icon with text three-line list&quot;
-                           primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.three.textIcon.map((list) =&gt; (
-                    &lt;List
-                        primaryText={list.primaryText}
-                        secondaryText={list.secondaryText}
-                        lines={3}
-                        leftIcon={
-                            &lt;Icon name=&quot;checkbox-blank-outline&quot; size={24}/&gt;
-                        }
-                        onLeftIconClick={()=&gt;{console.log(&apos;checked&apos;)}}
-                    /&gt;
-                ))}
-
-                &lt;Subheader text=&quot;Avatar with text three-line list&quot; primaryColor={COLOR[`${primary}500`].color}/&gt;
-                {data.two.avatarText.map((mail, i) =&gt; (
-                    &lt;View&gt;
-                        &lt;List
-                            primaryText={mail.name}
-                            leftAvatar={
-                            &lt;Avatar src={mail.avatar}/&gt;
-                        }
-                            secondaryTextMoreLine={[
-                                {
-                                    text: mail.subject,
-                                    style: {
-                                        color: &apos;rgba(0,0,0,.87)&apos;
-                                    },
-                                },
-                                {
-                                    text: mail.body
-                                }
-                            ]}
-                            lines={3}
-                            rightIcon={
-                                i &lt; 2 ?
-                                &lt;Icon name=&quot;star&quot; size={24} color={primaryColor}/&gt;
-                                :
-                                &lt;Icon name=&quot;star-outline&quot; size={24}/&gt;
-                            }
-                            onRightIconClick={()=&gt;{console.log(&apos;star&apos;)}}
-                            captionText={`${i * 6 + 1}min ago`}
-                        /&gt;
-                        {i &lt; data.two.avatarText.length - 1 &amp;&amp; &lt;Divider inset={true}/&gt;}
-                    &lt;/View&gt;
-                ))}
-            &lt;/View&gt;
-        );
-    };
-
-    _renderPlaceholderView = () =&gt; (
-        &lt;View&gt;
-        &lt;/View&gt;
-    );
-}
-
- const styles = StyleSheet.create({
-    content: {
-        padding: 16,
-    }
-});
-
- const data = {
-    single: {
-        text: [
-            {
-                primaryText: &apos;Inbox&apos;
-            },
-            {
-                primaryText: &apos;Starred&apos;
-            },
-            {
-                primaryText: &apos;Sent mail&apos;
-            },
-            {
-                primaryText: &apos;Drafts&apos;
-            }
-        ],
-        iconText: [
-            {
-                primaryText: &apos;Inbox&apos;,
-                leftIcon: &apos;inbox&apos;
-            },
-            {
-                primaryText: &apos;Outbox&apos;,
-                leftIcon: &apos;outbox&apos;
-            },
-            {
-                primaryText: &apos;Trash&apos;,
-                leftIcon: &apos;delete&apos;
-            },
-            {
-                primaryText: &apos;Spam&apos;,
-                leftIcon: &apos;block-helper&apos;
-            }
-        ],
-        avatarText: [
-            {name: &apos;Jsa&apos;, avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg&apos;},
-            {name: &apos;Pixeliris&apos;, avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/pixeliris/128.jpg&apos;},
-            {name: &apos;Ok&apos;, avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/ok/128.jpg&apos;},
-            {name: &apos;Marcosmoralez&apos;, avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg&apos;},
-            {name: &apos;Sindresorhus&apos;, avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/sindresorhus/128.jpg&apos;}
-        ]
-    },
-    two: {
-        text: [
-            {
-                primaryText: &apos;Profile photo&apos;,
-                secondaryText: &apos;Change your Google+ profile photo&apos;
-            },
-            {
-                primaryText: &apos;Show your status&apos;,
-                secondaryText: &apos;Your status is visible to everyone you use with&apos;
-            }
-        ],
-        iconText: [
-            {
-                leftIcon: &apos;phone&apos;,
-                primaryText: &apos;(650) 555-1234&apos;,
-                secondaryText: &apos;Mobile&apos;,
-                rightIcon: &apos;message-text&apos;
-            },
-            {
-                primaryText: &apos;(323) 555-6789&apos;,
-                secondaryText: &apos;Work&apos;,
-                rightIcon: &apos;message-text&apos;
-            },
-            {
-                leftIcon: &apos;email&apos;,
-                primaryText: &apos;being99@qq.com&apos;,
-                secondaryText: &apos;Personal&apos;,
-            },
-            {
-                primaryText: &apos;benzhao1988@gmail.com&apos;,
-                secondaryText: &apos;Work&apos;,
-            }
-        ],
-        avatarText: [
-            {
-                name: &apos;Pixeliris&apos;,
-                avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/pixeliris/128.jpg&apos;,
-                subject: &apos;Brunch this Weekend?&apos;,
-                body: &apos;Hello&#xFF01; I&#x2019;ll be your neighbourhood. How about we have branch together in my home this weekend.&apos;
-            },
-            {
-                name: &apos;Jsa&apos;,
-                avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg&apos;,
-                subject: &apos;Verify Email&apos;,
-                body: &apos;Hey Ben Zhao,Please click the link below to verify your account: &apos;
-            },
-            {
-                name: &apos;Ok&apos;,
-                avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/ok/128.jpg&apos;,
-                subject: &apos;Please confirm your email&apos;,
-                body: &apos;Hi Ben,Thanks so much for joining Pinterest! To finish signing up, you just need to confirm that we got your email right.&apos;
-            },
-            {
-                name: &apos;Marcosmoralez&apos;,
-                avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg&apos;,
-                subject: &apos;&#x5F00;&#x59CB;&#x4F7F;&#x7528;Airbnb&apos;,
-                body: &apos;Airbnb&#x6B22;&#x8FCE;&#x60A8;,&#x5728;Airbnb&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5411;&#x4E16;&#x754C;&#x4E0A;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x7684;&#x5F53;&#x5730;&#x4EBA;&#x9884;&#x8BA2;&#x623F;&#x95F4;&#x3001;&#x6C11;&#x5B85;&#x3001;&#x751A;&#x81F3;&#x57CE;&#x5821;&#x3002;&apos;
-            },
-            {
-                name: &apos;Sindresorhus&apos;,
-                avatar: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/sindresorhus/128.jpg&apos;,
-                subject: &apos;Welcome to Genymotion - User account activation&apos;,
-                body: &apos;Hi benzhao,Your user account with the e-mail address benzhao1988@gmail.com has been created. &apos;
-            }
-        ],
-        avatarIconText: [
-            {
-                name: &apos;Folders&apos;,
-                files: [
-                    {
-                        name: &apos;Photos&apos;,
-                        time: &apos;Jan 9, 2014&apos;,
-                        icon: &apos;folder&apos;
-                    },
-                    {
-                        name: &apos;Recipes&apos;,
-                        time: &apos;Jan 17, 2014&apos;,
-                        icon: &apos;folder&apos;
-                    },
-                    {
-                        name: &apos;Work&apos;,
-                        time: &apos;Jan 28, 2014&apos;,
-                        icon: &apos;folder&apos;
-                    }
-                ]
-            },
-            {
-                name: &apos;Files&apos;,
-                files: [
-                    {
-                        name: &apos;Vacation itinerary&apos;,
-                        time: &apos;Jan 20, 2014&apos;,
-                        icon: &apos;file-document-box&apos;,
-                        color: COLOR.paperBlue500.color
-                    },
-                    {
-                        name: &apos;Kitchen remodel&apos;,
-                        time: &apos;Jan 10, 2014&apos;,
-                        icon: &apos;book&apos;,
-                        color: COLOR.paperYellow500.color
-                    }
-                ]
-            }
-        ]
-    },
-    three: {
-        textIcon: [
-            {
-                primaryText: &apos;Notifications&apos;,
-                secondaryText: &apos;Notify me about updates of app or games I downloaded&apos;
-            },
-            {
-                primaryText: &apos;Sound&apos;,
-                secondaryText: &apos;Auto-update apps at anytime. Data charges my apply&apos;
-            }
-        ]
-    }
-
-};
- */
 export default class List extends Component {
     /**
      *
