@@ -1,7 +1,7 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 35321,
+  "end": 35391,
   "loc": {
     "start": {
       "line": 1,
@@ -74020,9 +74020,9 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
+            "value": "*\r\n * Icon Component\r\n * @example\r\n * <Icon name=\"google\" size={24} color={COLOR[`${primary}500`].color} />\r\n ",
             "start": 34915,
-            "end": 34959,
+            "end": 35029,
             "loc": {
               "start": {
                 "line": 1360,
@@ -74035,7 +74035,7 @@
             },
             "range": [
               34915,
-              34959
+              35029
             ]
           }
         ]
@@ -74067,9 +74067,9 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
+          "value": "*\r\n * Icon Component\r\n * @example\r\n * <Icon name=\"google\" size={24} color={COLOR[`${primary}500`].color} />\r\n ",
           "start": 34915,
-          "end": 34959,
+          "end": 35029,
           "loc": {
             "start": {
               "line": 1360,
@@ -74082,15 +74082,15 @@
           },
           "range": [
             34915,
-            34959
+            35029
           ]
         }
       ]
     },
     {
       "type": "ExportDefaultDeclaration",
-      "start": 34961,
-      "end": 35319,
+      "start": 35031,
+      "end": 35389,
       "loc": {
         "start": {
           "line": 1365,
@@ -74103,8 +74103,8 @@
       },
       "declaration": {
         "type": "ClassDeclaration",
-        "start": 34976,
-        "end": 35319,
+        "start": 35046,
+        "end": 35389,
         "loc": {
           "start": {
             "line": 1365,
@@ -74117,8 +74117,8 @@
         },
         "id": {
           "type": "Identifier",
-          "start": 34982,
-          "end": 34986,
+          "start": 35052,
+          "end": 35056,
           "loc": {
             "start": {
               "line": 1365,
@@ -74134,8 +74134,8 @@
         },
         "superClass": {
           "type": "CallExpression",
-          "start": 34995,
-          "end": 35084,
+          "start": 35065,
+          "end": 35154,
           "loc": {
             "start": {
               "line": 1365,
@@ -74148,8 +74148,8 @@
           },
           "callee": {
             "type": "Identifier",
-            "start": 34995,
-            "end": 35008,
+            "start": 35065,
+            "end": 35078,
             "loc": {
               "start": {
                 "line": 1365,
@@ -74165,8 +74165,8 @@
           "arguments": [
             {
               "type": "Identifier",
-              "start": 35009,
-              "end": 35017,
+              "start": 35079,
+              "end": 35087,
               "loc": {
                 "start": {
                   "line": 1365,
@@ -74181,8 +74181,8 @@
             },
             {
               "type": "Literal",
-              "start": 35019,
-              "end": 35042,
+              "start": 35089,
+              "end": 35112,
               "loc": {
                 "start": {
                   "line": 1365,
@@ -74199,8 +74199,8 @@
             },
             {
               "type": "Literal",
-              "start": 35044,
-              "end": 35083,
+              "start": 35114,
+              "end": 35153,
               "loc": {
                 "start": {
                   "line": 1365,
@@ -74219,8 +74219,8 @@
         },
         "body": {
           "type": "ClassBody",
-          "start": 35085,
-          "end": 35319,
+          "start": 35155,
+          "end": 35389,
           "loc": {
             "start": {
               "line": 1365,
@@ -74234,8 +74234,8 @@
           "body": [
             {
               "type": "MethodDefinition",
-              "start": 35272,
-              "end": 35316,
+              "start": 35342,
+              "end": 35386,
               "loc": {
                 "start": {
                   "line": 1372,
@@ -74249,8 +74249,8 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 35272,
-                "end": 35283,
+                "start": 35342,
+                "end": 35353,
                 "loc": {
                   "start": {
                     "line": 1372,
@@ -74268,8 +74268,8 @@
               "kind": "constructor",
               "value": {
                 "type": "FunctionExpression",
-                "start": 35283,
-                "end": 35316,
+                "start": 35353,
+                "end": 35386,
                 "loc": {
                   "start": {
                     "line": 1372,
@@ -74287,8 +74287,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 35284,
-                    "end": 35289,
+                    "start": 35354,
+                    "end": 35359,
                     "loc": {
                       "start": {
                         "line": 1372,
@@ -74304,8 +74304,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 35291,
-                  "end": 35316,
+                  "start": 35361,
+                  "end": 35386,
                   "loc": {
                     "start": {
                       "line": 1372,
@@ -74319,8 +74319,8 @@
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 35298,
-                      "end": 35311,
+                      "start": 35368,
+                      "end": 35381,
                       "loc": {
                         "start": {
                           "line": 1373,
@@ -74333,8 +74333,8 @@
                       },
                       "expression": {
                         "type": "CallExpression",
-                        "start": 35298,
-                        "end": 35310,
+                        "start": 35368,
+                        "end": 35380,
                         "loc": {
                           "start": {
                             "line": 1373,
@@ -74347,8 +74347,8 @@
                         },
                         "callee": {
                           "type": "Super",
-                          "start": 35298,
-                          "end": 35303,
+                          "start": 35368,
+                          "end": 35373,
                           "loc": {
                             "start": {
                               "line": 1373,
@@ -74363,8 +74363,8 @@
                         "arguments": [
                           {
                             "type": "Identifier",
-                            "start": 35304,
-                            "end": 35309,
+                            "start": 35374,
+                            "end": 35379,
                             "loc": {
                               "start": {
                                 "line": 1373,
@@ -74387,8 +74387,8 @@
                 {
                   "type": "Block",
                   "value": "*\r\n   * @param {object} prop\r\n   * @param {string} prop.name - Icon name\r\n   * @param {number} [prop.size=12] - Icon size\r\n   * @param {string} [prop.color] - Icon color\r\n   ",
-                  "start": 35090,
-                  "end": 35268,
+                  "start": 35160,
+                  "end": 35338,
                   "loc": {
                     "start": {
                       "line": 1366,
@@ -74400,8 +74400,8 @@
                     }
                   },
                   "range": [
-                    35090,
-                    35268
+                    35160,
+                    35338
                   ]
                 }
               ]
@@ -74411,9 +74411,9 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
+            "value": "*\r\n * Icon Component\r\n * @example\r\n * <Icon name=\"google\" size={24} color={COLOR[`${primary}500`].color} />\r\n ",
             "start": 34915,
-            "end": 34959,
+            "end": 35029,
             "loc": {
               "start": {
                 "line": 1360,
@@ -74426,7 +74426,7 @@
             },
             "range": [
               34915,
-              34959
+              35029
             ]
           }
         ],
@@ -74435,9 +74435,9 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\r\n * Icon Component\r\n * @example\r\n *\r\n ",
+          "value": "*\r\n * Icon Component\r\n * @example\r\n * <Icon name=\"google\" size={24} color={COLOR[`${primary}500`].color} />\r\n ",
           "start": 34915,
-          "end": 34959,
+          "end": 35029,
           "loc": {
             "start": {
               "line": 1360,
@@ -74450,7 +74450,7 @@
           },
           "range": [
             34915,
-            34959
+            35029
           ]
         }
       ]
