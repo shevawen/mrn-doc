@@ -85,10 +85,12 @@ pre > code {
 }
 
 pre.prettyprint, pre > code {
-    padding: 0px;
+    padding: 16px;
     margin: 0;
     background-color: #f5f5f5;
     border-radius: 3px;
+    font-size: 14px;
+    word-wrap:break-word;
     font-family: "Source Code Pro";
 }
 
@@ -147,10 +149,10 @@ li > code {
 .layout-container > header > a.repo-url-github {
     font-size: 0;
     display: inline-block;
-    background-size: 24px;
     height: 64px;
     width: 64px;
     background: url("../image/github.png") no-repeat center;
+    background-size: 24px;
     vertical-align: top;
 }
 
@@ -1007,4 +1009,10 @@ h1 .esdoc-coverage {
 
 [data-ice="extendsChain"] {
     display: none;
+}
+
+.phone {
+    position: fixed;
+    top: 200px;
+    left: 1300px;
 }
