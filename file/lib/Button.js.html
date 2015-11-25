@@ -158,7 +158,7 @@ export default class Button extends Component {
             raised: {
                 light: {
                     normal: {
-                        color: &apos;rgba(0,0,0,.87)&apos;,
+                        color: COLOR[`${primary}500`].color,
                     },
                     disabled: {
                         color: &apos;rgba(0,0,0,.26)&apos;,
@@ -209,21 +209,21 @@ export default class Button extends Component {
             flat: {
                 light: {
                     normal: &apos;rgba(153,153,153,.4)&apos;,
-                    disabled: &apos;rgba(0,0,0,0)&apos;
+                    disabled: &apos;rgba(0,0,0,0.06)&apos;
                 },
                 dark: {
                     normal: &apos;rgba(204,204,204,.25)&apos;,
-                    disabled: &apos;rgba(255,255,255,0)&apos;
+                    disabled: &apos;rgba(255,255,255,0.06)&apos;
                 }
             },
             raised: {
                 light: {
                     normal: &apos;rgba(153,153,153,.4)&apos;,
-                    disabled: &apos;rgba(0,0,0,0)&apos;
+                    disabled: &apos;rgba(0,0,0,.06)&apos;
                 },
                 dark: {
                     normal: COLOR[`${primary}700`].color,
-                    disabled: &apos;rgba(255,255,255,0)&apos;
+                    disabled: &apos;rgba(255,255,255,.06)&apos;
                 }
             }
         };
@@ -238,7 +238,7 @@ export default class Button extends Component {
         let rippleColor = this.rippleColorMap[shape][theme][type];
 
         return (
-            &lt;TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(String(rippleColor))}  onPress={disabled || onPress}&gt;
+            &lt;TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(rippleColor)}  onPress={!disabled ? onPress : undefined}&gt;
                 &lt;View
                     style={[
                         styles.button,

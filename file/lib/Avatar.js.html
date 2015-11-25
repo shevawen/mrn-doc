@@ -69,7 +69,31 @@ import Icon, {glyphMap} from &apos;./Icon&apos;;
 import { ICON_NAME } from &apos;./config&apos;;
 
 /**
- *
+ * Avatar Component
+ * @example
+ /*&lt;Subheader text=&quot;Avatar use image&quot;/&gt;
+ &lt;View style={styles.avatarContainer}&gt;
+     &lt;Avatar src=&quot;https://s3.amazonaws.com/uifaces/faces/twitter/ok/128.jpg&quot;/&gt;
+     &lt;Avatar src=&quot;https://s3.amazonaws.com/uifaces/faces/twitter/pixeliris/128.jpg&quot;/&gt;
+     &lt;Avatar src=&quot;https://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg&quot;/&gt;
+     &lt;Avatar src=&quot;https://s3.amazonaws.com/uifaces/faces/twitter/iannnnn/128.jpg&quot;/&gt;
+ &lt;/View&gt;
+
+ &lt;Subheader text=&quot;Avatar use icon&quot;/&gt;
+ &lt;View style={styles.avatarContainer}&gt;
+     &lt;Avatar icon=&quot;google&quot;/&gt;
+     &lt;Avatar icon=&quot;folder&quot;/&gt;
+     &lt;Avatar icon=&quot;phone&quot; backgroundColor={COLOR.paperGreen500.color}/&gt;
+     &lt;Avatar icon=&quot;plus&quot; backgroundColor={COLOR[`${primary}500`].color}/&gt;
+ &lt;/View&gt;
+
+ &lt;Subheader text=&quot;Avatar with different size&quot;/&gt;
+ &lt;View style={styles.avatarContainer}&gt;
+     &lt;Avatar src=&quot;http://mrn.js.org/user/image/favicon.png&quot;/&gt;
+     &lt;Avatar size={60} src=&quot;http://mrn.js.org/user/image/favicon.png&quot;/&gt;
+     &lt;Avatar size={80} src=&quot;http://mrn.js.org/user/image/favicon.png&quot;/&gt;
+     &lt;Avatar size={120} src=&quot;http://mrn.js.org/user/image/favicon.png&quot;/&gt;
+ &lt;/View&gt;
  */
 export default class Avatar extends Component {
     /**
@@ -78,7 +102,7 @@ export default class Avatar extends Component {
      * @param {string} props.src - Image src
      * @param {number} [props.size=40] - Avatar size
      * @param {string} [props.color=&apos;#fff&apos;] - Color of icon of Avatar. Accept a color string such as RGBA,RGB,HEX.
-     * @param {string} [props.primaryColor=&apos;#bdbdbd&apos;] -  Background color of Avatar. Only use with a icon prop.
+     * @param {string} [props.backgroundColor=&apos;#bdbdbd&apos;] -  Background color of Avatar. Only use with a icon prop.
      * Accept a color string such as RGBA,RGB,HEX.
      */
     constructor(props) {
