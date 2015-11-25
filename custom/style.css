@@ -1027,11 +1027,16 @@ h1 .esdoc-coverage {
     display: none;
 }
 
-.phone {
-    position: fixed;
-    top: 200px;
-    left: 1300px;
+@media screen and (min-width: 1600px) {
+    .phone {
+        position: fixed;
+        top: 200px;
+        left: 1300px;
+    }
 }
+
+
+
 
 img[src="./image/search.png"] {
     visibility: hidden;
