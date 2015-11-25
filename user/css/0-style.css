@@ -90,7 +90,7 @@ pre.prettyprint, pre > code {
     background-color: #f5f5f5;
     border-radius: 3px;
     font-size: 14px;
-    overflow: scroll;
+    overflow: auto;
     font-family: "Source Code Pro";
 }
 
@@ -140,11 +140,19 @@ li > code {
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 .layout-container > header > a{
-    margin: 0 5px;
+    margin: 0;
     color: #fff;
-    height:64px;
+    height: 64px;
+    padding: 0 16px;
     display: inline-block;
 }
+.layout-container > header > a[href="./"] {
+    text-indent: -9999px;
+    width: 80px;
+    background: transparent url(http://github.com/binggg/mrn/raw/master/mrn-logo-inverse.png) no-repeat center;
+    background-size: 120px;
+}
+
 
 .layout-container > header > a.repo-url-github {
     font-size: 0;
