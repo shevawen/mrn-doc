@@ -11,7 +11,7 @@
       "./manual/getting-started.md"
     ]
   },
-  "title": "mrn - Material React Native",
+  "title": "MRN - Material React Native",
   "styles": ["./custom/style.css"],
   "scripts": ["./custom/script.js"]
 }
