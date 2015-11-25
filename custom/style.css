@@ -90,7 +90,7 @@ pre.prettyprint, pre > code {
     background-color: #f5f5f5;
     border-radius: 3px;
     font-size: 14px;
-    word-wrap:break-word;
+    overflow: scroll;
     font-family: "Source Code Pro";
 }
 
@@ -1000,7 +1000,7 @@ h1 .esdoc-coverage {
 /** badge(.svg) does not have border */
 .github-markdown img:not([src*=".svg"]) {
     max-width: 100%;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: none;
 }
 
 [data-ice="constructorSummary"] {
