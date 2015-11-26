@@ -1,6 +1,6 @@
 {
   "name": "mrn",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React Native Material Design Components",
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "material",
     "design",
     "ui",
-    "components"
+    "components",
+    "react-component"
   ],
   "author": "Ben Zhao <benzhao1988@gmail.com> (http://binggg.net/)",
   "license": "MIT",

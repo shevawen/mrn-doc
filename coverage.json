@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 39,
-  "actualCount": 39,
+  "expectCount": 42,
+  "actualCount": 42,
   "files": {
     "lib/Avatar.js": {
       "expectCount": 2,
@@ -56,6 +56,11 @@
     "lib/RadioButtonGroup.js": {
       "expectCount": 5,
       "actualCount": 5,
+      "undocumentLines": []
+    },
+    "lib/Ripple.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "lib/Subheader.js": {

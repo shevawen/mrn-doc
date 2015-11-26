@@ -44,6 +44,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButton.js~RadioButton.html">RadioButton</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButtonGroup.js~RadioButtonGroup.html">RadioButtonGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Ripple.js~Ripple.html">Ripple</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Subheader.js~Subheader.html">Subheader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Toolbar.js~Toolbar.html">Toolbar</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-glyphMap">glyphMap</a></span></span></li>
@@ -64,12 +65,12 @@
     PropTypes,
     View,
     Text,
-    TouchableNativeFeedback,
     TouchableWithoutFeedback
 } from &apos;react-native&apos;;
 import { TYPO, COLOR } from &apos;./config&apos;;
 import Icon from &apos;./Icon&apos;;
 import Avatar from &apos;./Avatar&apos;;
+import Ripple from &apos;./Ripple&apos;;
 
 /**
  * List Compoent
@@ -308,8 +309,9 @@ export default class List extends Component {
             } = this.props;
 
         return (
-            &lt;TouchableNativeFeedback
-                background={TouchableNativeFeedback.Ripple(&apos;rgba(153,153,153,.4)&apos;)}
+            &lt;Ripple
+                color=&apos;rgba(153,153,153,.4)&apos;
+                rippleOpacity={1}
                 onPress={onPress}
             &gt;
                 &lt;View style={[styles.listContainer, {
@@ -373,7 +375,7 @@ export default class List extends Component {
                             &lt;Text&gt;{captionText}&lt;/Text&gt;
                         &lt;/View&gt;}
 
-                        {rightIcon &amp;&amp; &lt;TouchableWithoutFeedback onPress={onRightIconClicked}&gt;
+                        {rightIcon &amp;&amp; &lt;Ripple onPress={onRightIconClicked}&gt;
                             &lt;View style={[styles.rightIcon, {flex: 1},lines &gt; 2 &amp;&amp;{
                         paddingTop: 16,
                         alignSelf: &apos;flex-end&apos;,
@@ -381,11 +383,11 @@ export default class List extends Component {
 
                     }]} onPress={onRightIconClicked}&gt;
                                 {rightIcon}
-                            &lt;/View&gt;&lt;/TouchableWithoutFeedback&gt;
+                            &lt;/View&gt;&lt;/Ripple&gt;
                         }
                     &lt;/View&gt;
                 &lt;/View&gt;
-            &lt;/TouchableNativeFeedback&gt;
+            &lt;/Ripple&gt;
         )
     }
 

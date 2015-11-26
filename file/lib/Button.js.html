@@ -44,6 +44,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButton.js~RadioButton.html">RadioButton</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/RadioButtonGroup.js~RadioButtonGroup.html">RadioButtonGroup</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Ripple.js~Ripple.html">Ripple</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Subheader.js~Subheader.html">Subheader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/Toolbar.js~Toolbar.html">Toolbar</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-glyphMap">glyphMap</a></span></span></li>
@@ -64,32 +65,32 @@
     PropTypes,
     View,
     Text,
-    TouchableNativeFeedback
 } from &apos;react-native&apos;;
 import { TYPO, PRIMARY, COLOR, THEME_NAME, COLOR_NAME } from &apos;./config&apos;;
+import Ripple from &apos;./Ripple&apos;;
 
 /**
  * Button Component
  * @example
  *
  * &lt;Subheader text=&quot;Light Theme&quot;/&gt;
-    &lt;View style={styles.content}&gt;
-        &lt;Button value=&quot;NORMAL FLAT&quot; primary={primary} onPress={()=&gt; console.log(this.refs)}/&gt;
-        &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} primary={primary}/&gt;
-        &lt;Button value=&quot;NORMAL RAISED&quot; raised={true} primary={primary}/&gt;
-        &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} raised={true} primary={primary}/&gt;
-    &lt;/View&gt;
-    &lt;Subheader text=&quot;Dark Theme&quot;/&gt;
-    &lt;View style={{
+ &lt;View style={styles.content}&gt;
+ &lt;Button value=&quot;NORMAL FLAT&quot; primary={primary} onPress={()=&gt; console.log(this.refs)}/&gt;
+ &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} primary={primary}/&gt;
+ &lt;Button value=&quot;NORMAL RAISED&quot; raised={true} primary={primary}/&gt;
+ &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} raised={true} primary={primary}/&gt;
+ &lt;/View&gt;
+ &lt;Subheader text=&quot;Dark Theme&quot;/&gt;
+ &lt;View style={{
             backgroundColor: COLOR.paperGrey900.color,
             padding: 16,
 
         }}&gt;
-        &lt;Button value=&quot;NORMAL FLAT&quot; theme=&quot;dark&quot; primary={primary}/&gt;
-        &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} theme=&quot;dark&quot; primary={primary}/&gt;
-        &lt;Button value=&quot;NORMAL RAISED&quot; theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
-        &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
-    &lt;/View&gt;
+ &lt;Button value=&quot;NORMAL FLAT&quot; theme=&quot;dark&quot; primary={primary}/&gt;
+ &lt;Button value=&quot;DISABLED FLAT&quot; disabled={true} theme=&quot;dark&quot; primary={primary}/&gt;
+ &lt;Button value=&quot;NORMAL RAISED&quot; theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+ &lt;Button value=&quot;DISABLED RAISED&quot; disabled={true} theme=&quot;dark&quot; raised={true} primary={primary}/&gt;
+ &lt;/View&gt;
  */
 
 export default class Button extends Component {
@@ -238,23 +239,25 @@ export default class Button extends Component {
         let rippleColor = this.rippleColorMap[shape][theme][type];
 
         return (
-            &lt;TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(rippleColor)}  onPress={!disabled ? onPress : undefined}&gt;
-                &lt;View
-                    style={[
+
+            &lt;Ripple
+                color={rippleColor}
+                rippleOpacity={1}
+                onPress={!disabled ? onPress : undefined} style={ Object.assign({},
                         styles.button,
                         buttonStyle,
                         {
                             backgroundColor: background ? background : (buttonStyle &amp;&amp; buttonStyle.backgroundColor)
                         }
-                ]}&gt;
-                    &lt;Text style={[TYPO.paperFontButton, textStyle]}&gt;{value}&lt;/Text&gt;
-                &lt;/View&gt;
-            &lt;/TouchableNativeFeedback&gt;
+                )}&gt;
+
+                &lt;Text style={[TYPO.paperFontButton, textStyle]}&gt;{value}&lt;/Text&gt;
+            &lt;/Ripple&gt;
         );
     };
 }
 
-const styles = StyleSheet.create({
+const styles = {
     button: {
         height: 36,
         alignItems: &apos;center&apos;,
@@ -266,7 +269,7 @@ const styles = StyleSheet.create({
         margin: 4,
         borderRadius: 2,
     }
-});</code></pre>
+};</code></pre>
 
 </div>
 

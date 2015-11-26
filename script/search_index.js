@@ -84,6 +84,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "mrn/lib/ripple.js~ripple",
+    "class/lib/Ripple.js~Ripple.html",
+    "<span>Ripple</span> <span class=\"search-result-import-path\">mrn/lib/Ripple.js</span>",
+    "class"
+  ],
+  [
     "mrn/lib/subheader.js~subheader",
     "class/lib/Subheader.js~Subheader.html",
     "<span>Subheader</span> <span class=\"search-result-import-path\">mrn/lib/Subheader.js</span>",
@@ -505,13 +511,13 @@ window.esdocSearchIndex = [
   ],
   [
     "lib/checkboxgroup.js~checkboxgroup#value",
-    "class/lib/CheckboxGroup.js~CheckboxGroup.html#instance-set-value",
+    "class/lib/CheckboxGroup.js~CheckboxGroup.html#instance-get-value",
     "lib/CheckboxGroup.js~CheckboxGroup#value",
     "member"
   ],
   [
     "lib/checkboxgroup.js~checkboxgroup#value",
-    "class/lib/CheckboxGroup.js~CheckboxGroup.html#instance-get-value",
+    "class/lib/CheckboxGroup.js~CheckboxGroup.html#instance-set-value",
     "lib/CheckboxGroup.js~CheckboxGroup#value",
     "member"
   ],
@@ -601,14 +607,32 @@ window.esdocSearchIndex = [
   ],
   [
     "lib/radiobuttongroup.js~radiobuttongroup#value",
-    "class/lib/RadioButtonGroup.js~RadioButtonGroup.html#instance-get-value",
+    "class/lib/RadioButtonGroup.js~RadioButtonGroup.html#instance-set-value",
     "lib/RadioButtonGroup.js~RadioButtonGroup#value",
     "member"
   ],
   [
     "lib/radiobuttongroup.js~radiobuttongroup#value",
-    "class/lib/RadioButtonGroup.js~RadioButtonGroup.html#instance-set-value",
+    "class/lib/RadioButtonGroup.js~RadioButtonGroup.html#instance-get-value",
     "lib/RadioButtonGroup.js~RadioButtonGroup#value",
+    "member"
+  ],
+  [
+    "lib/ripple.js",
+    "file/lib/Ripple.js.html",
+    "lib/Ripple.js",
+    "file"
+  ],
+  [
+    "lib/ripple.js~ripple#constructor",
+    "class/lib/Ripple.js~Ripple.html#instance-constructor-constructor",
+    "lib/Ripple.js~Ripple#constructor",
+    "method"
+  ],
+  [
+    "lib/ripple.js~ripple#state",
+    "class/lib/Ripple.js~Ripple.html#instance-member-state",
+    "lib/Ripple.js~Ripple#state",
     "member"
   ],
   [
