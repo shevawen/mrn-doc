@@ -1,7 +1,7 @@
 {
-  "coverage": "95.23%",
+  "coverage": "100%",
   "expectCount": 42,
-  "actualCount": 40,
+  "actualCount": 42,
   "files": {
     "lib/Avatar.js": {
       "expectCount": 2,
@@ -35,11 +35,8 @@
     },
     "lib/Icon.js": {
       "expectCount": 3,
-      "actualCount": 1,
-      "undocumentLines": [
-        1384,
-        1385
-      ]
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "lib/IconButton.js": {
       "expectCount": 2,

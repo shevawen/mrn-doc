@@ -67,7 +67,7 @@
  */
 &apos;use strict&apos;;
 
-//import createIconSet from &apos;react-native-vector-icons/lib/create-icon-set&apos;;
+import createIconSet from &apos;react-native-vector-icons/lib/create-icon-set&apos;;
 
 /**
  *
@@ -1417,53 +1417,23 @@ export const glyphMap = {
   &quot;zip-box&quot;: 63037
 };
 
-//
-///**
-// * Icon Component
-// * @example
-// * &lt;Icon name=&quot;google&quot; size={24} color={COLOR[`${primary}500`].color} /&gt;
-// */
-//export default class Icon extends createIconSet(glyphMap, &apos;Material Design Icons&apos;, &apos;Fonts/materialdesignicons-webfont.ttf&apos;) {
-//  /**
-//   * @param {object} prop
-//   * @param {string} prop.name - Icon name
-//   * @param {number} [prop.size=12] - Icon size
-//   * @param {string} [prop.color] - Icon color
-//   */
-//  constructor(props) {
-//    super(props);
-//  }
-//}
 
-import React, {
-    Component,
-    StyleSheet,
-    PropTypes,
-    View
-} from &apos;react-native&apos;;
-
-export default class Icon extends Component {
-    constructor(props) {
-        super(props);
-        // Operations usually carried out in componentWillMount go here
-    }
-
-    static defaultProps = {};
-    static propTypes = {};
-    state = {};
-
-    render = () =&gt; {
-        return (
-            &lt;View&gt;
-
-            &lt;/View&gt;
-        );
-    }
-}
-
-const styles = StyleSheet.create({
-
-});</code></pre>
+/**
+ * Icon Component
+ * @example
+ * &lt;Icon name=&quot;google&quot; size={24} color={COLOR[`${primary}500`].color} /&gt;
+ */
+export default class Icon extends createIconSet(glyphMap, &apos;Material Design Icons&apos;, &apos;Fonts/materialdesignicons-webfont.ttf&apos;) {
+  /**
+   * @param {object} prop
+   * @param {string} prop.name - Icon name
+   * @param {number} [prop.size=12] - Icon size
+   * @param {string} [prop.color] - Icon color
+   */
+  constructor(props) {
+    super(props);
+  }
+}</code></pre>
 
 </div>
 
