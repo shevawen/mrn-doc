@@ -91,7 +91,7 @@ pre.prettyprint, pre > code {
     border-radius: 3px;
     font-size: 14px;
     overflow: auto;
-    font-family: "Source Code Pro";
+    font-family: "Source Code Pro", monospace;
 }
 
 pre.prettyprint > code {
