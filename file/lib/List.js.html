@@ -340,7 +340,7 @@ export default class List extends Component {
                     &lt;View style={{flex:1,justifyContent:&apos;center&apos;,}}&gt;
                         &lt;View style={styles.firstLine}&gt;
                             &lt;View style={styles.primaryTextContainer}&gt;
-                                &lt;Text style={[styles.primaryText,{color: primaryColor}]}&gt;{primaryText}&lt;/Text&gt;
+                                &lt;Text numberOfLines={1} style={[styles.primaryText,{color: primaryColor}]}&gt;{primaryText}&lt;/Text&gt;
                             &lt;/View&gt;
                             { (lines &gt; 2 &amp;&amp; !!rightIcon) || &lt;View style={styles.captionTextContainer}&gt;
                                 &lt;Text style={styles.captionText}&gt;{captionText}&lt;/Text&gt;
@@ -431,7 +431,8 @@ const styles = StyleSheet.create({
         flexDirection: &apos;row&apos;
     },
     primaryTextContainer: {
-        flex: 1
+        flex: 1,
+        paddingRight: 16
     },
     captionTextContainer: {
         alignSelf: &apos;flex-start&apos;,
@@ -444,7 +445,8 @@ const styles = StyleSheet.create({
         alignSelf: &apos;flex-end&apos;,
         alignItems: &apos;flex-end&apos;
     }
-});</code></pre>
+});
+</code></pre>
 
 </div>
 

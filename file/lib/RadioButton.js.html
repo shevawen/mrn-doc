@@ -177,7 +177,9 @@ export default class RadioButton extends Component {
             ]}
                   onStartShouldSetResponder={e=&gt;true}
                   onResponderGrant={this._onGrant}
-                  onResponderRelease={this._onRelease}&gt;
+                  onResponderRelease={this._onRelease}
+                  onResponderMove={this._onMove}
+            &gt;
                 &lt;Animated.View style={[styles.ripple,{
                     transform: [
                         {scale: scaleValue}
@@ -211,7 +213,11 @@ export default class RadioButton extends Component {
         );
     };
 
-    _onGrant = (e) =&gt; {
+    /**
+     *
+     * @private
+     */
+    _onGrant = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -228,13 +234,32 @@ export default class RadioButton extends Component {
         ).start()
     };
 
-    _onRelease = (e) =&gt; {
+    /**
+     *
+     * @private
+     */
+    _onRelease = () =&gt; {
         let { checked, disabled } = this.props;
 
         if (!checked &amp;&amp; !disabled) {
             this.props.onCheck &amp;&amp; this.props.onCheck(this.props.value);
         }
+        this._recover();
+    }
 
+    /**
+     *
+     * @private
+     */
+    _onMove = () =&gt; {
+        this._recover();
+    }
+
+    /**
+     *
+     * @private
+     */
+    _recover = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -248,7 +273,6 @@ export default class RadioButton extends Component {
                 toValue: 0
             }
         ).start();
-
     }
 }
 

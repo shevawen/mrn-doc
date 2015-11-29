@@ -181,7 +181,9 @@ export default class Checkbox extends Component {
             ]}
                   onStartShouldSetResponder={e=&gt;true}
                   onResponderGrant={this._onGrant}
-                  onResponderRelease={this._onRelease}&gt;
+                  onResponderRelease={this._onRelease}
+                  onResponderMove={this._onMove}
+            &gt;
                 &lt;Animated.View style={[styles.ripple,{
                     transform: [
                         {scale: scaleValue}
@@ -216,6 +218,10 @@ export default class Checkbox extends Component {
         );
     };
 
+    /**
+     *
+     * @private
+     */
     _onGrant = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
@@ -233,13 +239,24 @@ export default class Checkbox extends Component {
         ).start()
     };
 
+    /**
+     *
+     * @private
+     */
     _onRelease = () =&gt; {
         let { checked, disabled } = this.props;
 
         if (!disabled) {
             this.props.onCheck &amp;&amp; this.props.onCheck(!checked, this.props.value);
         }
+        this._recover();
+    }
 
+    _onMove = () =&gt; {
+        this._recover();
+    }
+
+    _recover = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -253,7 +270,6 @@ export default class Checkbox extends Component {
                 toValue: 0
             }
         ).start();
-
     }
 }
 
