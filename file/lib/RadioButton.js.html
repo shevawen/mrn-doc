@@ -268,12 +268,15 @@ export default class RadioButton extends Component {
      * @private
      */
     _handleResponderEnd = () =&gt; {
-        this._unHighlight();
-        let { checked, disabled } = this.props;
+        setTimeout(()=&gt; {
+            let { checked, disabled } = this.props;
 
-        if (!checked &amp;&amp; !disabled) {
-            this.props.onCheck &amp;&amp; this.props.onCheck(this.props.value);
-        }
+            if (!checked &amp;&amp; !disabled) {
+                this.props.onCheck &amp;&amp; this.props.onCheck(this.props.value);
+            }
+        }, 0)
+        this._unHighlight();
+
     }
 }
 

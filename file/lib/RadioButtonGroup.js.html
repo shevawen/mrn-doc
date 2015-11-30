@@ -160,7 +160,6 @@ export default class RadioButtonGroup extends Component {
 
         return (
             &lt;View&gt;
-
                 {options}
             &lt;/View&gt;
         );
@@ -171,8 +170,10 @@ export default class RadioButtonGroup extends Component {
             selected: value
         });
 
-        const { onSelect } = this.props;
-        onSelect &amp;&amp; onSelect(this.value);
+        setTimeout(() =&gt; {
+            const { onSelect } = this.props;
+            onSelect &amp;&amp; onSelect(this.value);
+        },0)
     };
 
     /**
