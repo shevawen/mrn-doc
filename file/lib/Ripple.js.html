@@ -90,6 +90,18 @@ export default class Ripple extends Component {
         this.state = {
             scaleValue: new Animated.Value(0.001),
         };
+
+        /**
+         *
+         * @type {{onStartShouldSetResponder: Ripple._responder.onStartShouldSetResponder, onResponderGrant: Ripple._highlight, onResponderRelease: Ripple._handleResponderEnd, onResponderTerminate: Ripple._unHighlight}}
+         * @private
+         */
+        this._responder = {
+            onStartShouldSetResponder: (e) =&gt; true,
+            onResponderGrant: this._highlight,
+            onResponderRelease: this._handleResponderEnd,
+            onResponderTerminate: this._unHighlight,
+        };
     }
 
     static
@@ -132,10 +144,7 @@ export default class Ripple extends Component {
         const assignStyle = Object.assign({}, styles.container, style);
         return (
             &lt;View ref=&quot;container&quot; style={assignStyle}
-                  onStartShouldSetResponder={evt =&gt; true}
-                  onResponderGrant={this._onGrant}
-                  onResponderRelease={this._onRelease}
-                  onResponderMove={this._onMove}
+                {...this._responder}
                 {...other}
             &gt;
                 &lt;View style={[
@@ -170,14 +179,14 @@ export default class Ripple extends Component {
 
     /**
      *
-     * @param evt
+     * @param e
      * @private
      */
-    _onGrant = (evt) =&gt; {
+    _highlight = (e) =&gt; {
         const {
             pageX,
             pageY
-            } = evt.nativeEvent;
+            } = e.nativeEvent;
 
         this.setState({
             rippling: true,
@@ -194,31 +203,13 @@ export default class Ripple extends Component {
                 duration: 500
             }
         ).start();
-
     };
 
     /**
      *
      * @private
      */
-    _onRelease = () =&gt; {
-        this.props.onPress &amp;&amp; this.props.onPress();
-        this._recover();
-    };
-
-    /**
-     * 
-     * @private
-     */
-    _onMove = () =&gt; {
-        this._recover();
-    }
-
-    /**
-     *
-     * @private
-     */
-    _recover = () =&gt; {
+    _unHighlight = () =&gt; {
         this.setState({
             rippling: false
         });
@@ -230,7 +221,17 @@ export default class Ripple extends Component {
                 duration: 0
             }
         ).start();
-    }
+    };
+
+    /**
+     *
+     * @param e
+     * @private
+     */
+    _handleResponderEnd = (e) =&gt; {
+        this._unHighlight();
+        this.props.onPress &amp;&amp; this.props.onPress();
+    };
 
     /**
      *

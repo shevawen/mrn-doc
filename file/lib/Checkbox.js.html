@@ -104,6 +104,18 @@ export default class Checkbox extends Component {
             scaleValue: new Animated.Value(0.001),
             opacityValue: new Animated.Value(0.1)
         };
+
+        /**
+         *
+         * @type {{onStartShouldSetResponder: Checkbox._responder.onStartShouldSetResponder, onResponderGrant: Checkbox._highlight, onResponderRelease: Checkbox._handleResponderEnd, onResponderTerminate: Checkbox._unHighlight}}
+         * @private
+         */
+        this._responder = {
+            onStartShouldSetResponder: (e) =&gt; true,
+            onResponderGrant: this._highlight,
+            onResponderRelease: this._handleResponderEnd,
+            onResponderTerminate: this._unHighlight,
+        };
     }
     static defaultProps = {
         theme: &apos;light&apos;,
@@ -179,10 +191,7 @@ export default class Checkbox extends Component {
             &lt;View style={[
                 styles.container
             ]}
-                  onStartShouldSetResponder={e=&gt;true}
-                  onResponderGrant={this._onGrant}
-                  onResponderRelease={this._onRelease}
-                  onResponderMove={this._onMove}
+                {...this._responder}
             &gt;
                 &lt;Animated.View style={[styles.ripple,{
                     transform: [
@@ -222,7 +231,7 @@ export default class Checkbox extends Component {
      *
      * @private
      */
-    _onGrant = () =&gt; {
+    _highlight = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -243,20 +252,7 @@ export default class Checkbox extends Component {
      *
      * @private
      */
-    _onRelease = () =&gt; {
-        let { checked, disabled } = this.props;
-
-        if (!disabled) {
-            this.props.onCheck &amp;&amp; this.props.onCheck(!checked, this.props.value);
-        }
-        this._recover();
-    }
-
-    _onMove = () =&gt; {
-        this._recover();
-    }
-
-    _recover = () =&gt; {
+    _unHighlight = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -270,6 +266,19 @@ export default class Checkbox extends Component {
                 toValue: 0
             }
         ).start();
+    }
+
+    /**
+     *
+     * @private
+     */
+    _handleResponderEnd = () =&gt; {
+        this._unHighlight();
+        let { checked, disabled } = this.props;
+
+        if (!disabled) {
+            this.props.onCheck &amp;&amp; this.props.onCheck(!checked, this.props.value);
+        }
     }
 }
 

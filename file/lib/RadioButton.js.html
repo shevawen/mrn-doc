@@ -101,6 +101,18 @@ export default class RadioButton extends Component {
             scaleValue: new Animated.Value(0.001),
             opacityValue: new Animated.Value(0.1)
         };
+
+        /**
+         *
+         * @type {{onStartShouldSetResponder: RadioButton._responder.onStartShouldSetResponder, onResponderGrant: RadioButton._highlight, onResponderRelease: RadioButton._handleResponderEnd, onResponderTerminate: RadioButton._unHighlight}}
+         * @private
+         */
+        this._responder = {
+            onStartShouldSetResponder: (e) =&gt; true,
+            onResponderGrant: this._highlight,
+            onResponderRelease: this._handleResponderEnd,
+            onResponderTerminate: this._unHighlight,
+        };
     }
 
     static defaultProps = {
@@ -175,10 +187,7 @@ export default class RadioButton extends Component {
             &lt;View style={[
                 styles.container
             ]}
-                  onStartShouldSetResponder={e=&gt;true}
-                  onResponderGrant={this._onGrant}
-                  onResponderRelease={this._onRelease}
-                  onResponderMove={this._onMove}
+                {...this._responder}
             &gt;
                 &lt;Animated.View style={[styles.ripple,{
                     transform: [
@@ -217,7 +226,7 @@ export default class RadioButton extends Component {
      *
      * @private
      */
-    _onGrant = () =&gt; {
+    _highlight = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -238,28 +247,7 @@ export default class RadioButton extends Component {
      *
      * @private
      */
-    _onRelease = () =&gt; {
-        let { checked, disabled } = this.props;
-
-        if (!checked &amp;&amp; !disabled) {
-            this.props.onCheck &amp;&amp; this.props.onCheck(this.props.value);
-        }
-        this._recover();
-    }
-
-    /**
-     *
-     * @private
-     */
-    _onMove = () =&gt; {
-        this._recover();
-    }
-
-    /**
-     *
-     * @private
-     */
-    _recover = () =&gt; {
+    _unHighlight = () =&gt; {
         Animated.timing(
             this.state.scaleValue,
             {
@@ -273,6 +261,19 @@ export default class RadioButton extends Component {
                 toValue: 0
             }
         ).start();
+    }
+
+    /**
+     *
+     * @private
+     */
+    _handleResponderEnd = () =&gt; {
+        this._unHighlight();
+        let { checked, disabled } = this.props;
+
+        if (!checked &amp;&amp; !disabled) {
+            this.props.onCheck &amp;&amp; this.props.onCheck(this.props.value);
+        }
     }
 }
 
@@ -294,7 +295,7 @@ const styles = StyleSheet.create({
     label: {
         marginLeft: 16,
         opacity: COLOR.darkPrimaryOpacity.opacity,
-        flex:1
+        flex: 1
     }
 });</code></pre>
 
