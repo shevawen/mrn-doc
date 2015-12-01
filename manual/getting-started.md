@@ -20,7 +20,7 @@ npm install react-native-vector-icons --save
 **react-native-material-design requires [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons), so you should set your project for using it.**
 
 
-* Copy the whole `Fonts` folder from `node_modules/mrn` to `android/app/src/main/assets`. 
+* Save [materialdesignicons-webfont.ttf](https://github.com/binggg/MaterialReactNative/blob/master/android/app/src/main/assets/Fonts/materialdesignicons-webfont.ttf?raw=true)  to folder `android/app/src/main/assets/Fonts`. 
 
 * Edit `android/settings.gradle` to look like this:
 
@@ -53,7 +53,7 @@ dependencies {
 }
 ```
 
-* Edit your `MainActivity.java` (deep in `android/app/src/main/java/...`) to look like this:
+* Edit your `MainActivity.java` (deep in `android/app/src/main/javaa/...`) to look like this:
 
 ```java
 package com.myapp;
